@@ -53,11 +53,12 @@ echo $voo_planejado->get_hist_planejado();
 echo $voo_decolado->get_hist_executado();
 
 //Test Case para a classe Passageiro
-//public function __construct($nome_p, $sobrenome_p,$documento_p, $nbagagens_p, $vip_p){
-
-$passageiro = new Passageiro("Bruna", "Faria", "12345678914", 2, true); 
+//public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p){
+$data_agora = new DateTime("now");
+$data_nascimento = new DateTime("2001-03-28 12:49:00");  
+$passageiro = new Passageiro("Bruna", "Faria", "12345678914", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com" ); 
 echo $passageiro->get_nome_passageiro()."\n";
-$passageiro_2 = new Passageiro("Gabriel", "Lott", "01905150660",0,false);
+//$passageiro_2 = new Passageiro("Gabriel", "Lott", "01905150660",0,false);
 
 
 //Test Case para classe Assento
