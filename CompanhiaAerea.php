@@ -152,3 +152,4 @@ public function set_avioes($avioes_f){
 public function set_preco_bagagem($preco_bagagem_f){
     $this->preco_bagagem = $preco_bagagem_f;
 }
+}
