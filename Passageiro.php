@@ -49,7 +49,7 @@ public function set_data_de_nascimento($data_de_nascimento_f, $data_atual_f) {
                     $this->data_de_nascimento = $data_de_nascimento_f;
                 }
                 else {
-                    throw new InvalidArgumentException("\nErro: Data de nascimento inválida");
+                    throw new InvalidArgumentException("\nErro: Data de nascimento inválida ");
                 }
             } 
         }      
@@ -59,13 +59,13 @@ public function set_data_de_nascimento($data_de_nascimento_f, $data_atual_f) {
     
 }
 public function set_cpf($cpf_f) {
-    if($this->nacionalidade == "brasileiro"){
+    if($this->nacionalidade == "brasileiro" || $this->nacionalidade == "brasileira"){
         try {
             if($this->valida_cpf($cpf_f)) {
                 $this->cpf = $cpf_f;
             }
             else {
-                throw new InvalidArgumentException("\nErro: CPF inválido");
+                throw new InvalidArgumentException("\nErro: CPF inválido ");
             }
         } catch (InvalidArgumentException $e) {
             echo $e->getMessage();
@@ -107,7 +107,7 @@ public function set_email($email_f) {
             $this->email = $email_f;
         }
         else {
-            throw new InvalidArgumentException("\nErro: email inválido");
+            throw new InvalidArgumentException("\nErro: email inválido ");
         }
     } catch (InvalidArgumentException $e) {
         echo $e->getMessage();
