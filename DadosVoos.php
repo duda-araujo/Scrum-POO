@@ -5,7 +5,7 @@ class DadosVoos{
     protected array $voos_historico;
     public function DadosVoos(){
     $this->voos_agenda = VooPlanejado::$historico_planejado;
-    $this->voos_historico = VooDecolado::$historico_executado;
+    $this->voos_historico = Viagem::$historico_executado;
     }
     public function ver_historico_dia(DateTime $dia_f){
         $historico_dia = [];
