@@ -58,7 +58,8 @@ $data_agora = new DateTime("now");
 $data_nascimento = new DateTime("2001-03-28 12:49:00");  
 $passageiro = new Passageiro("Bruna", "Faria", "12345678914", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com" ); 
 echo $passageiro->get_nome_passageiro()."\n";
-//$passageiro_2 = new Passageiro("Gabriel", "Lott", "01905150660",0,false);
+$data_nascimento_2 = new DateTime("2001-02-20 12:49:00");  
+$passageiro_2 = new Passageiro("Gabriel", "Lott", "01905150660", 0, false, "brasileiro", "536.713.724-51",$data_nascimento_2, $data_agora, "lott@hotmail.com");
 
 
 //Test Case para classe Assento
