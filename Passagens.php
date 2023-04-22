@@ -17,7 +17,8 @@ public static $dict_estados = [
     1 => "Passagem Cancelada",
     2 => "Check-in Realizado",
     3 => "Embarque Realizado",
-    4 => "NO SHOW"
+    4 => "NO SHOW",
+    5 => "Check-in Não Realizado"
 ];
 public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f){
     $this->set_voo($origem_f, $destino_f);
@@ -164,6 +165,7 @@ public function set_no_show(): void{
     $this->set_estado_da_passagem(3);
     echo "\nNo show registrado";
 }
+
 public function string_passagem(): string{
     $nome = $this->get_cliente()->get_nome_passageiro();
     $sobrenome = $this->get_cliente()->get_sobrenome_passageiro();

@@ -54,6 +54,7 @@ class Embarque extends VooPlanejado{
                         echo "\nPassageiro " . $passagem_f->get_cliente()->get_nome_passageiro() . " embarcado no voo " . $this->voo->get_codigo()."\n";
                         return;
                     } else {
+                        $passagem->set_estado_da_passagem(5);
                         throw new Exception("Erro: o passageiro não realizou o check-in");
                     }
                 }
