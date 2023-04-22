@@ -131,6 +131,9 @@ public function get_documento_passageiro(){
 public function get_nbagagens(){
     return $this->numero_bagagens;
 }
+public function get_vip(){
+    return $this->vip;
+}
 public function get_nacionalidade() {
     return $this->nacionalidade;
 }
