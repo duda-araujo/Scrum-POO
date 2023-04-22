@@ -42,7 +42,9 @@ echo $voo_planejado->get_hist_planejado();
 echo $voo_decolado->get_hist_executado();
 
 //Test Case para a classe Passageiro
-$passageiro = new Passageiro("Bruna", "Faria", "12345678914", 2); 
+$data_agora = new DateTime("now");
+$data_nascimento = new DateTime("2001-03-28 12:49:00");  
+$passageiro = new Passageiro("Bruna", "Faria", "12345678914", 2, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com" ); 
 echo $passageiro->get_nome_passageiro()."\n";
 
 //Test Case para classe Assento
