@@ -45,7 +45,6 @@ public function get_nbagagens(){
 public static function get_passagens(string $cpf_passageiro_f): array{
     $passagens_p = [];
     foreach(self::$passagens as $passagens1){
-        echo "1";
         $cpf = $passagens1->get_cliente()->get_cpf();
         if($cpf == $cpf_passageiro_f){
             $passagens_p[] = $passagens1;
