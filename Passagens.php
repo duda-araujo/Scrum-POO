@@ -45,7 +45,8 @@ public function get_nbagagens(){
 public static function get_passagens($cpf_passageiro_f): array{
     $passagens_p = [];
     foreach(self::$passagens as $passagens1){
-        if($passagens1->get_cliente()->get_cpf() == $cpf_passageiro_f){
+        $cpf = $passagens1->get_cliente()->get_cpf();
+        if($cpf == $cpf_passageiro_f){
             $passagens_p[] = $passagens1;
         }
     } return $passagens_p;
@@ -57,7 +58,7 @@ public static function set_ordem_cronologica(): array{
         foreach(self::$passagens as $passagens2){
             if($passagens2->voo->get_hora_agenda_chegada() < $hora_base){
                 $hora_base=$passagens2->voo->get_hora_agenda_chegada();
-                $new_passagens=$passagens2;
+                $new_passagens[]=$passagens2;
             }
         }
     } return $new_passagens;

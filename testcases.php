@@ -56,7 +56,7 @@ echo $voo_decolado->get_hist_executado();
 //public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p){
 $data_agora = new DateTime("now");
 $data_nascimento = new DateTime("2001-03-28 12:49:00");  
-$passageiro = new Passageiro("Bruna", "Faria", "12345678914", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com" ); 
+$passageiro = new Passageiro("Bruna", "Faria", "13748597614", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com" ); 
 echo $passageiro->get_nome_passageiro()."\n";
 $data_nascimento_2 = new DateTime("2001-02-20 12:49:00");  
 $passageiro_2 = new Passageiro("Gabriel", "Lott", "01905150660", 0, false, "brasileiro", "536.713.724-51",$data_nascimento_2, $data_agora, "lott@hotmail.com");
@@ -101,8 +101,7 @@ echo $passagem->string_passagem();
 $passagem = new Passagens($congonhas, $teresina, $passageiro_2, 2);
 echo $passagem->string_passagem();
 
-//Test case ordem cronológica
-$passagensBruna = new Passagens;
-$passagensBruna = $passagem->get_passagens('1234567814');
-print_r($passagemBruna->get_cliente()->get_nome_passageiro());
+//Test case get_passagens
+$passagensBruna = $passagem->get_passagens("948.884.119-21");
+print($passagensBruna);
 ?>
