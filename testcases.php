@@ -102,7 +102,16 @@ $passagem = new Passagens($congonhas, $teresina, $passageiro_2, 2);
 echo $passagem->string_passagem();
 
 //Test case get_passagens
-$passagens[] = $passagem->get_passagens("948.884.119-21");
+$passagens = [];
+$passagens = $passagem->get_passagens("536.713.724-51");
 foreach($passagens as $passagens1){
-    print_r($passagens1->string_passagem());
+
+    $nome = $passagens1->get_cliente()->get_nome_passageiro();
+    $sobrenome = $passagens1->get_cliente()->get_sobrenome_passageiro();
+    $origem = $passagens1->get_origem()->get_nome_aero();
+    $destino = $passagens1->get_destino()->get_nome_aero();
+    $hora = $passagens1->get_voo()->get_hora_agenda_saida()->format('d/m/Y H:i'); 
+
+    $s = "\nPassagem para $nome $sobrenome, de $origem para $destino, $hora";
+    echo $s;
 }
