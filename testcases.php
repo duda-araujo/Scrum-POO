@@ -102,6 +102,7 @@ $passagem = new Passagens($congonhas, $teresina, $passageiro_2, 2);
 echo $passagem->string_passagem();
 
 //Test case get_passagens
-$passagensBruna = $passagem->get_passagens("948.884.119-21");
-print($passagensBruna);
-?>
+$passagens[] = $passagem->get_passagens("948.884.119-21");
+foreach($passagens as $passagens1){
+    print_r($passagens1->string_passagem());
+}
