@@ -100,4 +100,9 @@ echo $passagem->string_passagem();
 //echo $passagem->string_passagem();
 $passagem = new Passagens($congonhas, $teresina, $passageiro_2, 2);
 echo $passagem->string_passagem();
+
+//Test case ordem cronológica
+$passagensBruna = new Passagens;
+$passagensBruna = $passagem->get_passagens('1234567814');
+print_r($passagemBruna->get_cliente()->get_nome_passageiro());
 ?>

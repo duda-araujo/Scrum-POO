@@ -9,9 +9,7 @@ class Passageiro{
     protected DateTime $data_de_nascimento;
     protected string $email;
     protected int $numero_bagagens;
-    protected bool $vip;
-    
-    
+    protected bool $vip;    
 public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p){
     $this->set_nome_passeiro($nome_p);
     $this->set_sobrenome_passageiro($sobrenome_p);
@@ -146,5 +144,6 @@ public function get_data_de_nascimento() {
 public function get_email() {
     return $this->email;
 }
+
 }
     
