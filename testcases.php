@@ -13,7 +13,7 @@ $chegada = new DateTime("2023-04-24 18:45:32");
 $novasaida = new DateTime("2023-04-24 19:35:32");
 $novachegada = new DateTime("2023-04-25 20:35:32");
 //Test Cases para a classe CompanhiaAerea
-$companhia = new CompanhiaAerea("Gol", "Gol Linhas Aereas", "123", "15488222000172", "GL", "25");
+$companhia = new CompanhiaAerea("Gol", "Gol Linhas Aereas", "123", "15488222000172", "GL", "25", "50");
 echo  $companhia->get_razao()."\n";
 //Test Cases para a classe Aeronave
 //public function __construct($fabricante_f,$modelo_f,$carga_f,$passageiros_f,$registro_f,$companhiaAerea_f){
@@ -42,25 +42,21 @@ $voo = new VooPlanejado("GL1255",  $congonhas, $teresina, $chegada, $saida, $aer
 
 //Test Cases para a classe VooDecolado
 //public function __construct($voo_anunciado_f,$saida_f,$chegada_f,$Aviao_voo_f){
-
-$voo_decolado = new Viagem($voo_planejado, $novasaida, $novachegada, $nova_aeronave);
-echo $voo_decolado->get_aviao_voo()->get_companhia_aerea()->get_nome()."\n";
 echo $voo_planejado->get_hist_planejado();
 
 //Test Case para a classe Passageiro
 //public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p){
 $data_agora = new DateTime("now");
 $data_nascimento = new DateTime("2001-03-28 12:49:00");  
-$passageiro = new Passageiro("Bruna", "Faria", "13748597614", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com" ); 
+$passageiro = new Passageiro("Bruna", "Faria", "13748597614", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com", "2A"); 
 echo $passageiro->get_nome_passageiro()."\n";
 $data_nascimento_2 = new DateTime("2001-02-20 12:49:00");  
-$passageiro_2 = new Passageiro("Gabriel", "Lott", "01905150660", 0, false, "brasileiro", "536.713.724-51",$data_nascimento_2, $data_agora, "lott@hotmail.com");
+$passageiro_2 = new Passageiro("Gabriel", "Lott", "01905150660", 0, false, "brasileiro", "536.713.724-51",$data_nascimento_2, $data_agora, "lott@hotmail.com", "2B");
 
 
 //Test Case para classe Assento
 //public function __construct(VooPlanejado $voo, Passageiro $passageiro, string $numero_assento){
 
-$assento = new Assento($voo_planejado, $passageiro, "15B");
 echo $voo_planejado->get_assentos_ocupados();
 
 //Test Case para venda de passagens em 30 dias
@@ -71,8 +67,8 @@ $passagem = new Passagens($congonhas, $teresina, $passageiro, 2);
 echo $passagem->string_passagem();
 echo $voo_planejado->get_assentos_ocupados();
 //Test Case conexão
-$passageiro2 = new Passageiro("Vinicius", "Cabral", "07251658399", 1, "16B"); 
-$passagem2 = new Passagens($congonhas, $guarulhos, $passageiro2);
+$passageiro2 = new Passageiro("Vinicius", "Cabral", "07251658399", 2, true, "brasileiro", "536.713.724-51",$data_nascimento_2, $data_agora, "viniciusmc.2109@gmail.com","3A"); 
+$passagem2 = new Passagens($congonhas, $guarulhos, $passageiro2, 3);
 echo $passagem2->string_passagem();
 echo ("\n").$passagem->get_preco();
 echo $voo_planejado->get_assentos_ocupados();

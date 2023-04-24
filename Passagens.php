@@ -52,7 +52,7 @@ public function get_voo(){
     return $this->voo;
 }
 public function get_tarifa(): float{
-    return $this->voo->get_aviao()->get_tarifa();
+    return $this->voo->get_aviao()->get_companhia_aerea()->get_tarifa();    
 }
 public function get_cliente(): Passageiro{
     return $this->passageiro;

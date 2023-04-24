@@ -69,21 +69,6 @@ public function set_passageiros_compraram(Passagens $passagem_f): void {
 public function get_passageiros_compraram(): array {
     return $this->passageiros_compraram;
 }
-public function get_franquia(): float {
-    return $this->franquia;
-}
-public function set_franquia($franquia_f): void {
-    try {
-        if ($franquia_f < 0){
-            throw new Exception("\nFranquia não pode ser negativa");
-        }
-        else{
-            $this->franquia = $franquia_f;
-        }
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
-}
 public function get_frequencia(): string {
     //retornar uma string com o dia e a frequencia
     $str = '';

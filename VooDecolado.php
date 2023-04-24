@@ -112,7 +112,12 @@ class Viagem extends VooPlanejado{
         //deve retornar uma string com todos os voos executados
         $string = "";
         foreach (self::$historico_executado as $voo){
-            $string .= "Voo " . $voo->get_voo_anunciado()->get_codigo() . " da " . $voo->get_aviao_voo()->get_companhia_aerea()->get_nome() . " de " . $voo->get_voo_anunciado()->get_origem()->get_sigla_aero() . " para " . $voo->get_voo_anunciado()->get_destino()->get_sigla_aero() . " saiu às " . $voo->get_saida()->format('d/m/Y H:i') . " e chegou às " . $voo->get_chegada()->format('d/m/Y H:i') . "\n";
+            $string .=  "Voo " . $voo->get_voo_anunciado()->get_codigo() . 
+                        " da " . $voo->get_aviao_voo()->get_companhia_aerea()->get_nome() . 
+                        " de " . $voo->get_voo_anunciado()->get_origem()->get_sigla_aero() . 
+                        " para " . $voo->get_voo_anunciado()->get_destino()->get_sigla_aero() . 
+                        " saiu às " . $voo->get_saida()->format('d/m/Y H:i') . 
+                        " e chegou às " . $voo->get_chegada()->format('d/m/Y H:i') . "\n";
         }
         return $string;
 }
