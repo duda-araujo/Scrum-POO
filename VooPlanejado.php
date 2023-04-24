@@ -15,6 +15,7 @@ protected Aeronave $Aviao;
 protected array $Frequencia_voo = ['dia', 'frequencia'];
 protected float $preco_trajeto;
 protected array $assentos;
+protected array $passageiros_compraram = [];
 public static array $historico_planejado = [];    
 
 public static $dict_frequencias = [
@@ -62,8 +63,12 @@ public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
     self::$historico_planejado[] = $this;
 }
 
-
-
+public function set_passageiros_compraram(Passagens $passagem_f): void {
+    array_push($this->passageiros_compraram, $passagem_f);
+}
+public function get_passageiros_compraram(): array {
+    return $this->passageiros_compraram;
+}
 public function get_frequencia(): string {
     //retornar uma string com o dia e a frequencia
     $str = '';
@@ -218,10 +223,10 @@ public function comprar_assento(string $assento, Passageiro $passageiro){
         if (ctype_alpha($letras)){
             if (ctype_digit($digitos) && $digitos < 101){
                 if ($digitos > $this->assentos){
-                    throw new Exception("A fileira deve ser um numero inteiro.");
+                    throw new Exception("\nComprar assento: A fileira deve ser um numero inteiro.");
                 }
             }else{
-                throw new Exception("A coluna deve ser escrita como A, B, C, D, E, ou F \n.");
+                throw new Exception("\nComprar assento: A coluna deve ser escrita como A, B, C, D, E, ou F \n.");
             }
         }
     } catch (Exception $e) {
@@ -231,11 +236,43 @@ public function comprar_assento(string $assento, Passageiro $passageiro){
     $fileira = $digitos;
     //verificar se o assento está disponivel
     try{
-        if ($this->assentos[$fileira][$coluna][1] == null && $this->assentos[$fileira][$coluna][2] = true){
+        if ($this->assentos[$fileira][$coluna][1] == null && $this->assentos[$fileira][$coluna][2] == true){
             $this->assentos[$fileira][$coluna][1] = $passageiro;
             $this->assentos[$fileira][$coluna][2] = false;
         }else{
-            throw new Exception("Assento indisponivel.");
+            throw new Exception("\nComprar assento: Assento indisponivel.");
+        }
+    }catch(Exception $e){
+        echo $e->getMessage();
+    }
+}
+public function liberar_assento(string $assento){
+    //verificar se o assento existe
+    try {
+        preg_match_all('/\d+|\D+/', $assento, $matches);
+        $digitos = "{$matches[0][0]}";
+        $letras = "{$matches[0][1]}";
+        if (ctype_alpha($letras)){
+            if (ctype_digit($digitos) && $digitos < 101){
+                if ($digitos > $this->assentos){
+                    throw new Exception("\nLiberar assento: A fileira deve ser um numero inteiro.");
+                }
+            }else{
+                throw new Exception("\nLiberar assento: A coluna deve ser escrita como A, B, C, D, E, ou F \n.");
+            }
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    $coluna = self::$dict_assentos[$letras];
+    $fileira = $digitos;
+    //verificar se o assento está ocupado
+    try{
+        if ($this->assentos[$fileira][$coluna][1] != null && $this->assentos[$fileira][$coluna][2] == false){
+            $this->assentos[$fileira][$coluna][1] = null;
+            $this->assentos[$fileira][$coluna][2] = true;
+        }else{
+            throw new Exception("\nLiberar assento: Assento indisponivel.");
         }
     }catch(Exception $e){
         echo $e->getMessage();
@@ -246,7 +283,7 @@ public function get_assentos_ocupados(): string {
     foreach ($this->assentos as $fileira) {
         foreach ($fileira as $assento) {
             if (!$assento[2]) { // verifica se o assento está ocupado
-                $ocupados .= $assento[1]->get_nome_passageiro()." ".$assento[1]->get_sobrenome_passageiro()." está sentado/a no assento {$assento[0]}";
+                $ocupados .= ("\n").$assento[1]->get_nome_passageiro()." ".$assento[1]->get_sobrenome_passageiro()." está sentado/a no assento {$assento[0]}";
             }
         }
     }
@@ -256,6 +293,7 @@ public static function get_hist_planejado(): string {
     //deve retornar uma string com todos os voos planejados
     $string = "";
     foreach (self::$historico_planejado as $voo){
+        $string .= "Voo " . $voo->get_codigo() . " da " . $voo->get_aviao()->get_companhia_aerea()->get_nome() . " de " . $voo->get_origem()->get_sigla_aero() . " para " . $voo->get_destino()->get_sigla_aero() . " marcado para " . $voo->get_hora_agenda_saida()->format('d/m/Y H:i') . " com chegada " . $voo->get_hora_agenda_chegada()->format('d/m/Y H:i') . "\n";
         $string .= "Voo " . $voo->get_codigo() . " da " . $voo->get_aviao()->get_companhia_aerea()->get_nome() . " de " . $voo->get_origem()->get_sigla_aero() . " para " . $voo->get_destino()->get_sigla_aero() . " marcado para " . $voo->get_hora_agenda_saida()->format('d/m/Y H:i') . " com chegada " . $voo->get_hora_agenda_chegada()->format('d/m/Y H:i') . "\n";
     }
     return $string;
@@ -277,7 +315,7 @@ public static function proximos_voos_string(): string {
         $voos_proximos = self::buscar_proximos_voos();
         $string = "";
         foreach ($voos_proximos as $voo) {
-            $string .= "Voo " . $voo->get_codigo() . " da " . $voo->get_aviao_marcado()->get_companhia_aerea()->get_nome() . " de " . $voo->get_origem()->get_sigla_aero() . " para " . $voo->get_destino()->get_sigla_aero() . " marcado para " . $voo->get_hora_agenda_saida()->format('d/m/Y H:i') . " com chegada " . $voo->get_hora_agenda_chegada()->format('d/m/Y H:i') . "\n";
+            $string .= "Voo " . $voo->get_codigo() . " da " . $voo->get_aviao()->get_companhia_aerea()->get_nome() . " de " . $voo->get_origem()->get_sigla_aero() . " para " . $voo->get_destino()->get_sigla_aero() . " marcado para " . $voo->get_hora_agenda_saida()->format('d/m/Y H:i') . " com chegada " . $voo->get_hora_agenda_chegada()->format('d/m/Y H:i') . "\n";
         }
         return $string;
 }

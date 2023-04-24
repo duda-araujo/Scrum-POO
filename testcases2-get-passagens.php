@@ -7,7 +7,6 @@ include_once("Passagens.php");
 include_once("Usuario.php");
 include_once("VooDecolado.php");
 include_once("VooPlanejado.php");
-include_once("Assento.php");
 
 $saida1 = new DateTime("2023-04-19 16:45:32");
 $chegada1 = new DateTime("2023-04-20 18:45:32");
@@ -31,7 +30,7 @@ $voo_planejado4 = new VooPlanejado("GL1734", $guarulhos, $teresina, $chegada4, $
 
 $data_agora = new DateTime("now");
 $data_nascimento = new DateTime("2001-03-28 12:49:00");  
-$passageiro = new Passageiro("Bruna", "Faria", "13748597614", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com" ); 
+$passageiro = new Passageiro("Bruna", "Faria", "13748597614", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com", "2A"); 
 
 $passagem1 = new Passagens($congonhas, $teresina, $passageiro, 2);
 $passagem2 = new Passagens($teresina, $guarulhos, $passageiro, 2);

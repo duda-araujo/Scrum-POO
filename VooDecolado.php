@@ -1,19 +1,23 @@
 <?php
 include_once("Aeronave.php");
 include_once("VooPlanejado.php");
+include_once("Passagens.php");
+include_once("Embarque.php");
 
 class Viagem extends VooPlanejado{
     protected Aeronave $aviao_voo;
     protected DateTime $chegada;
     protected DateTime $saida;
     protected VooPlanejado $voo_anunciado;
+    protected Embarque $embarque;
     public static array $historico_executado = []; 
 
-    public function __construct($voo_anunciado_f,$saida_f,$chegada_f,$Aviao_voo_f){
+    public function __construct($voo_anunciado_f,$saida_f,$chegada_f,$Aviao_voo_f, $embarque_f){
         $this-> set_voo_anunciado($voo_anunciado_f);
         $this->set_saida($saida_f);
         $this->set_chegada($chegada_f);
         $this->set_aviao_voo($Aviao_voo_f);
+        $this->comparar_passageiros($embarque_f);
         self::$historico_executado[] = $this;
     }
     public function get_chegada(): DateTime {
@@ -72,15 +76,48 @@ class Viagem extends VooPlanejado{
             echo $e->getMessage();
         }
     }
-    
-    
+
+    public function get_passageiros_embarcados(Embarque $embarque) {
+        try{
+            if ($embarque->get_voo() == $this->get_voo_anunciado()){
+                if ($embarque->get_status_embarque()=="Embarque finalizado"){
+                    return $embarque->get_passageiros_embarcados();
+                } else {
+                    throw new Exception("Erro: o embarque não foi finalizado");
+                }
+            } else {
+                throw new Exception("Erro: o embarque não é deste voo");
+            }
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+    }
+    public function comparar_passageiros($embarque){
+        $passagens_embarcadas = $this->get_passageiros_embarcados($embarque);
+        $passagens_compradas = $this->get_voo_anunciado()->get_passageiros_compraram();
+        $no_show = array_udiff($passagens_compradas, $passagens_embarcadas, function($a, $b){
+            return $a->get_cliente()->get_nome_passageiro() <=> $b->get_cliente()->get_nome_passageiro();
+        });
+        
+        if (count($no_show) > 0){
+            foreach ($no_show as $passageiro){
+                $passageiro->set_no_show();
+                echo "\nPassageiro " . $passageiro->get_cliente()->get_nome_passageiro() . " não embarcou no voo " . $this->get_voo_anunciado()->get_codigo() . " da " . $this->get_aviao_voo()->get_companhia_aerea()->get_nome() . " de " . $this->get_voo_anunciado()->get_origem()->get_sigla_aero() . " para " . $this->get_voo_anunciado()->get_destino()->get_sigla_aero() . " saiu às " . $this->get_saida()->format('d/m/Y H:i') . " e chegou às " . $this->get_chegada()->format('d/m/Y H:i') . "\n";
+            }
+        }
+    }
     
     public function get_hist_executado(): string
     {
         //deve retornar uma string com todos os voos executados
         $string = "";
         foreach (self::$historico_executado as $voo){
-            $string .= "Voo " . $voo->get_voo_anunciado()->get_codigo() . " da " . $voo->get_aviao_voo()->get_companhia_aerea()->get_nome() . " de " . $voo->get_voo_anunciado()->get_origem()->get_sigla_aero() . " para " . $voo->get_voo_anunciado()->get_destino()->get_sigla_aero() . " saiu às " . $voo->get_saida()->format('d/m/Y H:i') . " e chegou às " . $voo->get_chegada()->format('d/m/Y H:i') . "\n";
+            $string .=  "Voo " . $voo->get_voo_anunciado()->get_codigo() . 
+                        " da " . $voo->get_aviao_voo()->get_companhia_aerea()->get_nome() . 
+                        " de " . $voo->get_voo_anunciado()->get_origem()->get_sigla_aero() . 
+                        " para " . $voo->get_voo_anunciado()->get_destino()->get_sigla_aero() . 
+                        " saiu às " . $voo->get_saida()->format('d/m/Y H:i') . 
+                        " e chegou às " . $voo->get_chegada()->format('d/m/Y H:i') . "\n";
         }
         return $string;
 }

@@ -9,9 +9,10 @@ class Passageiro{
     protected DateTime $data_de_nascimento;
     protected string $email;
     protected int $numero_bagagens;
+    protected string $assento;
     protected bool $vip;    
-public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p){
-    $this->set_nome_passeiro($nome_p);
+public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p, $assento_p){
+    $this->set_nome_passageiro($nome_p);
     $this->set_sobrenome_passageiro($sobrenome_p);
     $this->set_documento_passageiro($documento_p);
     $this->set_numero_bagagens($nbagagens_p);
@@ -20,9 +21,16 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
     $this->set_cpf($cpf_p);
     $this->set_data_de_nascimento($data_de_nascimento_p, $data_atual_p);
     $this->set_email($email_p);
+    $this->set_assento($assento_p);
 
 }
-public function set_nome_passeiro($nome_p){
+public function set_assento($assento_p){
+    $this->assento = $assento_p;
+}
+public function get_assento(){
+    return $this->assento;
+}
+public function set_nome_passageiro($nome_p){
     $this->nome_passageiro = $nome_p;
 }
 public function set_sobrenome_passageiro($sobrenome_f){
