@@ -2,10 +2,6 @@
 
 include_once("CompanhiaAerea.php");
 
-
- 
-
-
 class Aeronave{
 
 protected string $fabricante;

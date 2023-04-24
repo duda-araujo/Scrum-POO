@@ -56,7 +56,7 @@ echo $voo_decolado->get_hist_executado();
 //public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p){
 $data_agora = new DateTime("now");
 $data_nascimento = new DateTime("2001-03-28 12:49:00");  
-$passageiro = new Passageiro("Bruna", "Faria", "12345678914", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com" ); 
+$passageiro = new Passageiro("Bruna", "Faria", "13748597614", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com" ); 
 echo $passageiro->get_nome_passageiro()."\n";
 $data_nascimento_2 = new DateTime("2001-02-20 12:49:00");  
 $passageiro_2 = new Passageiro("Gabriel", "Lott", "01905150660", 0, false, "brasileiro", "536.713.724-51",$data_nascimento_2, $data_agora, "lott@hotmail.com");
@@ -100,4 +100,19 @@ echo $passagem->string_passagem();
 //echo $passagem->string_passagem();
 $passagem = new Passagens($congonhas, $teresina, $passageiro_2, 2);
 echo $passagem->string_passagem();
-?>
+
+//Test case get_passagens
+// $passagem1 = new Passagens($congonhas, $teresina, $passageiro, 2);
+// $passagens = [];
+// $passagens = $passagem->get_passagens("536.713.724-51");
+// foreach($passagens as $passagens1){
+
+//     $nome = $passagens1->get_cliente()->get_nome_passageiro();
+//     $sobrenome = $passagens1->get_cliente()->get_sobrenome_passageiro();
+//     $origem = $passagens1->get_origem()->get_nome_aero();
+//     $destino = $passagens1->get_destino()->get_nome_aero();
+//     $hora = $passagens1->get_voo()->get_hora_agenda_saida()->format('d/m/Y H:i'); 
+
+//     $s = "\nPassagem para $nome $sobrenome, de $origem para $destino, $hora";
+//     echo $s;
+// }

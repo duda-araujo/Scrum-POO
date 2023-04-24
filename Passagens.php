@@ -18,6 +18,7 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
     $this->set_franquia($franquia_f);
     $this->set_preco($franquia_f);
     self::$passagens[] = $this;
+    // $this->set_ordem_cronologica();
 }
 
 public function get_preco(){
@@ -41,6 +42,41 @@ public function get_franquia(){
 public function get_nbagagens(){
     return $this->passageiro->get_nbagagens();
 }
+public static function get_passagens(string $cpf_passageiro_f): array{
+    $passagens_p = [];
+    foreach(self::$passagens as $passagens1){
+        $cpf = $passagens1->get_cliente()->get_cpf();
+        if($cpf == $cpf_passageiro_f){
+            $passagens_p[] = $passagens1;
+        }
+    } 
+    usort($passagens_p, function($a, $b){
+        $hora_saida_a = $a->voo->get_hora_agenda_saida();
+        $hora_saida_b = $b->voo->get_hora_agenda_saida();
+
+        if($hora_saida_a < $hora_saida_b){
+            return -1;
+        } else if($hora_saida_a > $hora_saida_b){
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+    
+    return $passagens_p;
+}
+// public static function set_ordem_cronologica(): array{
+//     $new_passagens = [];
+//     foreach(self::$passagens as $passagens1){
+//         $hora_base = $passagens1->voo->get_hora_agenda_saida();
+//         foreach(self::$passagens as $passagens2){
+//             if($passagens2->voo->get_hora_agenda_saida() < $hora_base){
+//                 $hora_base=$passagens2->voo->get_hora_agenda_saida();
+//                 $new_passagens[]=$passagens2;
+//             }
+//         }
+//     } return $new_passagens;
+// }
 public function set_voo($origem_f, $destino_f){
     echo "\nVerificando conexão";
     $voos = self::verificar_conexão($origem_f, $destino_f);
@@ -101,8 +137,6 @@ public function string_passagem(){
 
     return "\nPassagem comprada para $nome $sobrenome, de $origem para $destino, com franquia de $franquia kg e preço de R$$preco";
 }       
-
-
 
 public function set_franquia($franquia_f): void {//entre 0 e 3
     try {
