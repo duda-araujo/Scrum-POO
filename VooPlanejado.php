@@ -13,8 +13,7 @@ protected DateTime $hora_agendada_chegada;
 protected DateTime $hora_agendada_saida;
 protected Aeronave $Aviao;
 protected array $Frequencia_voo = ['dia', 'frequencia'];
-protected int $franquia;
-protected float $preco;
+protected float $preco_trajeto;
 protected array $assentos;
 protected array $passageiros_compraram = [];
 public static array $historico_planejado = [];    
@@ -51,16 +50,15 @@ public static $dict_assentos = [
 
 public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
                             $Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, 
-                            $dia_f,$frequencia_voo_f, $franquia_f, $preco_f) {
+                            $dia_f,$frequencia_voo_f, $preco_f) {
     $this->set_aviao($Aviao_f);
     $this->set_codigo($codigo_f);
     $this->set_origem($Aerop_origem_f);
     $this->set_destino($Aerop_destino_f);
     $this->set_hora_agenda_chegada($Hora_agen_chegada_f);
     $this->set_hora_agenda_saida($Hora_agen_saida_f);
-    $this->set_frequencia($frequencia_voo_f, $dia_f);
-    $this->set_franquia($franquia_f);
-    $this->set_preco($preco_f);
+    $this->set_frequencia($frequencia_voo_f, $dia_f); 
+    $this->set_preco_trajeto($preco_f);
     self::inicializar_assento();
     self::$historico_planejado[] = $this;
 }
@@ -141,16 +139,16 @@ public function set_destino($Aerop_destino_f): void {
         echo $e->getMessage();
     }
 }
-public function get_preco(): float {
-    return $this->preco;
+public function get_preco_trajeto(): float {
+    return $this->preco_trajeto;
 }
-public function set_preco($preco_f): void {
+public function set_preco_trajeto($preco_f): void {//positivo com duas casas decimais
     try {
         if ($preco_f < 0){
             throw new Exception("\nPreço não pode ser negativo");
         }
         else{
-            $this->preco = $preco_f;
+            $this->preco_trajeto = round($preco_f,2);
         }
     } catch (Exception $e) {
         echo $e->getMessage();
@@ -310,6 +308,7 @@ public static function get_hist_planejado(): string {
     //deve retornar uma string com todos os voos planejados
     $string = "";
     foreach (self::$historico_planejado as $voo){
+        $string .= "Voo " . $voo->get_codigo() . " da " . $voo->get_aviao()->get_companhia_aerea()->get_nome() . " de " . $voo->get_origem()->get_sigla_aero() . " para " . $voo->get_destino()->get_sigla_aero() . " marcado para " . $voo->get_hora_agenda_saida()->format('d/m/Y H:i') . " com chegada " . $voo->get_hora_agenda_chegada()->format('d/m/Y H:i') . "\n";
         $string .= "Voo " . $voo->get_codigo() . " da " . $voo->get_aviao()->get_companhia_aerea()->get_nome() . " de " . $voo->get_origem()->get_sigla_aero() . " para " . $voo->get_destino()->get_sigla_aero() . " marcado para " . $voo->get_hora_agenda_saida()->format('d/m/Y H:i') . " com chegada " . $voo->get_hora_agenda_chegada()->format('d/m/Y H:i') . "\n";
     }
     return $string;

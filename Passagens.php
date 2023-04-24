@@ -11,6 +11,7 @@ class Passagens{
     public static array $passagens = []; 
     protected float $preco;
     protected string $estado_da_passagem;
+    protected int $franquia;
 
 public static $dict_estados = [
     0 => "Passagem Adquirida",
@@ -20,14 +21,16 @@ public static $dict_estados = [
     4 => "NO SHOW",
     5 => "Check-in Não Realizado"
 ];
-public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f){
+public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f, int $franquia_f){
     $this->set_voo($origem_f, $destino_f);
     $this->set_cliente($passageiro_f);
-    $this->set_preco();
+    $this->set_franquia($franquia_f);
+    $this->set_preco($franquia_f);
     $this->set_estado_da_passagem(0);
     $this->voo->comprar_assento($passageiro_f->get_assento(), $passageiro_f);
     $this->voo->set_passageiros_compraram($this);
     self::$passagens[] = $this;
+    // $this->set_ordem_cronologica();
 }
 public function get_estado_da_passagem(): string{
     return $this->estado_da_passagem;
@@ -48,6 +51,9 @@ public function get_preco(): float{
 public function get_voo(){
     return $this->voo;
 }
+public function get_tarifa(): float{
+    return $this->voo->get_aviao()->get_tarifa();
+}
 public function get_cliente(): Passageiro{
     return $this->passageiro;
 }
@@ -57,22 +63,34 @@ public function get_origem(): Aeroporto{
 public function get_destino(): Aeroporto{
     return $this->voo->get_destino();
 }
-public function get_franquia(): int{
-    return $this->voo->get_franquia();
-}
-public function get_tarifa(): float{
-    return $this->voo->get_aviao()->get_tarifa();
+public function get_franquia(){
+    return $this->franquia;
 }
 public function get_nbagagens(): int{
     return $this->passageiro->get_nbagagens();
 }
-public function set_preco(): void{
-    if ($this->conexao == null){
-        $this->preco = $this->voo->get_preco();
-    }
-    else{
-        $this->preco = $this->voo->get_preco() + $this->conexao->get_preco();
-    }
+public static function get_passagens(string $cpf_passageiro_f): array{
+    $passagens_p = [];
+    foreach(self::$passagens as $passagens1){
+        $cpf = $passagens1->get_cliente()->get_cpf();
+        if($cpf == $cpf_passageiro_f){
+            $passagens_p[] = $passagens1;
+        }
+    } 
+    usort($passagens_p, function($a, $b){
+        $hora_saida_a = $a->voo->get_hora_agenda_saida();
+        $hora_saida_b = $b->voo->get_hora_agenda_saida();
+
+        if($hora_saida_a < $hora_saida_b){
+            return -1;
+        } else if($hora_saida_a > $hora_saida_b){
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+    
+    return $passagens_p;
 }
 
 public function comprar_bagagem(): float{
@@ -80,6 +98,18 @@ public function comprar_bagagem(): float{
     $tarifa = $this->get_tarifa();
     return $nbagagens*$tarifa;
 }
+// public static function set_ordem_cronologica(): array{
+//     $new_passagens = [];
+//     foreach(self::$passagens as $passagens1){
+//         $hora_base = $passagens1->voo->get_hora_agenda_saida();
+//         foreach(self::$passagens as $passagens2){
+//             if($passagens2->voo->get_hora_agenda_saida() < $hora_base){
+//                 $hora_base=$passagens2->voo->get_hora_agenda_saida();
+//                 $new_passagens[]=$passagens2;
+//             }
+//         }
+//     } return $new_passagens;
+// }
 public function set_voo($origem_f, $destino_f): void{
     echo "\nVerificando conexão";
     $voos = self::verificar_conexão($origem_f, $destino_f);
@@ -176,4 +206,67 @@ public function string_passagem(): string{
 
     return "\nPassagem comprada para $nome $sobrenome, de $origem para $destino, com franquia de $franquia kg e preço de R$$preco";
 }       
+
+public function set_franquia($franquia_f): void {//entre 0 e 3
+    try {
+        if ($franquia_f < 0){
+            throw new Exception("\nFranquia não pode ser negativa");
+        }
+        else if($franquia_f > 3){
+            throw new Exception("\nFranquia maxima eh 3");
+        }
+        else{
+            $this->franquia = $franquia_f;
+        }
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+}
+
+public function set_preco($franquia_f){
+    if($this->passageiro->get_vip() == false){ //Nao vip
+    if($this->conexao == null){//nao vip sem conexao
+      $a= $this->voo->get_aviao();
+      $b=$a->get_companhia_aerea();
+      $c=$b->get_preco_bagagem();
+      $this->preco=$this->voo->get_preco_trajeto() + $franquia_f * $c;
+}
+    else {//nao vip com conexao
+      $a= $this->voo->get_aviao();
+      $b=$a->get_companhia_aerea();
+      $c=$b->get_preco_bagagem();
+      $d= $this->conexao->get_aviao();
+      $e=$d->get_companhia_aerea();
+      $f=$e->get_preco_bagagem();
+      $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto() + $franquia_f *($c + $f);
+    }
+}
+    else{//vip
+            if($this->conexao == null){//vip sem conexao
+              $a= $this->voo->get_aviao();
+              $b=$a->get_companhia_aerea();
+              $c=$b->get_preco_bagagem();
+              if($franquia_f!=0){//vip sem conexao e com bagagem
+              $this->preco=$this->voo->get_preco_trajeto() + ($franquia_f - 1) * ($c/2);
+              }
+              else{//vip sem conexao sem bagagem
+              $this->preco=$this->voo->get_preco_trajeto();
+              }
+        }
+            else {//vip com conexao
+              $a= $this->voo->get_aviao();
+              $b=$a->get_companhia_aerea();
+              $c=$b->get_preco_bagagem();
+              $d= $this->conexao->get_aviao();
+              $e=$d->get_companhia_aerea();
+              $f=$e->get_preco_bagagem();
+              if($franquia_f !=0){//vip com conexao e bagagem
+              $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto() + ($franquia_f - 1) *(($c + $f)/2);
+              }
+              else{//vip com conexao sem bagagem
+              $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto();
+              }
+    }
+}
+}
 }

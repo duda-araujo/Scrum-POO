@@ -11,15 +11,18 @@ protected string $codigo;
 protected string $cnpj;
 protected string $sigla;
 protected array $avioes;
-protected string $preco_bagagem;
+protected float $preco_bagagem;
 
-public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_bagagem_f){
+protected float $tarifa;
+
+public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_bagagem_f,$tarifa_f){
     $this->set_nome_comp($nome_f);
     $this->set_razao($razao_f);
     $this->set_codigo($codigo_f);
     $this->set_cnpj($cnpj_f);
     $this->set_sigla($sigla_f);
     $this->set_preco_bagagem($preco_bagagem_f);
+    $this->set_tarifa($tarifa_f);
 }
 
 public function valida_sigla_companhia($sigla_f){
@@ -39,6 +42,10 @@ public function valida_cnpj($cnpj_f){
     }
 }
 public function valida_codigo(){
+}
+
+public function get_tarifa(){
+    return $this->tarifa;
 }
 
 public function get_nome(){
@@ -62,6 +69,24 @@ public function get_sigla(){
 
 public function get_avioes(){
     return $this->avioes;
+}
+
+public function get_preco_bagagem(){
+    return $this->preco_bagagem;
+}
+
+public function set_tarifa($tarifa_f){
+    try{
+    if($tarifa_f<0){
+        throw new Exception("Tarifa tem que ser positiva\n");
+    }
+    else{
+        $this->tarifa=round($tarifa_f,2);
+    }
+}catch(Exception $e){
+    echo $e->getMessage();
+
+}
 }
 
 public function set_nome_comp($nome_f){
@@ -127,5 +152,4 @@ public function set_avioes($avioes_f){
 public function set_preco_bagagem($preco_bagagem_f){
     $this->preco_bagagem = $preco_bagagem_f;
 }
-
 }

@@ -2,26 +2,18 @@
 
 include_once("CompanhiaAerea.php");
 
-class Excecao_Resgistro_aviao{
- public  string $registro_erro="Erro no registro";
- 
- } 
-
-
 class Aeronave{
 
 protected string $fabricante;
 protected string $modelo;
-protected float $tarifa;
 protected float $carga;
 protected int $passageiros;
 protected string $registro;
 protected CompanhiaAerea $CompanhiaAerea_;
 
 
-public function __construct($fabricante_f,$tarifa_f,$modelo_f,$carga_f,$passageiros_f,$registro_f,$companhiaAerea_f){
+public function __construct($fabricante_f,$modelo_f,$carga_f,$passageiros_f,$registro_f,$companhiaAerea_f){
     $this->set_fabricante($fabricante_f);
-    $this->set_tarifa($tarifa_f);
     $this->set_modelo($modelo_f);
     $this->set_carga($carga_f);
     $this->set_passageiros($passageiros_f);
@@ -55,9 +47,6 @@ public function get_fabricante(){
 
 public function get_modelo(){
     return $this->modelo;
-}
-public function get_tarifa(){
-    return $this->tarifa;
 }
 
 public function get_carga(){
@@ -159,15 +148,6 @@ public function set_companhia(CompanhiaAerea $companhia_aerea_f){
         else{
             $this->CompanhiaAerea_ = $companhia_aerea_f;
         }
-    }
-    catch(Exception $e){
-        echo $e->getMessage();
-    }
-}
-
-public function set_tarifa($tarifa_f){
-    try {
-        $this->tarifa = $tarifa_f;
     }
     catch(Exception $e){
         echo $e->getMessage();
