@@ -1,6 +1,6 @@
 <?php
 
-class Aeroporto {
+class Aeroporto extends persist {
 protected string $sigla;
 protected string $cidade;
 protected string $estado;
@@ -85,5 +85,9 @@ public function set_nome(string $nome_f){
   catch(Exception $e){
     echo $e->getMessage();
   }
+}
+
+public function getFilename(){
+  
 }
 }

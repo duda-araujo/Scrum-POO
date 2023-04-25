@@ -1,6 +1,6 @@
 <?php
 
-class Passageiro{
+class Passageiro extends persist{
    protected string $nome_passageiro;
     protected string $sobrenome_passageiro;
     protected string $documento_passageiro;
@@ -152,6 +152,8 @@ public function get_data_de_nascimento() {
 public function get_email() {
     return $this->email;
 }
-
+public function getFilename(){
+  
+}
 }
     

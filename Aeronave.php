@@ -2,7 +2,7 @@
 
 include_once("CompanhiaAerea.php");
 
-class Aeronave{
+class Aeronave extends persist{
 
 protected string $fabricante;
 protected string $modelo;
@@ -152,5 +152,9 @@ public function set_companhia(CompanhiaAerea $companhia_aerea_f){
     catch(Exception $e){
         echo $e->getMessage();
     }
+}
+
+public function getFilename(){
+
 }
 };

@@ -4,7 +4,7 @@ include_once "VooPlanejado.php";
 include_once "Aeroporto.php";
 include_once "Passageiro.php";
 include_once "Aeronave.php";
-class Passagens{
+class Passagens extends persist{
     protected VooPlanejado $voo;
     protected ?VooPlanejado $conexao = null;
     protected Passageiro $passageiro;
@@ -268,5 +268,8 @@ public function set_preco($franquia_f){
               }
     }
 }
+}
+public function getFilename(){
+  
 }
 }

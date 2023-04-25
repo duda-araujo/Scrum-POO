@@ -5,7 +5,7 @@ include_once("Aeroporto.php");
 include_once("CompanhiaAerea.php");
 
 
-class VooPlanejado{
+class VooPlanejado extends persist{
 protected string $codigo;
 protected Aeroporto $Aeroporto_origem;
 protected Aeroporto $Aeroporto_destino;
@@ -333,5 +333,8 @@ public function validar_codigo($codigo, $Aviao_esperado_f): bool {
     }else{
         return false;
     }
+}
+public function getFilename(){
+  
 }
 }

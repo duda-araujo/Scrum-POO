@@ -3,7 +3,7 @@
 include_once("Aeronave.php");
 
 
-class CompanhiaAerea{
+class CompanhiaAerea extends persist{
 
 protected string $nome;
 protected string $razao_social;
@@ -152,4 +152,8 @@ public function set_avioes($avioes_f){
 public function set_preco_bagagem($preco_bagagem_f){
     $this->preco_bagagem = $preco_bagagem_f;
 }
+public function getFilename(){
+  
+}
+
 }

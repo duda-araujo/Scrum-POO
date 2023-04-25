@@ -2,7 +2,7 @@
 
 include_once("Passagens.php");
 
-class Usuario{
+class Usuario extends persist{
 
     protected string $nome_usuario;
     protected string $sobrenome_usuario;
@@ -39,7 +39,9 @@ class Usuario{
     public function get_passagens(){
         return $this->passagens;
     }
- 
+    public function getFilename(){
+  
+    }
 
 }
 
