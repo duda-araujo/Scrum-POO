@@ -1,6 +1,6 @@
 <?php
 
-class Aeroporto {
+class Aeroporto extends persist{
 protected string $sigla;
 protected string $cidade;
 protected string $estado;
@@ -11,6 +11,10 @@ public function __construct(string $sigla_f,string $cidade_f,string $estado_f,st
     $this->set_cidade($cidade_f);
     $this->set_estado($estado_f);
     $this->set_nome($nome_f);
+}
+
+static public function getFilename() {
+  return get_called_class()::$local_filename;
 }
 
 public function validar_sigla_aero(string $sigla_s){

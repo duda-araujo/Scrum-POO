@@ -4,7 +4,7 @@ include_once "VooPlanejado.php";
 include_once "Aeroporto.php";
 include_once "Passageiro.php";
 include_once "Aeronave.php";
-class Passagens{
+class Passagens extends persist{
     protected VooPlanejado $voo;
     protected ?VooPlanejado $conexao = null;
     protected Passageiro $passageiro;
@@ -31,6 +31,9 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
     $this->voo->set_passageiros_compraram($this);
     self::$passagens[] = $this;
     // $this->set_ordem_cronologica();
+}
+static public function getFilename() {
+    return get_called_class()::$local_filename;
 }
 public function get_estado_da_passagem(): string{
     return $this->estado_da_passagem;

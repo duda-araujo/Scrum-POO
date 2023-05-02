@@ -5,7 +5,7 @@ include_once("Aeroporto.php");
 include_once("CompanhiaAerea.php");
 
 
-class VooPlanejado{
+class VooPlanejado extends persist{
 protected string $codigo;
 protected Aeroporto $Aeroporto_origem;
 protected Aeroporto $Aeroporto_destino;
@@ -62,7 +62,9 @@ public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
     self::inicializar_assento();
     self::$historico_planejado[] = $this;
 }
-
+static public function getFilename() {
+    return get_called_class()::$local_filename;
+}
 public function set_passageiros_compraram(Passagens $passagem_f): void {
     array_push($this->passageiros_compraram, $passagem_f);
 }

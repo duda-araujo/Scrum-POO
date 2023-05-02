@@ -2,7 +2,7 @@
 
 include_once("CompanhiaAerea.php");
 
-class Aeronave{
+class Aeronave extends persist{
 
 protected string $fabricante;
 protected string $modelo;
@@ -40,7 +40,9 @@ public function validar_registro($registro_f){
         return false;
     }
 }
-
+static public function getFilename() {
+    return get_called_class()::$local_filename;
+}
 public function get_fabricante(){
     return $this->fabricante;
 }
@@ -154,3 +156,4 @@ public function set_companhia(CompanhiaAerea $companhia_aerea_f){
     }
 }
 };
+?>

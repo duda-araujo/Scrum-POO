@@ -3,7 +3,7 @@
 include_once("Aeronave.php");
 
 
-class CompanhiaAerea{
+class CompanhiaAerea extends persist{
 
 protected string $nome;
 protected string $razao_social;
@@ -23,6 +23,10 @@ public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_b
     $this->set_sigla($sigla_f);
     $this->set_preco_bagagem($preco_bagagem_f);
     $this->set_tarifa($tarifa_f);
+}
+
+static public function getFilename() {
+    return get_called_class()::$local_filename;
 }
 
 public function valida_sigla_companhia($sigla_f){

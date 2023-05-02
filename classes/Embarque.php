@@ -17,6 +17,9 @@ class Embarque extends VooPlanejado{
         2 => "Embarque aberto",
         3 => "Embarque finalizado"
     ];
+    static public function getFilename() {
+        return get_called_class()::$local_filename;
+    }
     public function get_voo(): VooPlanejado {
         return $this->voo;
     }

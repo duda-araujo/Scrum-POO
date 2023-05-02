@@ -1,6 +1,6 @@
 <?php
 
-class Passageiro{
+class Passageiro extends persist{
    protected string $nome_passageiro;
     protected string $sobrenome_passageiro;
     protected string $documento_passageiro;
@@ -23,6 +23,9 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
     $this->set_email($email_p);
     $this->set_assento($assento_p);
 
+}
+static public function getFilename() {
+    return get_called_class()::$local_filename;
 }
 public function set_assento($assento_p){
     $this->assento = $assento_p;
