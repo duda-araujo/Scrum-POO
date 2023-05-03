@@ -7,6 +7,7 @@ include_once("Passagens.php");
 include_once("Usuario.php");
 include_once("VooDecolado.php");
 include_once("VooPlanejado.php");
+include_once("ProgramaDeMilhagem.php");
 
 $saida1 = new DateTime("2023-04-19 16:45:32");
 $chegada1 = new DateTime("2023-04-20 18:45:32");
@@ -22,6 +23,7 @@ $aeronave = new Aeronave("Boeing", "A-800", 186, 600, "PR-GUO", $companhia);
 $congonhas = new Aeroporto("CNG", "Congonhas", "SP", "Aeroporto de Congonhas");
 $teresina = new Aeroporto("THE", "Teresina", "PI", "Aeroporto de Teresina");
 $guarulhos = new Aeroporto("GRU", "Guarulhos", "SP", "Aeroporto de Guarulhos");
+$milhagem = new ProgramaDeMilhagem("Gol", "Smiles");
 
 $voo_planejado = new VooPlanejado("GL1234", $congonhas, $teresina, $chegada1, $saida1, $aeronave, '2', '2', 300);
 $voo_planejado2 = new VooPlanejado("GL1534", $teresina, $guarulhos, $chegada2, $saida2, $aeronave, '2', '2', 400);

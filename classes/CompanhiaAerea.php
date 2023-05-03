@@ -12,7 +12,6 @@ protected string $cnpj;
 protected string $sigla;
 protected array $avioes;
 protected float $preco_bagagem;
-
 protected float $tarifa;
 
 public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_bagagem_f,$tarifa_f){
