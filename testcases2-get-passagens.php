@@ -1,12 +1,5 @@
 <?php
-include_once("Aeronave.php");
-include_once("Aeroporto.php");
-include_once("CompanhiaAerea.php");
-include_once("Passageiro.php");
-include_once("Passagens.php");
-include_once("Usuario.php");
-include_once("VooDecolado.php");
-include_once("VooPlanejado.php");
+include_once("global.php");
 
 $saida1 = new DateTime("2023-04-19 16:45:32");
 $chegada1 = new DateTime("2023-04-20 18:45:32");
