@@ -6,7 +6,7 @@
         $funcionario1 = new funcionario("Steve Jobs", "987654321");
         $funcionario1->save();
     }
-    if ( 0 ) {s
+    if ( 0 ) {
         $funcionario2 = new funcionario("Bill Gates", "1234567");
         $funcionario2->save();
     }
