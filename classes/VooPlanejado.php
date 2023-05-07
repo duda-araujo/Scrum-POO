@@ -16,6 +16,8 @@ protected array $Frequencia_voo = ['dia', 'frequencia'];
 protected float $preco_trajeto;
 protected array $assentos;
 protected array $passageiros_compraram = [];
+
+protected int $pontos_viagem;
 public static array $historico_planejado = [];    
 
 public static $dict_frequencias = [
@@ -50,7 +52,7 @@ public static $dict_assentos = [
 
 public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
                             $Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, 
-                            $dia_f,$frequencia_voo_f, $preco_f) {
+                            $dia_f,$frequencia_voo_f, $preco_f,$pontos) {
     $this->set_aviao($Aviao_f);
     $this->set_codigo($codigo_f);
     $this->set_origem($Aerop_origem_f);
@@ -59,9 +61,12 @@ public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
     $this->set_hora_agenda_saida($Hora_agen_saida_f);
     $this->set_frequencia($frequencia_voo_f, $dia_f); 
     $this->set_preco_trajeto($preco_f);
+    $this->set_pontos_voo($pontos);
     self::inicializar_assento();
     self::$historico_planejado[] = $this;
 }
+
+
 static public function getFilename() {
     return get_called_class()::$local_filename;
 }
@@ -335,5 +340,13 @@ public function validar_codigo($codigo, $Aviao_esperado_f): bool {
     }else{
         return false;
     }
+}
+
+public function get_pontos_voo(){
+    return $this->pontos_viagem;
+}
+
+public function set_pontos_voo($p){
+    $this->pontos_viagem=$p;
 }
 }

@@ -30,8 +30,13 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
     $this->voo->comprar_assento($passageiro_f->get_assento(), $passageiro_f);
     $this->voo->set_passageiros_compraram($this);
     $this->passageiro->ultimos_doze_meses(new DateTime("now"));
+    $this->Pontos_do_voo( $this->voo->get_hora_agenda_chegada(), $this->voo->get_pontos_voo());
     self::$passagens[] = $this;
     // $this->set_ordem_cronologica();
+}
+
+public function Pontos_do_voo(DateTime $t,int $p){
+    $this->passageiro->adicionar_pontos($p,$t);
 }
 static public function getFilename() {
     return get_called_class()::$local_filename;
