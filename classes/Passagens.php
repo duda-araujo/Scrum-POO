@@ -29,6 +29,7 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
     $this->set_estado_da_passagem(0);
     $this->voo->comprar_assento($passageiro_f->get_assento(), $passageiro_f);
     $this->voo->set_passageiros_compraram($this);
+    $this->passageiro->ultimos_doze_meses(new DateTime("now"));
     self::$passagens[] = $this;
     // $this->set_ordem_cronologica();
 }
