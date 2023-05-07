@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 include_once("Aeronave.php");
 include_once("Aeroporto.php");
 include_once("CompanhiaAerea.php");
@@ -8,6 +9,9 @@ include_once("Usuario.php");
 include_once("VooDecolado.php");
 include_once("VooPlanejado.php");
 include_once("ProgramaDeMilhagem.php");
+=======
+include_once("global.php");
+>>>>>>> 414cb86aa399f36d79f4ce1ca9c471fee0a67f8d
 
 $saida1 = new DateTime("2023-04-19 16:45:32");
 $chegada1 = new DateTime("2023-04-20 18:45:32");
