@@ -12,8 +12,9 @@ protected string $cnpj;
 protected string $sigla;
 protected array $avioes;
 protected float $preco_bagagem;
-
 protected float $tarifa;
+protected array $tripulacao = [];
+
 
 public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_bagagem_f,$tarifa_f){
     $this->set_nome_comp($nome_f);
@@ -77,6 +78,9 @@ public function get_avioes(){
 
 public function get_preco_bagagem(){
     return $this->preco_bagagem;
+}
+public function get_tripulacao(){
+    return $this->tripulacao;
 }
 
 public function set_tarifa($tarifa_f){
@@ -156,4 +160,8 @@ public function set_avioes($avioes_f){
 public function set_preco_bagagem($preco_bagagem_f){
     $this->preco_bagagem = $preco_bagagem_f;
 }
+public function set_tripulacao($tripulacao_f){
+    $this->tripulacao[] = $tripulacao_f;
+}
+
 }

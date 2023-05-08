@@ -40,10 +40,10 @@ print_r($aeroportos);
 //public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
 //Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, 
 //$dia_f,$frequencia_voo_f, $preco_f) {
-$voo_planejado = new VooPlanejado("GL1234", $congonhas, $teresina, $chegada, $saida, $aeronave1, '2', '2', 300);
+$voo_planejado = new VooPlanejado("GL1234", $congonhas, $teresina, $chegada, $saida, $aeronave1, '2', '2', 300, 1000);
 //echo $voo_planejado1->get_frequencia()."\n";
-$voo_planejado2 = new VooPlanejado("GL1534", $teresina, $guarulhos, $novachegada, $novasaida, $aeronave1, '2', '2', 400);
-$voo_planejado3 = new VooPlanejado("GL1255",  $congonhas, $teresina, $chegada, $saida, $aeronave1, '2','2', 600);
+$voo_planejado2 = new VooPlanejado("GL1534", $teresina, $guarulhos, $novachegada, $novasaida, $aeronave1, '2', '2', 400, 2000);
+$voo_planejado3 = new VooPlanejado("GL1255",  $congonhas, $teresina, $chegada, $saida, $aeronave1, '2','2', 600, 3000);
 $voo_planejado->save();
 $voo_planejado2->save();
 $voo_planejado3->save();

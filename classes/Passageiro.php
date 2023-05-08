@@ -1,5 +1,5 @@
 <?php
-
+include_once "ProgramaDeMilhagem.php";
 class Passageiro extends persist{
    protected string $nome_passageiro;
     protected string $sobrenome_passageiro;
@@ -7,6 +7,10 @@ class Passageiro extends persist{
     protected string $nacionalidade;
     protected string $cpf;
     protected DateTime $data_de_nascimento;
+    protected ?ProgramaDeMilhagem $programa_de_milhagem = null;
+    protected string $categoria;
+    protected int $pontos;
+    protected array $historico_de_pontos=[];
     protected string $email;
     protected int $numero_bagagens;
     protected string $assento;
@@ -155,6 +159,36 @@ public function get_data_de_nascimento() {
 public function get_email() {
     return $this->email;
 }
-
+public function get_categoria() {
+    return $this->categoria;
+}
+public function set_categoria($pontos) {
+    $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
+}
+public function get_pontos() {
+    return $this->pontos;
+}
+public function set_pontos($pontos_f) {
+    $this->pontos = $pontos_f;
+}
+public function adicionar_pontos($pontos, DateTime $data){
+    $this->pontos += $pontos;
+    $this->historico_de_pontos[$data->format('d-m-Y')] = $pontos;
+}
+//Caso a quantidade mínima de pontos acumulados nos últimos 12 meses 
+//de uma categoria não seja mantida, o passageiro vip tem um downgrade e retorna à categoria anterior.
+//Checa o array historico_de_pontos e retorna a quantidade de pontos acumulados nos ultimos 12 meses
+public function ultimos_doze_meses(DateTime $data_atual) {
+    $pontos_ultimos_doze_meses = 0;
+    foreach($this->historico_de_pontos as $data => $pontos) {
+        $data_formatada = DateTime::createFromFormat('d-m-Y', $data);
+        $diferenca = $data_atual->diff($data_formatada);
+        if($diferenca->y == 0 && $diferenca->m <= 12) {
+            $pontos_ultimos_doze_meses += $pontos;
+        }
+    }
+    $categoria = $this->programa_de_milhagem->get_categoria($pontos_ultimos_doze_meses);
+    $this -> categoria = $categoria;
+}
 }
     

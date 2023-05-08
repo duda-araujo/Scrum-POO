@@ -3,7 +3,7 @@
 include_once("CompanhiaAerea.php");
 
 class Aeronave extends persist{
-
+    
 protected string $fabricante;
 protected string $modelo;
 protected float $carga;

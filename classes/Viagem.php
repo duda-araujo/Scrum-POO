@@ -11,6 +11,7 @@ class Viagem extends VooPlanejado{
     protected VooPlanejado $voo_anunciado;
     protected Embarque $embarque;
     public static array $historico_executado = []; 
+    public static array $comissarios_de_bordo = [];
 
     public function __construct($voo_anunciado_f,$saida_f,$chegada_f,$Aviao_voo_f, $embarque_f){
         $this-> set_voo_anunciado($voo_anunciado_f);
