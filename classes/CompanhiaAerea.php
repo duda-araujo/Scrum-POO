@@ -26,7 +26,7 @@ public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_b
 }
 
 static public function getFilename() {
-    return get_called_class()::$local_filename;
+    return get_called_class();
 }
 
 public function valida_sigla_companhia($sigla_f){

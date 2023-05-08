@@ -25,7 +25,7 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
 
 }
 static public function getFilename() {
-    return get_called_class()::$local_filename;
+    return get_called_class();
 }
 public function set_assento($assento_p){
     $this->assento = $assento_p;

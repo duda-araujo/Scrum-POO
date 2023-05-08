@@ -63,7 +63,7 @@ public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
     self::$historico_planejado[] = $this;
 }
 static public function getFilename() {
-    return get_called_class()::$local_filename;
+    return get_called_class();
 }
 public function set_passageiros_compraram(Passagens $passagem_f): void {
     array_push($this->passageiros_compraram, $passagem_f);

@@ -41,7 +41,7 @@ public function validar_registro($registro_f){
     }
 }
 static public function getFilename() {
-    return get_called_class()::$local_filename;
+    return get_called_class();
 }
 public function get_fabricante(){
     return $this->fabricante;

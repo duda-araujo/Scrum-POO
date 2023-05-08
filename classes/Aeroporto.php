@@ -14,7 +14,7 @@ public function __construct(string $sigla_f,string $cidade_f,string $estado_f,st
 }
 
 static public function getFilename() {
-  return get_called_class()::$local_filename;
+  return get_called_class();
 }
 
 public function validar_sigla_aero(string $sigla_s){

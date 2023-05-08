@@ -33,7 +33,7 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
     // $this->set_ordem_cronologica();
 }
 static public function getFilename() {
-    return get_called_class()::$local_filename;
+    return get_called_class();
 }
 public function get_estado_da_passagem(): string{
     return $this->estado_da_passagem;
