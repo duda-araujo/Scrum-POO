@@ -122,5 +122,6 @@ class Viagem extends VooPlanejado{
         }
         return $string;
 }
+
 }
 
