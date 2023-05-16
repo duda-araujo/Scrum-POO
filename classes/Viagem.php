@@ -12,14 +12,18 @@ class Viagem extends VooPlanejado{
     protected Embarque $embarque;
     public static array $historico_executado = []; 
     public static array $comissarios_de_bordo = [];
+    protected Piloto $piloto;
+    protected Piloto $copiloto;
 
-    public function __construct($voo_anunciado_f,$saida_f,$chegada_f,$Aviao_voo_f, $embarque_f){
+    public function __construct($voo_anunciado_f,$saida_f,$chegada_f,$Aviao_voo_f, $embarque_f,$piloto_f, $copiloto_f){
         $this-> set_voo_anunciado($voo_anunciado_f);
         $this->set_saida($saida_f);
         $this->set_chegada($chegada_f);
         $this->set_aviao_voo($Aviao_voo_f);
         $this->comparar_passageiros($embarque_f);
         self::$historico_executado[] = $this;
+        $this->set_piloto($piloto_f);
+        $this->set_copiloto($copiloto_f);
     }
     public function get_chegada(): DateTime {
         return $this->chegada;
@@ -107,6 +111,23 @@ class Viagem extends VooPlanejado{
             }
         }
     }
+    public function cadastrar_comissario_de_bordo(ComissarioDeBordo $comissario_de_bordo_f){
+        foreach (self::$voo_anunciado->get_aviao()->get_companhia_aerea()->get_comissarios_de_bordo() as $comissario_de_bordo){
+            if ($comissario_de_bordo->get_cpf() == $comissario_de_bordo_f->get_cpf()){
+                array_push($this->comissarios_de_bordo, $comissario_de_bordo_f);
+                return;
+            }
+        }
+    }
+    public function set_piloto(Piloto $piloto_f){
+       $this->piloto = $piloto_f;
+    }
+    public function set_copiloto(Piloto $copiloto_f){
+        $this->copiloto = $copiloto_f;
+     }
+     
+
+
     
     public function get_hist_executado(): string
     {
