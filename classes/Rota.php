@@ -2,6 +2,7 @@
 
 include_once("Tripulacao.php");
 include_once("Aeroporto.php");
+include_once("Veiculo.php");
 
 class Rota extends persist{
 
