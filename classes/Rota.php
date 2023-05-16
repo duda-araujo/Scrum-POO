@@ -46,7 +46,7 @@ class Rota extends persist{
     }
 
     public function obter_lang_long() {
-
+        
     }
 
     public function checar_duracao () {
