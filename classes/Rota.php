@@ -80,25 +80,14 @@ class Rota extends persist{
 
             // Converter a distância total para a unidade desejada (por exemplo, km)
             $totalDistanceKm = $totalDistance / 1000;
-
-            echo "Distância total: $totalDistanceKm km";
+            $googleMaps->close();
+            return $totalDistanceKm;
         } else {
+            $googleMaps->close();
             echo "Erro na requisição: " . $data['status'];
+            return;
         }
-
-        $googleMaps->close();
-
     }
-
-    public function obter_lang_long() {
-        
-    }
-
-    public function checar_duracao () {
-
-    }
-    
-
 }
 
 ?>
