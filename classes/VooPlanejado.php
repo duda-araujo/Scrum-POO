@@ -363,11 +363,22 @@ public function ordenar_voos($voos) : array
     }
     return $voos_ordenados;
 }
-public function buscar_voos($voos, $numero_de_passagens) : array
+public function get_assentos_livres():int{
+    $livres = 0;
+    foreach ($this->assentos as $fileira) {
+        foreach ($fileira as $assento) {
+            if ($assento[2]) { // verifica se o assento está ocupado
+                $livres++;
+            }
+        }
+    }
+    return $livres;
+}
+public function buscar_voos(array $voos, int $numero_de_passagens) : array
 {
     $voos_disponiveis = [];
     foreach ($voos as $voo){
-        if ($voo->get_aviao()->get_capacidade() - $voo->get_numero_de_passagens() >= $numero_de_passagens){
+        if ($voo->get_assentos_livres() - $numero_de_passagens >= 0){
             $voos_disponiveis[] = $voo;
         }
     }
