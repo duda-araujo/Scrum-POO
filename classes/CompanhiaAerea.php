@@ -14,6 +14,8 @@ protected array $avioes;
 protected float $preco_bagagem;
 protected float $tarifa;
 protected array $tripulacao = [];
+protected array $comissarios_de_bordo = [];
+protected array $pilotos = [];
 
 
 public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_bagagem_f,$tarifa_f){
@@ -81,6 +83,12 @@ public function get_preco_bagagem(){
 }
 public function get_tripulacao(){
     return $this->tripulacao;
+}
+public function get_comissarios_de_bordo(){
+    return $this->comissarios_de_bordo;
+}
+public function get_pilotos(){
+    return $this->pilotos;
 }
 
 public function set_tarifa($tarifa_f){
@@ -162,6 +170,12 @@ public function set_preco_bagagem($preco_bagagem_f){
 }
 public function set_tripulacao($tripulacao_f){
     $this->tripulacao[] = $tripulacao_f;
+}
+public function set_comissario_de_bordo($comissario_de_bordo_f){
+    $this->comissarios_de_bordo[] = $comissario_de_bordo_f;
+}
+public function set_piloto($piloto_f){
+    $this->pilotos[] = $piloto_f;
 }
 
 }

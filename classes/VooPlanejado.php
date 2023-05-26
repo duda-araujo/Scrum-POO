@@ -349,4 +349,51 @@ public function get_pontos_voo(){
 public function set_pontos_voo($p){
     $this->pontos_viagem=$p;
 }
+
+public function ordenar_voos($voos) : array
+{
+    $voos_ordenados = [];
+    $voos_ordenados[] = $voos[0];
+    for ($i = 1; $i < count($voos); $i++){
+        $j = 0;
+        while ($j < count($voos_ordenados) && $voos[$i]->get_hora_agenda_saida() > $voos_ordenados[$j]->get_hora_agenda_saida()){
+            $j++;
+        }
+        array_splice($voos_ordenados, $j, 0, $voos[$i]);
+    }
+    return $voos_ordenados;
+}
+public function buscar_voos($voos, $numero_de_passagens) : array
+{
+    $voos_disponiveis = [];
+    foreach ($voos as $voo){
+        if ($voo->get_aviao()->get_capacidade() - $voo->get_numero_de_passagens() >= $numero_de_passagens){
+            $voos_disponiveis[] = $voo;
+        }
+    }
+    $voos_disponiveis = self::ordenar_voos($voos_disponiveis);
+    return $voos_disponiveis;
+
+}
+public function pesquisar_voos($origem, $destino, $data, $numero_de_passagens){
+    $voos_disponiveis = [];
+    foreach (self::$historico_planejado as $voo){
+        if ($voo->get_origem()->get_sigla_aero() == $origem && $voo->get_destino()->get_sigla_aero() == $destino && $voo->get_hora_agenda_saida()->format('d/m/Y') == $data){
+            $voos_disponiveis[] = $voo;
+        }
+    }
+    if (count($voos_disponiveis) == 0){
+        echo "\nNão há voos disponiveis para a data e origem/destino selecionados.";
+        return false;
+    }else{
+        $voos_disponiveis = self::ordenar_voos($voos_disponiveis);
+        $voos_disponiveis = self::buscar_voos($voos_disponiveis, $numero_de_passagens);
+        if (count($voos_disponiveis) == 0){
+            echo "\nNão há voos disponiveis para a quantidade de passagens selecionada.";
+            return false;
+        }else{
+            return $voos_disponiveis;
+        }
+    }
+}
 }
