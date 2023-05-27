@@ -12,6 +12,8 @@ class Passagens extends persist{
     protected float $preco;
     protected string $estado_da_passagem;
     protected int $franquia;
+    protected CartaoDeEmbarque $cartao_de_embarque1;
+    protected ?CartaoDeEmbarque $cartao_de_embarque2 = null;
 
 public static $dict_estados = [
     0 => "Passagem Adquirida",
@@ -176,7 +178,7 @@ public function cancelar_passagem(): void{
     echo "\nPassagem cancelada";
 }
 
-public function realizar_check_in(): void{
+public function realizar_check_in($cartao_de_embarque1_f, $cartao_de_embarque2_f=null): void{
     ###O sistema deve permitir o check-in de passagens já adquiridas em um período compreendido
     //entre 48h e 30 minutos do horário de partida do primeiro vôo. Em caso de não realização do 
     //check-in o sistema deve registrar o NO SHOW, que indica o não comparecimento do passageiro. ###
@@ -189,6 +191,13 @@ public function realizar_check_in(): void{
             if ($this->get_estado_da_passagem() == "Passagem Adquirida"){
                 $this->set_estado_da_passagem(2);
                 echo "\nCheck-in realizado";
+
+                $this->cartao_de_embarque1 = $cartao_de_embarque1_f;
+                //se tiver conexao, cartao de embarque 2 é construido
+                if(!($this->conexao == null)){
+                    $this->cartao_de_embarque2 = $cartao_de_embarque2_f;
+                }
+
             }else{
                 throw new Exception("\nErro: O estado não permite check-in");
             }
