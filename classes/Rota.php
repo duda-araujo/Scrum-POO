@@ -47,23 +47,34 @@ class Rota extends persist{
     public function endereço_to_string(){
         $array = [];
         foreach ($this->tripulacao as $tripulante) {
-            $endereço .= $tripulante->get_logradouro() . ", " . $tripulante->get_numero() . ", " . $tripulante->get_bairro() . ", " . $tripulante->get_cidade() . ", " . $tripulante->get_estado() . ", " . $tripulante->get_pais();
+            $endereço = "";
+            $endereço .= $tripulante->get_logradouro() . ", " . 
+                            $tripulante->get_numero() . ", " . 
+                            $tripulante->get_bairro() . ", " . 
+                            $tripulante->get_cidade() . ", " . 
+                            $tripulante->get_estado();
             $endereço = $this->converter_endereco($endereço);
-            $array[] = ['location' => $endereço];
+            $array[] = [$endereço];
         }
         return $array;
     }
     public function definir_rota() {
         $googleMaps = new GoogleMapsAPI();
         $waypoints = $this->endereço_to_string();
-        $origin = $this -> aeroporto -> get_nome_aero() .= ", " . $this -> aeroporto -> get_cidade() .= ", " . $this -> aeroporto -> get_estado();
-        $destination = $this -> aeroporto -> get_nome_aero() .= ", " . $this -> aeroporto -> get_cidade() .= ", " . $this -> aeroporto -> get_estado();
+        $origin = "";
+        $destination = "";
+        $origin .= $this -> aeroporto -> get_nome_aero() . ", " . 
+                    $this -> aeroporto -> get_cidade() . ", " . 
+                    $this -> aeroporto -> get_estado();
+        $destination = $this -> aeroporto -> get_nome_aero() . ", " . 
+                        $this -> aeroporto -> get_cidade() . ", " . 
+                        $this -> aeroporto -> get_estado();
+
         // Fazer a requisição de direções com os waypoints
         $response = $googleMaps->directions($origin, $destination, $waypoints, $optimize = true);
 
         // Converter a resposta JSON em array
         $data = json_decode($response, true);
-
         // Verificar se a requisição foi bem-sucedida
         if ($data['status'] === 'OK') {
             $routes = $data['routes'];

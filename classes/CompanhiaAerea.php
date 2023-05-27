@@ -41,7 +41,11 @@ public function valida_sigla_companhia($sigla_f){
     }
 }
 public function valida_cnpj($cnpj_f){
-// Deve ser formado por 14 digitos
+// Deve ser formado por 14 digitos, o codigo ignora pontos, traços e barras
+// Retira todos os . / e - do cnpj
+    $cnpj_f = str_replace(".", "", $cnpj_f);
+    $cnpj_f = str_replace("/", "", $cnpj_f);
+    $cnpj_f = str_replace("-", "", $cnpj_f);
     if (ctype_digit($cnpj_f) && strlen($cnpj_f) == 14){
         return true;
     }else{
@@ -106,13 +110,14 @@ public function set_tarifa($tarifa_f){
 }
 
 public function set_nome_comp($nome_f){
+    // Deve ser formado apenas por letras e espaços
     try{
-        if (ctype_alpha($nome_f)){
+        if (ctype_alpha(str_replace(' ', '', $nome_f))){
             $this->nome = $nome_f;
         }else{
             throw new Exception("Nome inválido");
         }
-    }catch(Exception $e){
+    } catch(Exception $e){
         echo $e->getMessage();
     }
 }

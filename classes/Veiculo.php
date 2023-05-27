@@ -8,7 +8,7 @@ class Veiculo{
     protected string $modelo;
     protected int $capacidade;
     protected int $velocidade_media = 18;
-    public function __contruct(CompanhiaAerea $companhia_f, Aeroporto $aeroporto_f, string $modelo_f, int $capacidade_f){
+    public function __construct(CompanhiaAerea $companhia_f, Aeroporto $aeroporto_f, string $modelo_f, int $capacidade_f){
         $this->companhia = $companhia_f;
         $this->aeroporto = $aeroporto_f;
         $this->modelo = $modelo_f;

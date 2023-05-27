@@ -1,6 +1,4 @@
 <?php
-
-require_once 'requests.php';
 class GoogleMapsAPI
 {
     private $apiKey = "AIzaSyDg7gWEqeFaPMQqMmCeWDpFCF7-WiBaW-w";
@@ -10,6 +8,7 @@ class GoogleMapsAPI
     {
         $this->ch = curl_init();
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, false);
     }
     
     public function geocode($address)
@@ -35,10 +34,12 @@ class GoogleMapsAPI
     ];
 
     // Adiciona waypoints se existirem
-    if (!empty($waypoints)) {
+    if (!empty($waypoints) && is_array($waypoints)) {
+        $waypoints = array_map(function($item) {
+            return $item[0]; // Extrai a string do array interno
+        }, $waypoints);
         $waypointsParam = implode('|', $waypoints);
-        $queryParams['waypoints'] = $waypointsParam;
-    }
+        $queryParams['waypoints'] = $waypointsParam;}
     
     // Define a otimização de rota se necessário
     if ($optimize && !empty($waypoints)) {

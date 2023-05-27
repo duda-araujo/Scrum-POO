@@ -19,7 +19,7 @@ protected string $estado;
 protected CompanhiaAerea $companhiaAerea;
 protected Aeroporto $Aeroporto_base; 
 
-public function __construct($nome_t,$sobrenome_t,$documento_t,$cpf_t,$nacionalidade_t,DateTime $data_nascimento_t,$email_t,$cht_t,$logradouro_t,$numero_t,$bairro_t,$cidade_t,$estado_t,$Aerop_base_f,$companhiaAerea_f){
+public function __construct($nome_t,$sobrenome_t,$documento_t,$cpf_t,$nacionalidade_t,DateTime $data_nascimento_t,$email_t,$cht_t,$logradouro_t,$numero_t,$bairro_t,$cidade_t,$estado_t,$companhiaAerea_f,$Aerop_base_f){
     $this->set_nome($nome_t);
     $this->set_sobrenome($sobrenome_t);
     $this->set_documento($documento_t);
@@ -34,10 +34,23 @@ public function __construct($nome_t,$sobrenome_t,$documento_t,$cpf_t,$nacionalid
     $this->set_cidade($cidade_t);
     $this->set_estado($estado_t);
     $this->set_origem($Aerop_base_f);
-    $companhiaAerea_f->set_tripulacao($this);
+    $this->set_companhiaAerea($companhiaAerea_f);
+    $this->set_Aeroporto_base($Aerop_base_f);
+    $this-> companhiaAerea->set_tripulacao($this);
     
 }
-
+public function set_companhiaAerea(CompanhiaAerea $companhiaAerea_f){
+    $this->companhiaAerea = $companhiaAerea_f;
+}
+public function get_companhiaAerea(): CompanhiaAerea{
+    return $this->companhiaAerea;
+}
+public function set_Aeroporto_base(Aeroporto $Aeroporto_base_f){
+    $this->Aeroporto_base = $Aeroporto_base_f;
+}
+public function get_Aeroporto_base(): Aeroporto{
+    return $this->Aeroporto_base;
+}
 public function set_nome($nome_t){
     $this->nome = $nome_t;
 }
