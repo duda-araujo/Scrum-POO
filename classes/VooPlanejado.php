@@ -14,6 +14,7 @@ protected DateTime $hora_agendada_saida;
 protected Aeronave $Aviao;
 protected array $Frequencia_voo = ['dia', 'frequencia'];
 protected float $preco_trajeto;
+protected float $multa;
 protected array $assentos;
 protected array $passageiros_compraram = [];
 
@@ -52,7 +53,7 @@ public static $dict_assentos = [
 
 public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
                             $Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, 
-                            $dia_f,$frequencia_voo_f, $preco_f,$pontos) {
+                            $dia_f,$frequencia_voo_f, $preco_f,$pontos_f, $multa_f) {
     $this->set_aviao($Aviao_f);
     $this->set_codigo($codigo_f);
     $this->set_origem($Aerop_origem_f);
@@ -61,7 +62,8 @@ public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
     $this->set_hora_agenda_saida($Hora_agen_saida_f);
     $this->set_frequencia($frequencia_voo_f, $dia_f); 
     $this->set_preco_trajeto($preco_f);
-    $this->set_pontos_voo($pontos);
+    $this->set_multa($multa_f);
+    $this->set_pontos_voo($pontos_f);
     self::inicializar_assento();
     self::$historico_planejado[] = $this;
 }
@@ -75,6 +77,22 @@ public function set_passageiros_compraram(Passagens $passagem_f): void {
 }
 public function get_passageiros_compraram(): array {
     return $this->passageiros_compraram;
+}
+public function set_multa($multa_f): void{
+
+}
+public function get_multa(): float {
+    return $this->multa;
+}
+public function get_ressarcimento(): float {
+    $multa_f = $this->get_multa();
+    $preco_trajeto_f = $this->get_preco_trajeto();
+    if ($multa_f>=$preco_trajeto_f){
+        $ressarcimento_f = 0;
+    } else {
+        $ressarcimento_f = $preco_trajeto_f-$multa_f;
+    }
+    return $ressarcimento_f;
 }
 public function get_frequencia(): string {
     //retornar uma string com o dia e a frequencia
