@@ -91,16 +91,12 @@ class Rota extends persist{
             echo "Erro na requisição: " . $data['status'];
             return;
         }
-    }
-}
+ }
+
 public function hora_transporte(){
-    $tempo_transporte_horas=$this->definir_rota()/18;
-    $tempo_transporte=ceil($tempo_transporte_horas,1);
-    $horas=string($tempo_transporte);
-    $k=date_create_from_format("H:i:s",$horas":0:0");
-    $s=date_create_from_format("H:i:s","1:30:0");
-    $a=$this->get_voo();
-    $this->hora_transporte=$a->get_hora_agenda_saida()-$k-$s;
+    $segundos_antes_do_embarque=$this->definir_rota()*80+5400;
+    $hora=$this->voo->get_hora_agenda_saida();
+    $this->hora_transporte=$hora->sub(new DateInterval("PT{$segundos_antes_do_embarque}S"));
 }
 
 
@@ -111,4 +107,6 @@ public function get_voo(){
 public function set_voo($voo_f){
     $this->voo=$voo_f;
 }
+}
+
 ?>
