@@ -79,7 +79,7 @@ public function get_passageiros_compraram(): array {
     return $this->passageiros_compraram;
 }
 public function set_multa($multa_f): void{
-
+    $this->multa=$multa_f;
 }
 public function get_multa(): float {
     return $this->multa;
