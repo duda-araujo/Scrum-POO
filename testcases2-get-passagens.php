@@ -29,10 +29,10 @@ $guarulhos->save();
 $aeroportos = Aeroporto::getRecords();
 //print_r($aeroportos);
 
-$voo_planejado = new VooPlanejado("GL1234", $congonhas, $teresina, $chegada1, $saida1, $aeronave, '2', '2', 300, 1000);
-$voo_planejado2 = new VooPlanejado("GL1534", $teresina, $guarulhos, $chegada2, $saida2, $aeronave, '2', '2', 400, 1000);
-$voo_planejado3 = new VooPlanejado("GL1634", $guarulhos, $congonhas, $chegada3, $saida3, $aeronave, '2', '2', 500, 2000);
-$voo_planejado4 = new VooPlanejado("GL1734", $guarulhos, $teresina, $chegada4, $saida4, $aeronave, '2', '2', 600, 2000);
+$voo_planejado = new VooPlanejado("GL1234", $congonhas, $teresina, $chegada1, $saida1, $aeronave, '2', '2', 300, 1000, 200);
+$voo_planejado2 = new VooPlanejado("GL1534", $teresina, $guarulhos, $chegada2, $saida2, $aeronave, '2', '2', 400, 1000, 2000);
+$voo_planejado3 = new VooPlanejado("GL1634", $guarulhos, $congonhas, $chegada3, $saida3, $aeronave, '2', '2', 500, 2000, 100);
+$voo_planejado4 = new VooPlanejado("GL1734", $guarulhos, $teresina, $chegada4, $saida4, $aeronave, '2', '2', 600, 2000, 600);
 $voo_planejado->save();
 $voo_planejado2->save();
 $voo_planejado3->save();
@@ -71,3 +71,12 @@ foreach($passagens as $passagem){
     $s = "\nPassagem para $nome $sobrenome, de $origem para $destino, $hora";
     echo $s;
 }
+
+$voo_planejado->get_multa();
+$voo_planejado->get_ressarcimento();
+$voo_planejado2->get_multa();
+$voo_planejado2->get_ressarcimento();
+$voo_planejado3->get_multa();
+$voo_planejado3->get_ressarcimento();
+$voo_planejado4->get_multa();
+$voo_planejado4->get_ressarcimento();

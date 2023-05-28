@@ -15,6 +15,8 @@ class Passagens extends persist{
     protected CartaoDeEmbarque $cartao_de_embarque1;
     protected ?CartaoDeEmbarque $cartao_de_embarque2 = null;
 
+    protected Usuario $usuario_;
+
 public static $dict_estados = [
     0 => "Passagem Adquirida",
     1 => "Passagem Cancelada",
@@ -23,7 +25,8 @@ public static $dict_estados = [
     4 => "NO SHOW",
     5 => "Check-in Não Realizado"
 ];
-public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f, int $franquia_f){
+public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f, int $franquia_f,Usuario $usuario_f){
+    $this->set_usuario($usuario_f);
     $this->set_voo($origem_f, $destino_f);
     $this->set_cliente($passageiro_f);
     $this->set_franquia($franquia_f);
@@ -34,7 +37,9 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
     $this->passageiro->ultimos_doze_meses(new DateTime("now"));
     $this->Pontos_do_voo( $this->voo->get_hora_agenda_chegada(), $this->voo->get_pontos_voo());
     self::$passagens[] = $this;
+    $this->usuario_->passagem_comprada($this->get_preco(),$origem_f,$destino_f);
     // $this->set_ordem_cronologica();
+
 }
 
 public function Pontos_do_voo(DateTime $t,int $p){
@@ -176,6 +181,15 @@ public function cancelar_passagem(): void{
     //liberar assento
     $this->voo->liberar_assento($this->passageiro->get_assento());
     echo "\nPassagem cancelada";
+    if($this->preco>$this->voo->get_multa()){
+    $a=$this->preco-$this->voo->get_multa();
+    $this->usuario_->passagem_cancelada($a,$this->get_origem(),$this->get_destino());
+    }
+    else{
+    $a=0.00;
+    $this->usuario_->passagem_cancelada($a,$this->get_origem(),$this->get_destino());
+
+    }
 }
 
 public function realizar_check_in($cartao_de_embarque1_f, $cartao_de_embarque2_f=null): void{
@@ -287,4 +301,11 @@ public function set_preco($franquia_f){
     }
 }
 }
+    public function set_usuario($usuario_f){
+        $this->usuario_=$usuario_f;
+    }
+
+    public function get_usuario(){
+        return $this->usuario_;
+    }
 }

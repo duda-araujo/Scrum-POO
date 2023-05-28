@@ -11,11 +11,19 @@ class Rota extends persist{
     protected Veiculo $veiculo;
     protected array $tripulacao;
 
-    public function __construct($aeroporto_f, $veiculo_f,$tripulacao_f)
-    {
+    protected array $enderecos;
+
+    protected VooPlanejado $voo;
+
+    protected DateTime $hora_transporte;
+
+    
+    public function __construct($aeroporto_f, $veiculo_f,$tripulacao_f,$voo_f) {
         $this->set_aeroporto($aeroporto_f);
         $this->set_veiculo($veiculo_f);
         $this->set_tripulacao($tripulacao_f);
+        $this->set_voo($voo_f);
+        $this->set_hora_transporte();
     }
 
     static public function getFilename() {
@@ -47,34 +55,23 @@ class Rota extends persist{
     public function endereço_to_string(){
         $array = [];
         foreach ($this->tripulacao as $tripulante) {
-            $endereço = "";
-            $endereço .= $tripulante->get_logradouro() . ", " . 
-                            $tripulante->get_numero() . ", " . 
-                            $tripulante->get_bairro() . ", " . 
-                            $tripulante->get_cidade() . ", " . 
-                            $tripulante->get_estado();
+            $endereço .= $tripulante->get_logradouro() . ", " . $tripulante->get_numero() . ", " . $tripulante->get_bairro() . ", " . $tripulante->get_cidade() . ", " . $tripulante->get_estado() . ", " . $tripulante->get_pais();
             $endereço = $this->converter_endereco($endereço);
-            $array[] = [$endereço];
+            $array[] = ['location' => $endereço];
         }
         return $array;
     }
     public function definir_rota() {
         $googleMaps = new GoogleMapsAPI();
         $waypoints = $this->endereço_to_string();
-        $origin = "";
-        $destination = "";
-        $origin .= $this -> aeroporto -> get_nome_aero() . ", " . 
-                    $this -> aeroporto -> get_cidade() . ", " . 
-                    $this -> aeroporto -> get_estado();
-        $destination = $this -> aeroporto -> get_nome_aero() . ", " . 
-                        $this -> aeroporto -> get_cidade() . ", " . 
-                        $this -> aeroporto -> get_estado();
-
+        $origin = $this -> aeroporto -> get_nome_aero() .= ", " . $this -> aeroporto -> get_cidade() .= ", " . $this -> aeroporto -> get_estado();
+        $destination = $this -> aeroporto -> get_nome_aero() .= ", " . $this -> aeroporto -> get_cidade() .= ", " . $this -> aeroporto -> get_estado();
         // Fazer a requisição de direções com os waypoints
         $response = $googleMaps->directions($origin, $destination, $waypoints, $optimize = true);
 
         // Converter a resposta JSON em array
         $data = json_decode($response, true);
+
         // Verificar se a requisição foi bem-sucedida
         if ($data['status'] === 'OK') {
             $routes = $data['routes'];
@@ -91,13 +88,37 @@ class Rota extends persist{
 
             // Converter a distância total para a unidade desejada (por exemplo, km)
             $totalDistanceKm = $totalDistance / 1000;
-            $googleMaps->close();
-            return $totalDistanceKm;
+
+            echo "Distância total: $totalDistanceKm km";
         } else {
-            $googleMaps->close();
             echo "Erro na requisição: " . $data['status'];
-            return;
         }
+
+        $googleMaps->close();
+
+    }
+
+    public function obter_lang_long() {
+        
+    }
+
+    public function set_hora_transporte () {
+        $segundos=$this->definir_rota()/18+5400;
+        $a=$this->voo->get_hora_agenda_saida();
+        $this->hora_transporte=$a->sub(new DateInterval("PT{$segundos}S"));
+    }
+    
+    public function get_voo(){
+        return $this->voo;
+
+    }
+
+    public function set_voo($voo_f){
+        $this->voo=$voo_f;
+
+    }
+    public function get_hora_transporte(){
+        return $this->hora_transporte;
     }
 }
 
