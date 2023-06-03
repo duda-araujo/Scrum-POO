@@ -43,7 +43,11 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
 }
 
 public function Pontos_do_voo(DateTime $t,int $p){
-    $this->passageiro->adicionar_pontos($p,$t);
+    if ($this->passageiro->get_programa_de_milhagem() == null) {
+        echo("\nPrograma de milhagem não definido");
+    }
+    else{
+    $this->passageiro->adicionar_pontos($p,$t);}
 }
 static public function getFilename() {
     return get_called_class();
@@ -192,7 +196,7 @@ public function cancelar_passagem(): void{
     }
 }
 
-public function realizar_check_in($cartao_de_embarque1_f, $cartao_de_embarque2_f=null): void{
+public function realizar_check_in(): void{
     ###O sistema deve permitir o check-in de passagens já adquiridas em um período compreendido
     //entre 48h e 30 minutos do horário de partida do primeiro vôo. Em caso de não realização do 
     //check-in o sistema deve registrar o NO SHOW, que indica o não comparecimento do passageiro. ###
@@ -206,12 +210,12 @@ public function realizar_check_in($cartao_de_embarque1_f, $cartao_de_embarque2_f
                 $this->set_estado_da_passagem(2);
                 echo "\nCheck-in realizado";
 
-                $this->cartao_de_embarque1 = $cartao_de_embarque1_f;
+                $this->cartao_de_embarque1 = new CartaoDeEmbarque($this->voo,$this->passageiro);
                 //se tiver conexao, cartao de embarque 2 é construido
                 if(!($this->conexao == null)){
-                    $this->cartao_de_embarque2 = $cartao_de_embarque2_f;
-                }
-
+                    $this->cartao_de_embarque2 = new CartaoDeEmbarque($this->conexao,$this->passageiro);
+               } 
+               
             }else{
                 throw new Exception("\nErro: O estado não permite check-in");
             }

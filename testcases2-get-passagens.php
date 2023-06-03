@@ -11,52 +11,35 @@ $saida4 = new DateTime("2023-05-19 19:45:32");
 $chegada4 = new DateTime("2023-05-20 21:45:32");
 
 $companhia = new CompanhiaAerea("Gol", "Gol Linhas Aereas", "123", "15488222000172", "GL", 10.0,15.20);
-$companhia->save();
-$companhias_aereas = CompanhiaAerea::getRecords();
-//print_r($companhias_aereas);
-
 $aeronave = new Aeronave("Boeing", "A-800", 186, 600, "PR-GUO", $companhia);
-$aeronave->save();
-$aeronaves = Aeronave::getRecords();
-//print_r($aeronaves);
-
 $congonhas = new Aeroporto("CNG", "Congonhas", "SP", "Aeroporto de Congonhas");
 $teresina = new Aeroporto("THE", "Teresina", "PI", "Aeroporto de Teresina");
 $guarulhos = new Aeroporto("GRU", "Guarulhos", "SP", "Aeroporto de Guarulhos");
-$congonhas->save();
-$teresina->save();
-$guarulhos->save();
-$aeroportos = Aeroporto::getRecords();
-//print_r($aeroportos);
+$milhagem = new ProgramaDeMilhagem( "Smiles",$companhia);
 
-$voo_planejado = new VooPlanejado("GL1234", $congonhas, $teresina, $chegada1, $saida1, $aeronave, '2', '2', 300, 1000, 200);
-$voo_planejado2 = new VooPlanejado("GL1534", $teresina, $guarulhos, $chegada2, $saida2, $aeronave, '2', '2', 400, 1000, 2000);
-$voo_planejado3 = new VooPlanejado("GL1634", $guarulhos, $congonhas, $chegada3, $saida3, $aeronave, '2', '2', 500, 2000, 100);
-$voo_planejado4 = new VooPlanejado("GL1734", $guarulhos, $teresina, $chegada4, $saida4, $aeronave, '2', '2', 600, 2000, 600);
-$voo_planejado->save();
-$voo_planejado2->save();
-$voo_planejado3->save();
-$voo_planejado4->save();
-$voos_planejados = VooPlanejado::getRecords();
-//print_r($voos_planejados);
+//public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
+//$Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, 
+//$dia_f,$frequencia_voo_f, $preco_f,$pontos_f, $multa_f) {
+$voo_planejado = new VooPlanejado("GL1234", $congonhas, $teresina, $chegada1, $saida1, $aeronave, '2', '2', 300,100,10);
+$voo_planejado2 = new VooPlanejado("GL1534", $teresina, $guarulhos, $chegada2, $saida2, $aeronave, '2', '2', 400,100,10);
+$voo_planejado3 = new VooPlanejado("GL1634", $guarulhos, $congonhas, $chegada3, $saida3, $aeronave, '2', '2', 500,100,10);
+$voo_planejado4 = new VooPlanejado("GL1734", $guarulhos, $teresina, $chegada4, $saida4, $aeronave, '2', '2', 600,100,10);
 
 $data_agora = new DateTime("now");
 $data_nascimento = new DateTime("2001-03-28 12:49:00");  
 $passageiro = new Passageiro("Bruna", "Faria", "13748597614", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com", "2A"); 
-$passageiro->save();
-$passageiros = Passageiro::getRecords();
-//print_r($passageiros);
 
-$passagem1 = new Passagens($congonhas, $teresina, $passageiro, 2);
-$passagem2 = new Passagens($teresina, $guarulhos, $passageiro, 2);
-$passagem3 = new Passagens($guarulhos, $congonhas, $passageiro, 2);
-$passagem4 = new Passagens($guarulhos, $teresina, $passageiro, 2);
-$passagem1->save();
-$passagem2->save();
-$passagem3->save();
-$passagem4->save();
-$passagens_ = Passagens::getRecords();
-//print_r($passagens_);
+//public function __construct($nome_u,$sobrenome_u,$documento_u){
+   // $this->set_nome_usuario($nome_u);
+   // $this->set_sobrenome_usuario($sobrenome_u);
+  //  $this->set_documento_usuario($documento_u);
+//}
+$usuario = new usuario("Gabriel","Lott","01905150660");
+$passagem1 = new Passagens($congonhas, $teresina, $passageiro, 2,$usuario);
+$passagem2 = new Passagens($teresina, $guarulhos, $passageiro, 2,$usuario);
+$passagem3 = new Passagens($guarulhos, $congonhas, $passageiro, 2,$usuario);
+$passagem4 = new Passagens($guarulhos, $teresina, $passageiro, 2,$usuario);
+
 
 $passagens = [];
 $passagens = Passagens::get_passagens("948.884.119-21");
@@ -71,12 +54,3 @@ foreach($passagens as $passagem){
     $s = "\nPassagem para $nome $sobrenome, de $origem para $destino, $hora";
     echo $s;
 }
-
-$voo_planejado->get_multa();
-$voo_planejado->get_ressarcimento();
-$voo_planejado2->get_multa();
-$voo_planejado2->get_ressarcimento();
-$voo_planejado3->get_multa();
-$voo_planejado3->get_ressarcimento();
-$voo_planejado4->get_multa();
-$voo_planejado4->get_ressarcimento();

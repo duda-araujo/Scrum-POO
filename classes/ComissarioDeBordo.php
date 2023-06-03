@@ -39,6 +39,9 @@ public function __construct($nome_c,$sobrenome_c,$documento_c,$cpf_c,$nacionalid
     $companhiaAerea_c->set_tripulacao($this);
     $companhiaAerea_c->set_comissarios_de_bordo($this);
 }
+static public function getFilename() {
+  return get_called_class();
+}
 
 public function set_nome($nome_c){
     $this->nome = $nome_c;

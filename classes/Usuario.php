@@ -2,14 +2,14 @@
 
 include_once("Passagens.php");
 
-class Usuario{
+class Usuario extends persist{
 
     protected string $nome_usuario;
     protected string $sobrenome_usuario;
     protected string $documento_usuario;
     protected array $passagens;
 
-    protected array $registro_financeiro;
+    protected array $registro_financeiro=[];
 
 
     public function __construct($nome_u,$sobrenome_u,$documento_u){
@@ -17,6 +17,9 @@ class Usuario{
         $this->set_sobrenome_usuario($sobrenome_u);
         $this->set_documento_usuario($documento_u);
     }
+    static public function getFilename() {
+        return get_called_class();
+      }
     public function set_nome_usuario($nome_u){
         $this->nome_usuario = $nome_u;
     }

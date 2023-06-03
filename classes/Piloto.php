@@ -1,6 +1,6 @@
 <?php
 
-
+include_once("Tripulacao.php");
 class Piloto extends Tripulacao{
 
 protected string $nome;
@@ -35,9 +35,11 @@ public function __construct($nome_p,$sobrenome_p,$documento_p,$cpf_p,$nacionalid
     $this->set_estado($estado_p);
     $this->set_origem($Aerop_base_p);
     $companhiaAerea_p->set_tripulacao($this);
-    $companhiaAerea_p->set_pilotos($this);
+    $companhiaAerea_p->set_piloto($this);
 }
-
+static public function getFilename() {
+    return get_called_class();
+  }
 public function set_nome($nome_p){
     $this->nome = $nome_p;
 

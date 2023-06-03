@@ -1,7 +1,7 @@
 <?php
 
 include_once("CompanhiaAerea.php");
-class Tripulacao {
+class Tripulacao extends persist{
 
 protected string $nome;
 protected string $sobrenome;
@@ -39,6 +39,9 @@ public function __construct($nome_t,$sobrenome_t,$documento_t,$cpf_t,$nacionalid
     $this-> companhiaAerea->set_tripulacao($this);
     
 }
+static public function getFilename() {
+    return get_called_class();
+  }
 public function set_companhiaAerea(CompanhiaAerea $companhiaAerea_f){
     $this->companhiaAerea = $companhiaAerea_f;
 }

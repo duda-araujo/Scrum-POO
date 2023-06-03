@@ -14,22 +14,28 @@ class Passageiro extends persist{
     protected string $email;
     protected int $numero_bagagens;
     protected string $assento;
-    protected bool $vip;    
-public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p, $assento_p){
+    protected bool $vip=false;    
+public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p, $assento_p, $programa = null){
     $this->set_nome_passageiro($nome_p);
     $this->set_sobrenome_passageiro($sobrenome_p);
     $this->set_documento_passageiro($documento_p);
     $this->set_numero_bagagens($nbagagens_p);
-    $this->set_vip($vip_p);
     $this->set_nacionalidade($nacionalidade_p);
     $this->set_cpf($cpf_p);
     $this->set_data_de_nascimento($data_de_nascimento_p, $data_atual_p);
     $this->set_email($email_p);
     $this->set_assento($assento_p);
+    $this->set_programa_de_milhagem($programa);
 
 }
 static public function getFilename() {
-    return get_called_class();
+   return get_called_class();
+}
+public function set_programa_de_milhagem(?ProgramaDeMilhagem $p){
+    $this->programa_de_milhagem= $p;
+}
+public function get_programa_de_milhagem(){
+    return $this->programa_de_milhagem;
 }
 public function set_assento($assento_p){
     $this->assento = $assento_p;
@@ -48,9 +54,6 @@ public function set_documento_passageiro($documento_f){
 }
 public function set_numero_bagagens($numero_bagagens_f){
     $this->numero_bagagens = $numero_bagagens_f;
-}
-public function set_vip($vip_f){
-    $this->vip = $vip_f;
 }
 public function set_nacionalidade($nacionalidade_f) {
     $this->nacionalidade = $nacionalidade_f;
@@ -179,6 +182,10 @@ public function adicionar_pontos($pontos, DateTime $data){
 //de uma categoria não seja mantida, o passageiro vip tem um downgrade e retorna à categoria anterior.
 //Checa o array historico_de_pontos e retorna a quantidade de pontos acumulados nos ultimos 12 meses
 public function ultimos_doze_meses(DateTime $data_atual) {
+    if ($this->programa_de_milhagem == null) {
+        echo("\nPrograma de milhagem não definido");
+    }
+    else{
     $pontos_ultimos_doze_meses = 0;
     foreach($this->historico_de_pontos as $data => $pontos) {
         $data_formatada = DateTime::createFromFormat('d-m-Y', $data);
@@ -188,7 +195,7 @@ public function ultimos_doze_meses(DateTime $data_atual) {
         }
     }
     $categoria = $this->programa_de_milhagem->get_categoria($pontos_ultimos_doze_meses);
-    $this -> categoria = $categoria;
+    $this -> categoria = $categoria;}
 }
 }
     

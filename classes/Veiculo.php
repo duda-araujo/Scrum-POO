@@ -2,7 +2,7 @@
 
 include_once("CompanhiaAerea.php");
 
-class Veiculo{
+class Veiculo extends persist{
     protected CompanhiaAerea $companhia;
     protected Aeroporto $aeroporto;
     protected string $modelo;
@@ -14,6 +14,9 @@ class Veiculo{
         $this->modelo = $modelo_f;
         $this->capacidade = $capacidade_f;
     }
+    static public function getFilename() {
+        return get_called_class();
+      }
     public function get_companhia(): CompanhiaAerea{
         return $this->companhia;
     }

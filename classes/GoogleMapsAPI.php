@@ -1,5 +1,5 @@
 <?php
-class GoogleMapsAPI
+class GoogleMapsAPI extends persist
 {
     private $apiKey = "AIzaSyDg7gWEqeFaPMQqMmCeWDpFCF7-WiBaW-w";
     private $ch;
@@ -10,7 +10,9 @@ class GoogleMapsAPI
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, false);
     }
-    
+    static public function getFilename() {
+        return get_called_class();
+      }
     public function geocode($address)
     {
         $url = 'https://maps.googleapis.com/maps/api/geocode/json';

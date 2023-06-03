@@ -25,6 +25,9 @@ class Viagem extends VooPlanejado{
         $this->set_piloto($piloto_f);
         $this->set_copiloto($copiloto_f);
     }
+    static public function getFilename() {
+        return get_called_class();
+      }
     public function get_chegada(): DateTime {
         return $this->chegada;
     }

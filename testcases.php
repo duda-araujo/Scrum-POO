@@ -11,7 +11,6 @@ $companhia1 = new CompanhiaAerea("Gol", "Gol Linhas Aereas", "123", "15488222000
 $companhia1->save();
 //echo  $companhia->get_razao()."\n";
 $companhias = CompanhiaAerea::getRecords();
-print_r($companhias);
 
 
 //Test Cases para a classe Aeronave
@@ -22,7 +21,7 @@ $aeronave2 = new Aeronave("AeroBus", "M-650", 186, 600, "PR-GUO", $companhia1);
 $aeronave1->save();
 $aeronave2->save();
 $aeronaves = Aeronave::getRecords();
-print_r($aeronaves);
+
 
 //Test Cases para a classe Aeroporto
 //public function __construct(string $sigla_f,string $cidade_f,string $estado_f,string $nome_f){
@@ -34,21 +33,21 @@ $congonhas->save();
 $teresina->save();
 $guarulhos->save();
 $aeroportos = Aeroporto::getRecords();
-print_r($aeroportos);
+
 
 //Test Cases para a classe VooPlanejado
 //public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
 //Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, 
 //$dia_f,$frequencia_voo_f, $preco_f) {
-$voo_planejado = new VooPlanejado("GL1234", $congonhas, $teresina, $chegada, $saida, $aeronave1, '2', '2', 300, 1000);
+$voo_planejado = new VooPlanejado("GL1234", $congonhas, $teresina, $chegada, $saida, $aeronave1, '2', '2', 300, 1000,50);
 //echo $voo_planejado1->get_frequencia()."\n";
-$voo_planejado2 = new VooPlanejado("GL1534", $teresina, $guarulhos, $novachegada, $novasaida, $aeronave1, '2', '2', 400, 2000);
-$voo_planejado3 = new VooPlanejado("GL1255",  $congonhas, $teresina, $chegada, $saida, $aeronave1, '2','2', 600, 3000);
+$voo_planejado2 = new VooPlanejado("GL1534", $teresina, $guarulhos, $novachegada, $novasaida, $aeronave1, '2', '2', 400, 2000,50);
+$voo_planejado3 = new VooPlanejado("GL1255",  $congonhas, $teresina, $chegada, $saida, $aeronave1, '2','2', 600, 3000,50);
 $voo_planejado->save();
 $voo_planejado2->save();
 $voo_planejado3->save();
 $voos_planejados = VooPlanejado::getRecords();
-print_r($voos_planejados);
+
 
 //Test Cases para a classe VooDecolado
 //public function __construct($voo_anunciado_f,$saida_f,$chegada_f,$Aviao_voo_f){
@@ -58,6 +57,7 @@ echo $voo_planejado->get_hist_planejado();
 //public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p){
 $data_agora = new DateTime("now");
 $data_nascimento = new DateTime("2001-03-28 12:49:00");  
+$programaDeMilhagem = new ProgramaDeMilhagem('Smiles', $companhia1);
 $passageiro1 = new Passageiro("Bruna", "Faria", "13748597614", 2, true, "brasileira", "948.884.119-21", $data_nascimento, $data_agora, "bruninha@gmail.com", "2A"); 
 //echo $passageiro1->get_nome_passageiro()."\n";
 $data_nascimento_2 = new DateTime("2001-02-20 12:49:00");  
@@ -67,7 +67,7 @@ $passageiro1->save();
 $passageiro2->save();
 $passageiro3->save();
 $passageiros = Passageiro::getRecords();
-print_r($passageiros);
+
 
 //Test Case para classe Assento
 //public function __construct(VooPlanejado $voo, Passageiro $passageiro, string $numero_assento){
@@ -78,11 +78,12 @@ echo $voo_planejado->get_assentos_ocupados();
 //public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f, int $franquia_f){
   
 
-$passagem1 = new Passagens($congonhas, $teresina, $passageiro1, 2);
+$usuario = new Usuario("Gabriel","Lott","01905150660");
+$passagem1 = new Passagens($congonhas, $teresina, $passageiro1, 2,$usuario);
 echo $passagem1->string_passagem();
 echo $voo_planejado->get_assentos_ocupados();
 //Test Case conexão
-$passagem2 = new Passagens($congonhas, $guarulhos, $passageiro3, 3);
+$passagem2 = new Passagens($congonhas, $guarulhos, $passageiro3, 3,$usuario);
 echo $passagem2->string_passagem();
 echo ("\n").$passagem1->get_preco();
 echo $voo_planejado->get_assentos_ocupados();
@@ -90,13 +91,19 @@ echo $voo_planejado->get_assentos_ocupados();
 echo ("\n----------------------------------------\n");
 echo ("\nTESTES DE ESTADO\n");
 echo $passagem1->get_estado_da_passagem();
+
 $passagem1->realizar_check_in();
 $passagem2->realizar_check_in();
 $embarque = new Embarque($voo_planejado);
 $embarque->embarcar_passageiro($passagem1);
 $embarque->embarcar_passageiro($passagem2);
 $embarque->set_status_embarque(3);
-$voo_decolado = new Viagem($voo_planejado, $saida, $chegada, $aeronave1, $embarque);
+//public function __construct($nome_p,$sobrenome_p,$documento_p,$cpf_p,$nacionalidade_p,DateTime $data_nascimento_p,$email_p,
+//$cht_p,$logradouro_p,$numero_p,$bairro_p,$cidade_p,$estado_p,$Aerop_base_p,$companhiaAerea_p ){
+$hora_1 = new DateTime("now");
+$piloto_1 = new Piloto("Gabriel","Lott","MG-17.685.694","01905150660","Brasileiro",$hora_1,"gabriellg2011@gmail.com","sei oq eh isso n","Antonio Aleixo 205",205,"Lourdes","Belo Horizonte","Minas Gerais",$guarulhos,$companhia1);
+$piloto_2 = new Piloto("Gabriel_fake","Lott","MG-17.685.694","01905150660","Brasileiro",$hora_1,"gabriellg2011@gmail.com","sei oq eh isso n","Antonio Aleixo 205",205,"Lourdes","Belo Horizonte","Minas Gerais",$guarulhos,$companhia1);
+$voo_decolado = new Viagem($voo_planejado, $saida, $chegada, $aeronave1, $embarque,$piloto_1,$piloto_2);
 echo $passagem1->get_estado_da_passagem();
 $passagem1->save();
 $passagem2->save();
@@ -107,25 +114,25 @@ $voo_decolado->save();
 $viagens = Viagem::getRecords();
 
 //Test Case do preco da passagem
-$passagem3 = new Passagens($congonhas, $guarulhos, $passageiro1, -1);
+$passagem3 = new Passagens($congonhas, $guarulhos, $passageiro1, -1,$usuario);
 //$passagem3 = new Passagens($congonhas, $guarulhos, $passageiro, 0);
 //echo $passagem3->string_passagem();
 //$passagem3 = new Passagens($congonhas, $guarulhos, $passageiro, 1);
 //echo $passagem3->string_passagem();
-$passagem3 = new Passagens($congonhas, $guarulhos, $passageiro1, 2);
+$passagem3 = new Passagens($congonhas, $guarulhos, $passageiro1, 2,$usuario);
 echo $passagem3->string_passagem();
 //$passagem = new Passagens($congonhas, $guarulhos, $passageiro_2, 0);
 //echo $passagem->string_passagem();
-$passagem3 = new Passagens($congonhas, $guarulhos, $passageiro2, 2);
+$passagem3 = new Passagens($congonhas, $guarulhos, $passageiro2, 2,$usuario);
 echo $passagem3->string_passagem();
 
 //$passagem = new Passagens($congonhas, $teresina, $passageiro, 0);
 //echo $passagem->string_passagem();
-$passagem = new Passagens($congonhas, $teresina, $passageiro1, 2);
+$passagem = new Passagens($congonhas, $teresina, $passageiro1, 2,$usuario);
 echo $passagem->string_passagem();
 //$passagem = new Passagens($congonhas, $teresina, $passageiro_2, 0);
 //echo $passagem->string_passagem();
-$passagem = new Passagens($congonhas, $teresina, $passageiro2, 2);
+$passagem = new Passagens($congonhas, $teresina, $passageiro2, 2,$usuario);
 echo $passagem->string_passagem();
 
 $passagem3->save();

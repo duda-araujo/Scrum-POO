@@ -2,7 +2,7 @@
 
 include_once("ProgramaDeMilhagem.php");
 
-class Categorias{
+class Categorias extends persist{
     protected ProgramaDeMilhagem $programa_de_milhagem;
     protected string $nome;
     protected float $pontos_exigidos;
@@ -11,6 +11,9 @@ class Categorias{
         $this->set_nome($nome_f);
         $this->set_pontos($pontos_exigidos_f);
     }
+    static public function getFilename() {
+        return get_called_class();
+      }
     public function set_milhagem($programa_de_milhagem_f){
         $this->programa_de_milhagem = $programa_de_milhagem_f;
     }

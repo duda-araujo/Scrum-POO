@@ -20,6 +20,9 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
     $this->set_milhagem($programa);
     $this->set_registro($registro);
 }
+static public function getFilename() {
+    return get_called_class();
+  }
 public function get_vip(){
     return true;
 

@@ -2,7 +2,7 @@
 
 include_once ("Passagens.php");
 
-class CartaoDeEmbarque  {
+class CartaoDeEmbarque extends persist{
 
 protected Passagens $passagem;
 protected string $nome_passageiro;
@@ -14,38 +14,44 @@ protected DateTime $horario_viagem;
 protected string $assento;
 
 
-public function __construct(Passagens $passagem_f){
-$this->set_nome($passagem_f);
-$this->set_sobrenome($passagem_f);
-$this->set_origem($passagem_f);
-$this->set_destino($passagem_f);
-$this->set_horario_embarque($passagem_f);
-$this->set_horario_viagem($passagem_f);
-$this->set_assento($passagem_f);
+public function __construct($voo_planejado_f,$passageiro_f){
+$this->set_nome($passageiro_f->get_nome_passageiro());
+$this->set_sobrenome($passageiro_f->get_sobrenome_passageiro());
+$this->set_origem($voo_planejado_f->get_origem());
+$this->set_destino($voo_planejado_f->get_destino());
+$this->set_horario_viagem($voo_planejado_f->get_hora_agenda_saida());
+$this->set_assento($passageiro_f->get_assento());
+$this->set_horario_embarque();
 }
-
+static public function getFilename() {
+    return get_called_class();
+  }
 public function set_nome($passagem_f){
-    $this->nome_passageiro = $passagem_f->get_cliente()->get_nome_passageiro(); 
+    $this->nome_passageiro = $passagem_f;
 }
 public function set_sobrenome($passagem_f){
-    $this->sobrenome_passageiro = $passagem_f->get_cliente()->get_sobrenome_passageiro();
+    $this->sobrenome_passageiro = $passagem_f;
 }
 public function set_origem($passagem_f){
-    $this->origem_do_voo = $passagem_f->get_origem();
+    $this->origem_do_voo = $passagem_f;
 }
 public function set_destino($passagem_f){
-    $this->destino_do_voo = $passagem_f->get_destino();
+    $this->destino_do_voo = $passagem_f;
 }
-public function set_horario_embarque($passagem_f){
-    $this->horario_embarque = $passagem_f->get_voo();
+public function set_horario_embarque(){
+    $segundos=3000;
+    $a=$this->get_horario_voo();
+    $this->horario_embarque=$a->sub(new DateInterval("PT{$segundos}S"));
 }
 public function set_horario_viagem($passagem_f){
-    $this->horario_viagem = $passagem_f->get_voo()->get_hora_agenda_saida();
+    $this->horario_viagem = $passagem_f;
 }
 public function set_assento($passagem_f){
-    $this->assento = $passagem_f->get_cliente()->get_assento();
+    $this->assento = $passagem_f;
 }
 
-
+public function get_horario_voo(){
+    return $this->horario_viagem;
+}
 }
 
