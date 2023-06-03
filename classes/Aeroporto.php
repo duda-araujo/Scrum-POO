@@ -6,6 +6,7 @@ protected string $cidade;
 protected string $estado;
 protected string $nome;
 
+
 public function __construct(string $sigla_f,string $cidade_f,string $estado_f,string $nome_f){
     $this->set_sigla_aero($sigla_f);
     $this->set_cidade($cidade_f);
@@ -55,9 +56,8 @@ public function set_sigla_aero(string $sigla_f){
 }
 
 public function set_cidade(string $cidade_f){
-//checa se é uma string
-  try{
-    if (is_string($cidade_f)){
+ try{
+    if (ctype_alpha($cidade_f)){
       $this->cidade = $cidade_f;
     }else{
       throw new Exception("Cidade inválida");
@@ -81,13 +81,14 @@ public function set_estado(string $estado_f){
 
 public function set_nome(string $nome_f){
   try{
-    if (ctype_alpha(str_replace(' ', '', $nome_f))){
-        $this->nome = $nome_f;
+    if (is_string($nome_f)){
+      $this->nome = $nome_f;
     }else{
-        throw new Exception("Nome inválido");
+      throw new Exception("Nome inválido");
     }
-} catch(Exception $e){
-    echo $e->getMessage();
 }
+  catch(Exception $e){
+    echo $e->getMessage();
+  }
 }
 }

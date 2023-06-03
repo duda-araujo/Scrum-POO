@@ -2,9 +2,9 @@
 
 include_once("CompanhiaAerea.php");
 
-class ProgramaDeMilhagem extends CompanhiaAerea{
-    private CompanhiaAerea $companhia;
-    private string $nome;
+class ProgramaDeMilhagem extends persist{
+    protected CompanhiaAerea $companhia;
+    protected string $nome;
     public static $categoria = [
         0 => "Basico",
         1 => "Prata",
@@ -63,5 +63,9 @@ class ProgramaDeMilhagem extends CompanhiaAerea{
         }
         $desconto = $valor * $porcentagem;
         return $desconto;
+    }
+
+    static public function getFilename(){
+        return get_called_class();
     }
 }

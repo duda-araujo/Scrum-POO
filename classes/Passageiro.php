@@ -14,13 +14,12 @@ class Passageiro extends persist{
     protected string $email;
     protected int $numero_bagagens;
     protected string $assento;
-    protected bool $vip;    
+    protected bool $vip=false;    
 public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p, $assento_p){
     $this->set_nome_passageiro($nome_p);
     $this->set_sobrenome_passageiro($sobrenome_p);
     $this->set_documento_passageiro($documento_p);
     $this->set_numero_bagagens($nbagagens_p);
-    $this->set_vip($vip_p);
     $this->set_nacionalidade($nacionalidade_p);
     $this->set_cpf($cpf_p);
     $this->set_data_de_nascimento($data_de_nascimento_p, $data_atual_p);
@@ -29,7 +28,7 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
 
 }
 static public function getFilename() {
-    return get_called_class();
+   return get_called_class();
 }
 public function set_assento($assento_p){
     $this->assento = $assento_p;
@@ -49,9 +48,8 @@ public function set_documento_passageiro($documento_f){
 public function set_numero_bagagens($numero_bagagens_f){
     $this->numero_bagagens = $numero_bagagens_f;
 }
-public function set_vip($vip_f){
-    $this->vip = $vip_f;
-}
+
+
 public function set_nacionalidade($nacionalidade_f) {
     $this->nacionalidade = $nacionalidade_f;
 }

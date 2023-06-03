@@ -1,6 +1,6 @@
 <?php
 
-
+include_once("Tripulacao.php");
 class Piloto extends Tripulacao{
 
 protected string $nome;
