@@ -2,7 +2,7 @@
 
 include_once("CompanhiaAerea.php");
 
-class ProgramaDeMilhagem extends CompanhiaAerea{
+class ProgramaDeMilhagem{
     private CompanhiaAerea $companhia;
     private string $nome;
     public static $categoria = [
