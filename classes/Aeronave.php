@@ -21,25 +21,22 @@ public function __construct($fabricante_f,$modelo_f,$carga_f,$passageiros_f,$reg
     $this->set_companhia($companhiaAerea_f);
     $companhiaAerea_f->set_avioes($this);
 }
-
-public function validar_registro($registro_f){
-// Composto pelo prefixo, que contém duas letras:
-// Um hífen
-// Seguido de três letras
-// Ex.: PR-GUO)
-// No Brasil, somente são permitidos para voos comerciais os
-// prefixos PT, PR, PP, PS, que devem ser validados.
-
-    $prefixo = substr($registro_f,0,2);
-    $hifen = substr($registro_f,2,1);
-    $sufixo = substr($registro_f,3,3);
-    if (ctype_alpha($prefixo)==true && $hifen=='-' && ctype_alpha($sufixo)==true && $prefixo=='PT' || $prefixo=='PR' || $prefixo=='PP' || $prefixo=='PS'){
-        return true;
-    }
-    else{
-        return false;
+public function validar_registro($registro_f) {
+    $prefixo = substr($registro_f, 0, 2);
+    $hifen = substr($registro_f, 2, 1);
+    $sufixo = substr($registro_f, 3, 3);
+  
+    if (ctype_alpha($prefixo) && $hifen == '-' && ctype_alpha(str_replace(' ', '', $sufixo)) &&
+        ($prefixo == 'PT' || $prefixo == 'PR' || $prefixo == 'PP' || $prefixo == 'PS')) {
+        return $registro_f;
+    } else {
+        $prefixo_corrigido = "PP";
+        $registro_corrigido = strtoupper($prefixo_corrigido) . '-' . strtoupper($sufixo);
+        echo "Registro inválido, corrigido para: " . $registro_corrigido . "\n";
+        return $registro_corrigido;
     }
 }
+
 static public function getFilename() {
     return get_called_class();
 }
@@ -127,19 +124,9 @@ public function set_passageiros($passageiro_f){
     catch(Exception $e){
         echo $e->getMessage();
 }}
-
-public function set_registro($registro_f){
-    try {
-        if ($this->validar_registro($registro_f)==false){
-            throw new Exception("Registro inválido");
-        }
-        else{
-            $this->registro = $registro_f;
-        }
-    }
-    catch(Exception $e){
-        echo $e->getMessage();
-    }
+public function set_registro($registro_f) {
+    $this->registro = $this->validar_registro($registro_f);
+    
 }
 
 public function set_companhia(CompanhiaAerea $companhia_aerea_f){

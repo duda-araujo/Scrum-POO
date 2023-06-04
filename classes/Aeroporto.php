@@ -55,14 +55,14 @@ public function set_sigla_aero(string $sigla_f){
   }
 }
 
-public function set_cidade(string $cidade_f){
- try{
-    if (ctype_alpha($cidade_f)){
+public function set_cidade(string $cidade_f) {
+  try {
+    if (preg_match('/^[a-zA-Z\s]+$/', $cidade_f)) {
       $this->cidade = $cidade_f;
-    }else{
+    } else {
       throw new Exception("Cidade inválida");
     }
-  }catch(Exception $e){
+  } catch(Exception $e) {
     echo $e->getMessage();
   }
 }
