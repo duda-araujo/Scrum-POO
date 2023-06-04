@@ -78,11 +78,34 @@ $veiculo = new Veiculo(
     10
 );
 
+$saida = new DateTime("2023-04-23 16:45:32");
+$chegada = new DateTime("2023-04-24 18:45:32");
+
+$confins = new Aeroporto("CNF", "Confins", "MG", "Aeroporto de Confins");
+$guarulhos = new Aeroporto("GRU", "Guarulhos", "SP", "Aeroporto de Guarulhos");
+
+$aeronave1 = new Aeronave("Boeing", "A-800", 186, 600, "PR-GUO", $companhiaAerea);
+
+$voo = new VooPlanejado(
+    "AC1329",
+    $confins,
+    $guarulhos,
+    $chegada,
+    $saida, 
+    $aeronave1, 
+    '2', 
+    '2', 
+    300, 
+    1000,
+    50
+);
+
 $tripulantes = [$tripulacao1, $tripulacao2, $tripulacao3];
 
 $rota = new Rota(
     $aeroportoBase,
     $veiculo,
-    $tripulantes
+    $tripulantes,
+    $voo
 );
 echo $rota -> definir_rota();
