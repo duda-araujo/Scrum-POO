@@ -1,5 +1,6 @@
 <?php
 
+include_once("persist.php");
 class Aeroporto extends persist{
 protected string $sigla;
 protected string $cidade;
@@ -56,15 +57,15 @@ public function set_sigla_aero(string $sigla_f){
 }
 
 public function set_cidade(string $cidade_f) {
-  try {
-    if (preg_match('/^[a-zA-Z\s]+$/', $cidade_f)) {
-      $this->cidade = $cidade_f;
-    } else {
-      throw new Exception("Cidade inválida");
-    }
-  } catch(Exception $e) {
-    echo $e->getMessage();
-  }
+  // //try {
+  //   if (preg_match('/^[a-zA-Z\s]+$/', $cidade_f)) {
+       $this->cidade = $cidade_f;
+  //   } else {
+  //     throw new Exception("Cidade inválida");
+  //   }
+  // } catch(Exception $e) {
+  //   echo $e->getMessage();
+  // }
 }
 
 public function set_estado(string $estado_f){

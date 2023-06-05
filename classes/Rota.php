@@ -55,7 +55,7 @@ class Rota extends persist{
     public function endereço_to_string(){
         $array = [];
         foreach ($this->tripulacao as $tripulante) {
-            $endereço .= $tripulante->get_logradouro() . ", " . $tripulante->get_numero() . ", " . $tripulante->get_bairro() . ", " . $tripulante->get_cidade() . ", " . $tripulante->get_estado() . ", " . $tripulante->get_pais();
+            $endereço = $tripulante->get_logradouro() . ", " . $tripulante->get_numero() . ", " . $tripulante->get_bairro() . ", " . $tripulante->get_cidade() . ", " . $tripulante->get_estado();
             $endereço = $this->converter_endereco($endereço);
             $array[] = ['location' => $endereço];
         }

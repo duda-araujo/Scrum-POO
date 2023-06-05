@@ -26,30 +26,30 @@ class GoogleMapsAPI extends persist
     }
     
     public function directions($origin, $destination, $waypoints = [], $optimize = false)
-{
-    $url = 'https://maps.googleapis.com/maps/api/directions/json';
+    {
+        $url = 'https://maps.googleapis.com/maps/api/directions/json';
     
-    $queryParams = [
-        'origin' => $origin,
-        'destination' => $destination,
-        'key' => $this->apiKey
-    ];
+        $queryParams = [
+            'origin' => $origin,
+            'destination' => $destination,
+            'key' => $this->apiKey
+        ];
 
-    // Adiciona waypoints se existirem
-    if (!empty($waypoints) && is_array($waypoints)) {
-        $waypoints = array_map(function($item) {
-            return $item[0]; // Extrai a string do array interno
-        }, $waypoints);
-        $waypointsParam = implode('|', $waypoints);
-        $queryParams['waypoints'] = $waypointsParam;}
+        // Adiciona waypoints se existirem
+        if (!empty($waypoints) && is_array($waypoints)) {
+            $waypoints = array_map(function($item) {
+                return $item[0]; // Extrai a string do array interno
+            }, $waypoints);
+            $waypointsParam = implode('|', $waypoints);
+            $queryParams['waypoints'] = $waypointsParam;}
     
-    // Define a otimização de rota se necessário
-    if ($optimize && !empty($waypoints)) {
-        $queryParams['optimize_waypoints'] = 'true';
+        // Define a otimização de rota se necessário
+        if ($optimize && !empty($waypoints)) {
+            $queryParams['optimize_waypoints'] = 'true';
+        }
+    
+        return $this->get($url, $queryParams);
     }
-    
-    return $this->get($url, $queryParams);
-}
     
     private function get($url, $queryParams = [])
     {
