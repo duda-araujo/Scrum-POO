@@ -29,6 +29,30 @@ class Rota extends persist{
     static public function getFilename() {
         return get_called_class();
     }
+    public function gerarLogLeitura($entity, $attribute)
+{
+    // Implementação do log de leitura específico para Aeroporto
+    $log = "User: " . "Usuário" . "\n";
+    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+    $log .= "Date/Time: " . $dateTime . "\n";
+    $log .= "   Entity: " . $entity . "\n";
+    $log .= "   Attribute: " . $attribute . "\n";
+
+    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
+    file_put_contents('logLeitura.txt', $log, FILE_APPEND);
+}
+public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
+    // Implementação do log de escrita específico para Aeroporto
+    $log = "User: " . "Usuário" . "\n";
+    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+    $log .= "Date/Time: " . $dateTime . "\n";
+    $log .= "   Entity: " . $entity . "\n";
+    $log .= "   Object before: " . $objectBefore . "\n";
+    $log .= "   Object after: " . $objectAfter . "\n";
+
+    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
+    file_put_contents('logEscrita.txt', $log, FILE_APPEND);
+}
 
     public function set_aeroporto($aeroporto_f) {
         $this->aeroporto = $aeroporto_f;

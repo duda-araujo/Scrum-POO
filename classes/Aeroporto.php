@@ -17,7 +17,30 @@ public function __construct(string $sigla_f,string $cidade_f,string $estado_f,st
 static public function getFilename() {
   return get_called_class();
 }
+public function gerarLogLeitura($entity, $attribute)
+{
+    // Implementação do log de leitura específico para Aeroporto
+    $log = "User: " . "Usuário" . "\n";
+    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+    $log .= "Date/Time: " . $dateTime . "\n";
+    $log .= "   Entity: " . $entity . "\n";
+    $log .= "   Attribute: " . $attribute . "\n";
 
+    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
+    file_put_contents('logLeitura.txt', $log, FILE_APPEND);
+}
+public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
+    // Implementação do log de escrita específico para Aeroporto
+    $log = "User: " . "Usuário" . "\n";
+    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+    $log .= "Date/Time: " . $dateTime . "\n";
+    $log .= "   Entity: " . $entity . "\n";
+    $log .= "   Object before: " . $objectBefore . "\n";
+    $log .= "   Object after: " . $objectAfter . "\n";
+
+    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
+    file_put_contents('logEscrita.txt', $log, FILE_APPEND);
+}
 public function validar_sigla_aero(string $sigla_s){
 //A sigla deve ser formada por três letras
     if (ctype_alpha($sigla_s) && strlen($sigla_s) == 3){

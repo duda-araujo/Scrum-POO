@@ -43,7 +43,34 @@ public function validar_registro($registro_f){
 static public function getFilename() {
     return get_called_class();
 }
+public function gerarLogLeitura($entity, $attribute)
+{
+    // Implementação do log de leitura específico para Aeroporto
+    $log = "User: " . "Usuário" . "\n";
+    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+    $log .= "Date/Time: " . $dateTime . "\n";
+    $log .= "   Entity: " . $entity . "\n";
+    $log .= "   Attribute: " . $attribute . "\n";
+
+    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
+    file_put_contents('logLeitura.txt', $log, FILE_APPEND);
+}
+public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
+    // Implementação do log de escrita específico para Aeroporto
+    $log = "User: " . "Usuário" . "\n";
+    $dateTime = (new DateTime('now', new DateTimeZone('America/Sao_Paulo')))->format('Y-m-d H:i:s');;
+    $log .= "Date/Time: " . $dateTime . "\n";
+    $log .= "   Entity: " . $entity . "\n";
+    $log .= "   Object before: " . $objectBefore . "\n";
+    $log .= "   Object after: " . $objectAfter . "\n";
+
+    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
+    file_put_contents('logEscrita.txt', $log, FILE_APPEND);
+}
 public function get_fabricante(){
+    $attribute = __METHOD__;
+    $value = $this->fabricante;
+    $this->gerarLogLeitura(get_called_class(), $attribute);
     return $this->fabricante;
 }
 
@@ -73,7 +100,18 @@ public function set_fabricante($fabricante_f){
             throw new Exception("Fabricante inválido");
         }
         else{
-            $this->fabricante = $fabricante_f;
+            if (isset($this->fabricante)){
+                $objectBefore = $this->fabricante;
+                $this->fabricante = $fabricante_f;
+                $objectAfter = $this->fabricante;
+                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }
+            else{
+                $objectBefore = null;
+                $this->fabricante = $fabricante_f;
+                $objectAfter = $this->fabricante;
+                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }
         }
     }
     catch(Exception $e){

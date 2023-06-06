@@ -1,0 +1,10 @@
+User: Usuário
+Date/Time: 2023-06-05 21:27:06
+   Entity: Aeronave
+   Object before: 
+   Object after: Boeing
+User: Usuário
+Date/Time: 2023-06-05 21:27:06
+   Entity: Aeronave
+   Object before: 
+   Object after: AeroBus

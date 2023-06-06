@@ -1,6 +1,6 @@
 <?php    
     include_once('container.php');
-    abstract class persist {
+    abstract class persist extends Log {
         private ?string $filename;
         private ?int $index = null; 
         public function __construct() {        
