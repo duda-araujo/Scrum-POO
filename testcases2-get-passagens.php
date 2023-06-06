@@ -15,7 +15,7 @@ $aeronave = new Aeronave("Boeing", "A-800", 186, 600, "PR-GUO", $companhia);
 $congonhas = new Aeroporto("CNG", "Congonhas", "SP", "Aeroporto de Congonhas");
 $teresina = new Aeroporto("THE", "Teresina", "PI", "Aeroporto de Teresina");
 $guarulhos = new Aeroporto("GRU", "Guarulhos", "SP", "Aeroporto de Guarulhos");
-$milhagem = new ProgramaDeMilhagem( "Smiles",$companhia);
+$milhagem = new ProgramaDeMilhagem( "Smiles", $companhia);
 
 //public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
 //$Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, 
