@@ -204,15 +204,15 @@ public function set_companhia(CompanhiaAerea $companhia_aerea_f){
         }
         else{
             if (isset($this->CompanhiaAerea_)){
-                $objectBefore = $this->CompanhiaAerea_->get_nome();
+                $objectBefore = $this->CompanhiaAerea_;
                 $this->CompanhiaAerea_ = $companhia_aerea_f;
-                $objectAfter = $this->CompanhiaAerea_->get_nome();
+                $objectAfter = $this->CompanhiaAerea_;
                 new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
             else{
                 $objectBefore = null;
                 $this->CompanhiaAerea_ = $companhia_aerea_f;
-                $objectAfter = $this->CompanhiaAerea_->get_nome();
+                $objectAfter = $this->CompanhiaAerea_;
                 new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
         }

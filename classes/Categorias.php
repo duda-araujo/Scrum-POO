@@ -14,46 +14,58 @@ class Categorias extends persist{
     static public function getFilename() {
         return get_called_class();
       }
-      public function gerarLogLeitura($entity, $attribute)
-{
-    // Implementação do log de leitura específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Attribute: " . $attribute . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logLeitura.txt', $log, FILE_APPEND);
-}
-public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
-    // Implementação do log de escrita específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Object before: " . $objectBefore . "\n";
-    $log .= "   Object after: " . $objectAfter . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logEscrita.txt', $log, FILE_APPEND);
-}
     public function set_milhagem($programa_de_milhagem_f){
-        $this->programa_de_milhagem = $programa_de_milhagem_f;
+        if (isset($this->programa_de_milhagem)){
+            $objectBefore = $this->programa_de_milhagem;
+            $this->programa_de_milhagem = $programa_de_milhagem_f;
+            $objectAfter = $this->programa_de_milhagem;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+        }else{
+            $objectBefore = null;
+            $this->programa_de_milhagem = $programa_de_milhagem_f;
+            $objectAfter = $this->programa_de_milhagem;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+        }
     }
     public function set_nome($nome_f){
-        $this->nome = $nome_f;
+        if (isset($this->nome)){
+            $objectBefore = $this->nome;
+            $this->nome = $nome_f;
+            $objectAfter = $this->nome;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+        }else{
+            $objectBefore = null;
+            $this->nome = $nome_f;
+            $objectAfter = $this->nome;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+        }
     }
     public function set_pontos($pontos_exigidos_f){
-        $this->pontos_exigidos = $pontos_exigidos_f;
+        if (isset($this->pontos_exigidos)){
+            $objectBefore = $this->pontos_exigidos;
+            $this->pontos_exigidos = $pontos_exigidos_f;
+            $objectAfter = $this->pontos_exigidos;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+        }else{
+            $objectBefore = null;
+            $this->pontos_exigidos = $pontos_exigidos_f;
+            $objectAfter = $this->pontos_exigidos;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+        }
     }
     public function get_milhagem(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class() ,$method);
         return $this->programa_de_milhagem;
     }
     public function get_nome(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class() ,$method);
         return $this->nome;
     }
     public function get_pontos(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class() ,$method);
         return $this->pontos_exigidos;
     }
 }

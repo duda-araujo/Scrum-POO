@@ -31,30 +31,6 @@ public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_b
 static public function getFilename() {
     return get_called_class();
 }
-public function gerarLogLeitura($entity, $attribute)
-{
-    // Implementação do log de leitura específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Attribute: " . $attribute . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logLeitura.txt', $log, FILE_APPEND);
-}
-public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
-    // Implementação do log de escrita específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Object before: " . $objectBefore . "\n";
-    $log .= "   Object after: " . $objectAfter . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logEscrita.txt', $log, FILE_APPEND);
-}
 public function valida_sigla_companhia($sigla_f){
 // Deve ser formado por 2 letras
     if (ctype_alpha($sigla_f) && strlen($sigla_f) == 2){
@@ -79,42 +55,64 @@ public function valida_codigo(){
 }
 
 public function get_tarifa(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->tarifa;
 }
 
 public function get_nome(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->nome;
 }
 
 public function get_razao(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->razao_social;
 }
 
 public function get_codigo(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->codigo;
 }
 public function get_cnpj(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->cnpj;
 }
 
 public function get_sigla(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->sigla;
 }
 
 public function get_avioes(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->avioes;
 }
 
 public function get_preco_bagagem(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->preco_bagagem;
 }
 public function get_tripulacao(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->tripulacao;
 }
 public function get_comissarios_de_bordo(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->comissarios_de_bordo;
 }
 public function get_pilotos(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->pilotos;
 }
 
@@ -124,11 +122,21 @@ public function set_tarifa($tarifa_f){
         throw new Exception("Tarifa tem que ser positiva\n");
     }
     else{
-        $this->tarifa=round($tarifa_f,2);
+        if(isset($tarifa_f)){
+            $objectBefore = $this->tarifa;
+            $this->tarifa=round($tarifa_f,2);
+            $objectAfter = $this->tarifa;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+        }else{
+            $objectBefore = null;
+            $this->tarifa=round($tarifa_f,2);
+            $objectAfter = $this->tarifa;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+        }
+        
     }
 }catch(Exception $e){
     echo $e->getMessage();
-
 }
 }
 
@@ -136,7 +144,17 @@ public function set_nome_comp($nome_f){
     // Deve ser formado apenas por letras e espaços
     try{
         if (ctype_alpha(str_replace(' ', '', $nome_f))){
-            $this->nome = $nome_f;
+            if (isset($nome_f)){
+                $objectBefore = $this->nome;
+                $this->nome = $nome_f;
+                $objectAfter = $this->nome;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }else{
+                $objectBefore = null;
+                $this->nome = $nome_f;
+                $objectAfter = $this->nome;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }
         }else{
             throw new Exception("Nome inválido");
         }
@@ -148,7 +166,17 @@ public function set_nome_comp($nome_f){
 public function set_razao($razao_f){
     try{
         if (is_string($razao_f)){
-            $this->razao_social = $razao_f;
+            if(isset($razao_f)){
+                $objectBefore = $this->razao_social;
+                $this->razao_social = $razao_f;
+                $objectAfter = $this->razao_social;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }else{
+                $objectBefore = null;
+                $this->razao_social = $razao_f;
+                $objectAfter = $this->razao_social;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }
         }else{
             throw new Exception("Razão social inválida");
         }
@@ -160,7 +188,17 @@ public function set_razao($razao_f){
 public function set_codigo($codigo){
     try{
         if (ctype_digit($codigo)){
-            $this->codigo = $codigo;
+            if(isset($codigo)){
+                $objectBefore = $this->codigo;
+                $this->codigo = $codigo;
+                $objectAfter = $this->codigo;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }else{
+                $objectBefore = null;
+                $this->codigo = $codigo;
+                $objectAfter = $this->codigo;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }
         }else{
             throw new Exception("Código inválido");
         }
@@ -171,7 +209,17 @@ public function set_codigo($codigo){
 public function set_cnpj($cnpj_f){
     try{
         if ($this->valida_cnpj($cnpj_f)){
-            $this->cnpj = $cnpj_f;
+            if(isset($cnpj_f)){
+                $objectBefore = $this->cnpj;
+                $this->cnpj = $cnpj_f;
+                $objectAfter = $this->cnpj;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }else{
+                $objectBefore = null;
+                $this->cnpj = $cnpj_f;
+                $objectAfter = $this->cnpj;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }
         }else{
             throw new Exception("CNPJ inválido");
         }
@@ -182,7 +230,17 @@ public function set_cnpj($cnpj_f){
 public function set_sigla($sigla_f){
     try{
         if ($this->valida_sigla_companhia($sigla_f)){
-            $this->sigla = $sigla_f;
+            if(isset($sigla_f)){
+                $objectBefore = $this->sigla;
+                $this->sigla = $sigla_f;
+                $objectAfter = $this->sigla;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }else{
+                $objectBefore = null;
+                $this->sigla = $sigla_f;
+                $objectAfter = $this->sigla;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }
         }else{
             throw new Exception("Sigla inválida");
         }
@@ -191,19 +249,69 @@ public function set_sigla($sigla_f){
     }
 }
 public function set_avioes($avioes_f){
-    $this->avioes[] = $avioes_f;
+    if(isset($avioes_f)){
+        $objectBefore = $this->avioes;
+        $this->avioes[] = $avioes_f;
+        $objectAfter = $this->avioes;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->avioes[] = $avioes_f;
+        $objectAfter = $this->avioes;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function set_preco_bagagem($preco_bagagem_f){
-    $this->preco_bagagem = $preco_bagagem_f;
+    if(isset($preco_bagagem_f)){
+        $objectBefore = $this->preco_bagagem;
+        $this->preco_bagagem = $preco_bagagem_f;
+        $objectAfter = $this->preco_bagagem;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->preco_bagagem = $preco_bagagem_f;
+        $objectAfter = $this->preco_bagagem;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function set_tripulacao($tripulacao_f){
-    $this->tripulacao[] = $tripulacao_f;
+    if(isset($tripulacao_f)){
+        $objectBefore = $this->tripulacao;
+        $this->tripulacao[] = $tripulacao_f;
+        $objectAfter = $this->tripulacao;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->tripulacao[] = $tripulacao_f;
+        $objectAfter = $this->tripulacao;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function set_comissario_de_bordo($comissario_de_bordo_f){
-    $this->comissarios_de_bordo[] = $comissario_de_bordo_f;
+    if(isset($comissario_de_bordo_f)){
+        $objectBefore = $this->comissario_de_bordo;
+        $this->comissario_de_bordo[] = $comissario_de_bordo_f;
+        $objectAfter = $this->comissario_de_bordo;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->comissario_de_bordo[] = $comissario_de_bordo_f;
+        $objectAfter = $this->comissario_de_bordo;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function set_piloto($piloto_f){
-    $this->pilotos[] = $piloto_f;
+    if(isset($piloto_f)){
+        $objectBefore = $this->piloto;
+        $this->piloto[] = $piloto_f;
+        $objectAfter = $this->piloto;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->piloto[] = $piloto_f;
+        $objectAfter = $this->piloto;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 
 }
