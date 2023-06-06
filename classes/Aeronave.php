@@ -40,63 +40,40 @@ public function validar_registro($registro_f) {
 static public function getFilename() {
     return get_called_class();
 }
-public function gerarLogLeitura($entity, $attribute)
-{
-    // Implementação do log de leitura específico para Aeroporto
-    $log = "\nUser: " . "Usuário - ";
-    $dateTime = (new DateTime('now', new DateTimeZone('America/Sao_Paulo')))->format('Y-m-d H:i:s');
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "       Attribute: " . $attribute . "\n";
 
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logLeitura.txt', $log, FILE_APPEND);
-}
-public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
-    // Implementação do log de escrita específico para Aeroporto
-    $log = "\nUser: " . "Usuário - ";
-    $dateTime = (new DateTime('now', new DateTimeZone('America/Sao_Paulo')))->format('Y-m-d H:i:s');
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "       Object before: " . $objectBefore . "\n";
-    $log .= "       Object after: " . $objectAfter . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logEscrita.txt', $log, FILE_APPEND);
-}
 public function get_fabricante(){
     $attribute = __METHOD__;
-    $this->gerarLogLeitura(get_called_class(), $attribute);
+    new logLeitura(get_called_class() ,$attribute);
     return $this->fabricante;
 }
 
 public function get_modelo(){
     $attribute = __METHOD__;
-    $this->gerarLogLeitura(get_called_class(), $attribute);
+    new logLeitura(get_called_class() ,$attribute);
     return $this->modelo;
 }
 
 public function get_carga(){
     $attribute = __METHOD__;
-    $this->gerarLogLeitura(get_called_class(), $attribute);
+    new logLeitura(get_called_class() ,$attribute);
     return $this->carga;
 }
 
 public function get_passageiro(){
     $attribute = __METHOD__;
-    $this->gerarLogLeitura(get_called_class(), $attribute);
+    new logLeitura(get_called_class() ,$attribute);
     return $this->passageiros;
 }
 
 public function get_registro(){
     $attribute = __METHOD__;
-    $this->gerarLogLeitura(get_called_class(), $attribute);
+    new logLeitura(get_called_class() ,$attribute);
     return $this->registro;
 }
 
 public function get_companhia_aerea(){
     $attribute = __METHOD__;
-    $this->gerarLogLeitura(get_called_class(), $attribute);
+    new logLeitura(get_called_class() ,$attribute);
     return $this->CompanhiaAerea_;
 }
 
@@ -110,13 +87,13 @@ public function set_fabricante($fabricante_f){
                 $objectBefore = $this->fabricante;
                 $this->fabricante = $fabricante_f;
                 $objectAfter = $this->fabricante;
-                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
             else{
                 $objectBefore = null;
                 $this->fabricante = $fabricante_f;
                 $objectAfter = $this->fabricante;
-                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
         }
     }
@@ -142,13 +119,13 @@ public function set_modelo($modelo_f){
                 $objectBefore = $this->modelo;
                 $this->modelo = $modelo_f;
                 $objectAfter = $this->modelo;
-                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
             else{
                 $objectBefore = null;
                 $this->modelo = $modelo_f;
                 $objectAfter = $this->modelo;
-                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
         }
     }
@@ -167,13 +144,13 @@ public function set_carga($carga_f){
                 $objectBefore = $this->carga;
                 $this->carga = $carga_f;
                 $objectAfter = $this->carga;
-                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
             else{
                 $objectBefore = null;
                 $this->carga = $carga_f;
                 $objectAfter = $this->carga;
-                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
         }
     }
@@ -192,13 +169,13 @@ public function set_passageiros($passageiro_f){
                 $objectBefore = $this->passageiros;
                 $this->passageiros = $passageiro_f;
                 $objectAfter = $this->passageiros;
-                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
             else{
                 $objectBefore = null;
                 $this->passageiros = $passageiro_f;
                 $objectAfter = $this->passageiros;
-                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
         }
     }
@@ -210,13 +187,13 @@ public function set_registro($registro_f) {
         $objectBefore = $this->registro;
         $this->registro = $this->validar_registro($registro_f);
         $objectAfter = $this->registro;
-        $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     else{
         $objectBefore = null;
         $this->registro = $this->validar_registro($registro_f);
         $objectAfter = $this->registro;
-        $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }   
 }
 
@@ -230,13 +207,13 @@ public function set_companhia(CompanhiaAerea $companhia_aerea_f){
                 $objectBefore = $this->CompanhiaAerea_->get_nome();
                 $this->CompanhiaAerea_ = $companhia_aerea_f;
                 $objectAfter = $this->CompanhiaAerea_->get_nome();
-                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
             else{
                 $objectBefore = null;
                 $this->CompanhiaAerea_ = $companhia_aerea_f;
                 $objectAfter = $this->CompanhiaAerea_->get_nome();
-                $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
             }
         }
     }

@@ -1,16 +1,13 @@
 <?php
 
-abstract class Log {
+abstract class Log extends persist{
     #protected $user;
+    protected $entity;
     protected $dateTime;
-
-    public function __construct() {
+    public function __construct($entity) {
         #$this->user = $user;
-        $this->dateTime = new DateTime();
+        $this->entity = $entity;
+        $this->dateTime = new DateTime("now", new DateTimeZone("America/Sao_Paulo"));
     }
-
-    abstract protected function gerarLogLeitura($entity, $attribute);
-
-    abstract protected function gerarLogEscrita($entity, $objectBefore, $objectAfter);
-
+    abstract protected function gerarLog();
 }
