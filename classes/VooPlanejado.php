@@ -138,7 +138,7 @@ public function set_frequencia($frequencia_voo_f, $dia_f): void {
         if (isset(self::$dict_dias[$dia_f])) {
             $dia = self::$dict_dias[$dia_f];
         } else {
-            throw new Exception("\nCódigo de dia inválido.");
+            throw new Exception("\nCódigo de dia inválido.\n");
         }
     }catch(Exception $e){
         echo $e->getMessage();
@@ -221,15 +221,31 @@ public function get_codigo(): string {
 }
 public function set_codigo($codigo_f): void {
     try {
-        if ($this->validar_codigo($codigo_f, $this->get_aviao())){
-            $this->codigo = $codigo_f;
-        } else{
-            throw new Exception("\nCodigo invalido");
-        }
-    }catch(Exception $e){
-        echo $e->getMessage();
+      $codigo_valido = $this->validar_codigo($codigo_f, $this->get_aviao());
+      if ($codigo_valido === true) {
+        $this->codigo = $codigo_f;
+      } else {
+        //throw new Exception("\nCodigo invalido");
+        // Utilize o código corrigido passado como parâmetro
+        $this->codigo = $codigo_valido;
+      }
+    } catch (Exception $e) {
+      echo $e->getMessage();
     }
-}
+  }
+  
+// public function set_codigo($codigo_f): void {
+//     try {
+//         if ($this->validar_codigo($codigo_f, $this->get_aviao())){
+//             $this->codigo = $codigo_f;
+//         } else{
+//             throw new Exception("\nCodigo invalido");
+            
+//         }
+//     }catch(Exception $e){
+//         echo $e->getMessage();
+//     }
+// }
 public function get_aviao(): Aeronave {
     return $this->Aviao;
 }
@@ -343,7 +359,6 @@ public static function get_hist_planejado(): string {
     $string = "";
     foreach (self::$historico_planejado as $voo){
         $string .= "Voo " . $voo->get_codigo() . " da " . $voo->get_aviao()->get_companhia_aerea()->get_nome() . " de " . $voo->get_origem()->get_sigla_aero() . " para " . $voo->get_destino()->get_sigla_aero() . " marcado para " . $voo->get_hora_agenda_saida()->format('d/m/Y H:i') . " com chegada " . $voo->get_hora_agenda_chegada()->format('d/m/Y H:i') . "\n";
-        $string .= "Voo " . $voo->get_codigo() . " da " . $voo->get_aviao()->get_companhia_aerea()->get_nome() . " de " . $voo->get_origem()->get_sigla_aero() . " para " . $voo->get_destino()->get_sigla_aero() . " marcado para " . $voo->get_hora_agenda_saida()->format('d/m/Y H:i') . " com chegada " . $voo->get_hora_agenda_chegada()->format('d/m/Y H:i') . "\n";
     }
     return $string;
 }
@@ -368,21 +383,29 @@ public static function proximos_voos_string(): string {
         }
         return $string;
 }
-public function validar_codigo($codigo, $Aviao_esperado_f): bool {
-//Codigo composto por 2 letras e 4 numeros
-    $letras = substr($codigo,0,2);
-    $sigla_comp_aerea = $Aviao_esperado_f-> get_companhia_aerea() -> get_sigla();
-    if ($letras != $sigla_comp_aerea){
-        echo "\nErro: Codigo do voo não corresponde a companhia aerea";
-        return false;
+public function validar_codigo($codigo, $Aviao_esperado_f) {
+    // Codigo composto por 2 letras e 4 numeros
+    $letras = substr($codigo, 0, 2);
+    $sigla_comp_aerea = $Aviao_esperado_f->get_companhia_aerea()->get_sigla();
+    
+    if ($letras != $sigla_comp_aerea) {
+    //   echo "\nErro: Codigo do voo nao corresponde a companhia aerea";
+    //   echo "\nO codigo esperado deveria ser: " . $Aviao_esperado_f->get_companhia_aerea()->get_sigla();
+      
+      // Alterar o registro com a sigla correta
+      $codigo_corrigido = $sigla_comp_aerea . substr($codigo, 2);
+      //echo "\nCodigo corrigido: " . $codigo_corrigido;
+      
+      return $codigo_corrigido;
     }
-    $numeros = substr($codigo,2,4);
-    if (ctype_alpha($letras) && ctype_digit($numeros)){
-        return true;
-    }else{
-        return false;
+    
+    $numeros = substr($codigo, 2, 4);
+    if (ctype_alpha($letras) && ctype_digit($numeros)) {
+      return true;
+    } else {
+      return false;
     }
-}
+  }
 
 public function get_pontos_voo(){
     return $this->pontos_viagem;

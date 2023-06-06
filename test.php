@@ -2,6 +2,8 @@
 require_once "global.php";
 
 //teste cases para o arquivo rotas.php
+
+//Declarando companhias aereas
 $companhiaAerea = new CompanhiaAerea(
     "Nome da Companhia",
     "Razão Social",
@@ -11,12 +13,71 @@ $companhiaAerea = new CompanhiaAerea(
     50.0,
     100.0
 );
+
+$Latam = new CompanhiaAerea(
+    "Latam",
+    "Latam Airlines do Brasil S.A.",
+    "001",
+    "02.012.862/0001-60",
+    "LA",
+    40.0,
+    80.0
+);
+
+$Azul = new CompanhiaAerea(
+    "Latam",
+    "Azul Linhas Aéreas Brasileiras S.A.",
+    "002",
+    "09.296.295/0001-60",
+    "AD",
+    55.0,
+    90.0
+);
+
+//Declarando aeroportos
+$confins = new Aeroporto(
+    "CNF", 
+    "Confins", 
+    "MG", 
+    "Aeroporto de Confins"
+);
+
+$congonhas = new Aeroporto(
+    "CGH", 
+    "Congonhas", 
+    "SP", 
+    "Aeroporto de Congonhas"
+);
+
+$galeao = new Aeroporto(
+    "GIG", 
+    "Galeao", 
+    "RJ", 
+    "Aeroporto Internacional Tom Jobim"
+);
+
+$afonsoPena = new Aeroporto(
+    "GRU", 
+    "Guarulhos", 
+    "SP", 
+    "Aeroporto de Guarulhos"
+);
+
+$guarulhos = new Aeroporto(
+    "GRU", 
+    "Guarulhos", 
+    "SP", 
+    "Aeroporto de Guarulhos"
+);
+
 $aeroportoBase = new Aeroporto(
     "ABC",
     "São Paulo",
     "SP",
     "Aeroporto Internacional"
 );
+
+//Declarando tripulações
 $tripulacao1 = new Tripulacao(
     "João",
     "Silva",
@@ -78,11 +139,49 @@ $veiculo = new Veiculo(
     10
 );
 
+$saida = new DateTime("2023-04-23 16:45:32");
+$chegada = new DateTime("2023-04-24 18:45:32");
+
+//Declarando aeronaves
+$aeronave1 = new Aeronave(
+    "Embraer",
+    "175",
+    600, 
+    180, 
+    "PX-RUZ", 
+    $Latam
+);
+
+$aeronave2 = new Aeronave(
+    "Embraer",
+    "175",
+    600, 
+    180, 
+    "PP-RUZ", 
+    $Azul
+);
+
+//Declarando voos
+$voo = new VooPlanejado(
+    "AC1329",
+    $confins,
+    $guarulhos,
+    $chegada,
+    $saida, 
+    $aeronave1, 
+    '2', 
+    '2', 
+    300, 
+    1000,
+    50
+);
+
 $tripulantes = [$tripulacao1, $tripulacao2, $tripulacao3];
 
 $rota = new Rota(
     $aeroportoBase,
     $veiculo,
-    $tripulantes
+    $tripulantes,
+    $voo
 );
 echo $rota -> definir_rota();
