@@ -220,6 +220,13 @@ public function cancelar_passagem(): void{
     }
 }
 
+public function get_cartao_de_embarque1(){
+    return $this->cartao_de_embarque1;
+}
+public function get_cartao_de_embarque2(){
+    return $this->cartao_de_embarque2;
+}
+
 public function realizar_check_in(): void{
     ###O sistema deve permitir o check-in de passagens já adquiridas em um período compreendido
     //entre 48h e 30 minutos do horário de partida do primeiro vôo. Em caso de não realização do 
