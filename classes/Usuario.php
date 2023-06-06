@@ -11,12 +11,15 @@ class Usuario extends persist{
     protected string $senha;
     protected array $passagens;
     protected array $registro_financeiro=[];
+    protected array $UsuariosCadastrados = [];
 
 
     public function __construct($nome_u,$sobrenome_u,$email_u,$login_u,$senha_u){
-      $this->set_email()
-      array_pus($this)
-
+        $this->set_nome($nome_u);
+        $this->set_sobrenome($sobrenome_u);
+        $this->set_email($email_u);
+        $this->set_login($login_u);
+        $this->set_senha($senha_u);
     }
     static public function getFilename() {
         return get_called_class();
@@ -81,33 +84,33 @@ class Usuario extends persist{
     public function get_passagens(){
         return $this->passagens;
     }
-    public static function getUsuariosCadastrados(){
-        $usuarios_cadastrados = [];
-        //$usuarios_cadastrados = parent::get_all();  
-        return $usuarios_cadastrados;
-    }
+    // public static function getUsuariosCadastrados(){
+    //     $usuarios_cadastrados = [];
+    //     //$usuarios_cadastrados = parent::get_all();  
+    //     return $usuarios_cadastrados;
+    // }
     public function realizar_login($login_u, $senha_u){
-        $usuarios_cadastrados = self::getUsuariosCadastrados();
-
-        foreach($usuarios_cadastrados as $usuario){
+     
+        foreach($this->UsuariosCadastrados as $usuario){
             if($usuario->get_login() == $login_u && $usuario->get_senha() == $senha_u){
-                echo "Login realizado com sucesso!";
+                echo "Login realizado com sucesso!\n";
                 return $usuario;
             }
         }
-        echo "Login ou senha incorretos!";
+        echo "Login ou senha incorretos!\n";
     }
-    public function realizar_cadastro($nome_u,$sobrenome_u,$email_u,$login_u,$senha_u){
-        $usuarios_cadastrados = self::getUsuariosCadastrados();
-
-        foreach($usuarios_cadastrados as $usuario){
-            if($usuario->get_login() == $login_u){
-                echo "Login já cadastrado!";
+    public function cadastrar_usuario(Usuario $usuario_cadastrado) {
+        foreach ($this->UsuariosCadastrados as $usuario) {
+            if ($usuario->get_login() == $usuario_cadastrado->get_login()) {
+                echo "Login já cadastrado!\n";
                 return;
             }
         }
-        echo "Cadastro realizado com sucesso!";
+        
+        $this->UsuariosCadastrados[] = $usuario_cadastrado;
+        echo "Cadastro realizado com sucesso!\n";
     }
+    
     public function passagem_comprada($preco_f,$Aerop_origem_f,$Aerop_destino_f){
         $a="Passagem comprada de".$Aerop_origem_f->get_cidade()."para".$Aerop_destino_f->get_cidade()."por R$".strval($preco_f);
         array_push($this->registro_financeiro,$a);
