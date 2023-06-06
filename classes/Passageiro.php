@@ -31,56 +31,106 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
 static public function getFilename() {
    return get_called_class();
 }
-public function gerarLogLeitura($entity, $attribute)
-{
-    // Implementação do log de leitura específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Attribute: " . $attribute . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logLeitura.txt', $log, FILE_APPEND);
-}
-public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
-    // Implementação do log de escrita específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Object before: " . $objectBefore . "\n";
-    $log .= "   Object after: " . $objectAfter . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logEscrita.txt', $log, FILE_APPEND);
-}
 public function set_programa_de_milhagem(?ProgramaDeMilhagem $p){
-    $this->programa_de_milhagem= $p;
+    if(isset($this->programa_de_milhagem)){
+        $objectBefore = $this->programa_de_milhagem;
+        $this->programa_de_milhagem = $p;
+        $objectAfter = $this->programa_de_milhagem;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->programa_de_milhagem = $p;
+        $objectAfter = $this->programa_de_milhagem;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function get_programa_de_milhagem(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->programa_de_milhagem;
 }
 public function set_assento($assento_p){
-    $this->assento = $assento_p;
+    if(isset($this->assento)){
+        $objectBefore = $this->assento;
+        $this->assento = $assento_p;
+        $objectAfter = $this->assento;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->assento = $assento_p;
+        $objectAfter = $this->assento;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function get_assento(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->assento;
 }
 public function set_nome_passageiro($nome_p){
-    $this->nome_passageiro = $nome_p;
+    if(isset($this->nome_passageiro)){
+        $objectBefore = $this->nome_passageiro;
+        $this->nome_passageiro = $nome_p;
+        $objectAfter = $this->nome_passageiro;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->nome_passageiro = $nome_p;
+        $objectAfter = $this->nome_passageiro;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function set_sobrenome_passageiro($sobrenome_f){
-    $this->sobrenome_passageiro = $sobrenome_f;
+    if(isset($this->sobrenome_passageiro)){
+        $objectBefore = $this->sobrenome_passageiro;
+        $this->sobrenome_passageiro = $sobrenome_f;
+        $objectAfter = $this->sobrenome_passageiro;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->sobrenome_passageiro = $sobrenome_f;
+        $objectAfter = $this->sobrenome_passageiro;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function set_documento_passageiro($documento_f){
-    $this->documento_passageiro = $documento_f;
+    if(isset($this->documento_passageiro)){
+        $objectBefore = $this->documento_passageiro;
+        $this->documento_passageiro = $documento_f;
+        $objectAfter = $this->documento_passageiro;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->documento_passageiro = $documento_f;
+        $objectAfter = $this->documento_passageiro;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function set_numero_bagagens($numero_bagagens_f){
-    $this->numero_bagagens = $numero_bagagens_f;
+    if(isset($this->numero_bagagens)){
+        $objectBefore = $this->numero_bagagens;
+        $this->numero_bagagens = $numero_bagagens_f;
+        $objectAfter = $this->numero_bagagens;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->numero_bagagens = $numero_bagagens_f;
+        $objectAfter = $this->numero_bagagens;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function set_nacionalidade($nacionalidade_f) {
-    $this->nacionalidade = $nacionalidade_f;
+    if(isset($this->nacionalidade)){
+        $objectBefore = $this->nacionalidade;
+        $this->nacionalidade = $nacionalidade_f;
+        $objectAfter = $this->nacionalidade;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->nacionalidade = $nacionalidade_f;
+        $objectAfter = $this->nacionalidade;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function set_data_de_nascimento($data_de_nascimento_f, $data_atual_f) {
     $dia = $data_de_nascimento_f->format("d");
@@ -91,7 +141,17 @@ public function set_data_de_nascimento($data_de_nascimento_f, $data_atual_f) {
         if($data_de_nascimento_f instanceof DateTime) { //valida formatação
             if (checkdate($mes, $dia, $ano)) { //valida numeros
                 if( $data_de_nascimento_f < $data_atual_f) { //valida se é uma data anterior ao dia atual
-                    $this->data_de_nascimento = $data_de_nascimento_f;
+                    if(isset($this->data_de_nascimento)){
+                        $objectBefore = $this->data_de_nascimento;
+                        $this->data_de_nascimento = $data_de_nascimento_f;
+                        $objectAfter = $this->data_de_nascimento;
+                        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+                    }else{
+                        $objectBefore = null;
+                        $this->data_de_nascimento = $data_de_nascimento_f;
+                        $objectAfter = $this->data_de_nascimento;
+                        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+                    }
                 }
                 else {
                     throw new InvalidArgumentException("\nErro: Data de nascimento inválida ");
@@ -107,7 +167,17 @@ public function set_cpf($cpf_f) {
     if($this->nacionalidade == "brasileiro" || $this->nacionalidade == "brasileira"){
         try {
             if($this->valida_cpf($cpf_f)) {
-                $this->cpf = $cpf_f;
+                if(isset($this->cpf)){
+                    $objectBefore = $this->cpf;
+                    $this->cpf = $cpf_f;
+                    $objectAfter = $this->cpf;
+                    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+                }else{
+                    $objectBefore = null;
+                    $this->cpf = $cpf_f;
+                    $objectAfter = $this->cpf;
+                    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+                }
             }
             else {
                 throw new InvalidArgumentException("\nErro: CPF inválido ");
@@ -149,7 +219,17 @@ public function valida_cpf($cpf_f) {
 public function set_email($email_f) {
     try {
         if(filter_var($email_f, FILTER_VALIDATE_EMAIL)) {
-            $this->email = $email_f;
+            if(isset($this->email)){
+                $objectBefore = $this->email;
+                $this->email = $email_f;
+                $objectAfter = $this->email;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }else{
+                $objectBefore = null;
+                $this->email = $email_f;
+                $objectAfter = $this->email;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }
         }
         else {
             throw new InvalidArgumentException("\nErro: email inválido ");
@@ -160,43 +240,85 @@ public function set_email($email_f) {
     
 }
 public function get_nome_passageiro(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->nome_passageiro;
 }
 public function get_sobrenome_passageiro(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->sobrenome_passageiro;
 }
 public function get_documento_passageiro(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->documento_passageiro;
 }
 public function get_nbagagens(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->numero_bagagens;
 }
 public function get_vip(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->vip;
 }
 public function get_nacionalidade() {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->nacionalidade;
 }
 public function get_cpf() {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->cpf;
 }
 public function get_data_de_nascimento() {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->data_de_nascimento;
 }
 public function get_email() {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->email;
 }
 public function get_categoria() {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->categoria;
 }
 public function set_categoria($pontos) {
-    $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
+    if(isset($this->programa_de_milhagem)){
+        $objectBefore = $this->categoria;
+        $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
+        $objectAfter = $this->categoria;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
+        $objectAfter = $this->categoria;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function get_pontos() {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->pontos;
 }
 public function set_pontos($pontos_f) {
-    $this->pontos = $pontos_f;
+    if(isset($this->programa_de_milhagem)){
+        $objectBefore = $this->pontos;
+        $this->pontos = $pontos_f;
+        $objectAfter = $this->pontos;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->pontos = $pontos_f;
+        $objectAfter = $this->pontos;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
 }
 public function adicionar_pontos($pontos, DateTime $data){
     $this->pontos += $pontos;
@@ -219,7 +341,17 @@ public function ultimos_doze_meses(DateTime $data_atual) {
         }
     }
     $categoria = $this->programa_de_milhagem->get_categoria($pontos_ultimos_doze_meses);
-    $this -> categoria = $categoria;}
+    if(isset($this->categoria)){
+        $objectBefore = $this->categoria;
+        $this -> categoria = $categoria;
+        $objectAfter = $this -> categoria;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this -> categoria = $categoria;
+        $objectAfter = $this -> categoria;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }}
 }
 }
     

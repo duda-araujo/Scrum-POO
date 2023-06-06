@@ -289,27 +289,27 @@ public function set_tripulacao($tripulacao_f){
 }
 public function set_comissario_de_bordo($comissario_de_bordo_f){
     if(isset($comissario_de_bordo_f)){
-        $objectBefore = $this->comissario_de_bordo;
-        $this->comissario_de_bordo[] = $comissario_de_bordo_f;
-        $objectAfter = $this->comissario_de_bordo;
+        $objectBefore = $this->comissarios_de_bordo;
+        $this->comissarios_de_bordo[] = $comissario_de_bordo_f;
+        $objectAfter = $this->comissarios_de_bordo;
         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }else{
         $objectBefore = null;
-        $this->comissario_de_bordo[] = $comissario_de_bordo_f;
-        $objectAfter = $this->comissario_de_bordo;
+        $this->comissarios_de_bordo[] = $comissario_de_bordo_f;
+        $objectAfter = $this->comissarios_de_bordo;
         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
 }
 public function set_piloto($piloto_f){
     if(isset($piloto_f)){
-        $objectBefore = $this->piloto;
-        $this->piloto[] = $piloto_f;
-        $objectAfter = $this->piloto;
+        $objectBefore = $this->pilotos;
+        $this->pilotos[] = $piloto_f;
+        $objectAfter = $this->pilotos;
         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }else{
         $objectBefore = null;
-        $this->piloto[] = $piloto_f;
-        $objectAfter = $this->piloto;
+        $this->pilotos[] = $piloto_f;
+        $objectAfter = $this->pilotos;
         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
 }

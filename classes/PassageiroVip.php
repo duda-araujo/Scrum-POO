@@ -23,47 +23,43 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
 static public function getFilename() {
     return get_called_class();
   }
-  public function gerarLogLeitura($entity, $attribute)
-{
-    // Implementação do log de leitura específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Attribute: " . $attribute . "\n";
 
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logLeitura.txt', $log, FILE_APPEND);
-}
-public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
-    // Implementação do log de escrita específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Object before: " . $objectBefore . "\n";
-    $log .= "   Object after: " . $objectAfter . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logEscrita.txt', $log, FILE_APPEND);
-}
 public function get_vip(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return true;
-
 }
 
 public function get_milhagem(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->programa_milhagem;
 }
 
 public function set_milhagem(ProgramaDeMilhagem $p){
-    $this->programa_de_milhagem= $p;
+    if(isset($this->programa_de_milhagem)){
+        $objectBefore = $this->programa_de_milhagem;
+    }else{
+        $objectBefore = null;
+    }
+    $this->programa_de_milhagem = $p;
+    $objectAfter = $this->programa_de_milhagem;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_registro($r){
-    $this->numero_registro=$r;
+    if(isset($this->numero_registro)){
+        $objectBefore = $this->numero_registro;
+    }else{
+        $objectBefore = null;
+    }
+    $this->numero_registro = $r;
+    $objectAfter = $this->numero_registro;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 
 public function get_registro(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->numero_registro;
 }
 }
