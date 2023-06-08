@@ -43,5 +43,16 @@ new DateTime("18:49"), new DateTime("17:49"), $aeronave1, 3, 1, "350.00", "100",
 $resultado = VooPlanejado::get_hist_planejado();
 echo $resultado;
 
+$data_amanha = new DateTime("tomorow");
+$programa_azul = new ProgramaDeMilhagem("Azul", $companhia2);
+$passageiro1_vip = new PassageiroVip("Bruno", "Rodrigues", "MG-10.123.345", 2, true, "brasileiro", "948.884.119-21", new DateTime("1995-03-15"), new DateTime("now"), "bruno@gmail.com", "2A", $programa_azul, "102");
 
+$user1 = new Usuario("João", "Silva", "joao123@gmail.com", "joao123", "123456");
+$user1->cadastrar_usuario($user1);
+$user1->realizar_login("joao123", "123456");
 
+$passagem_ida = new Passagens($aeroporto5, $aeroporto4, $passageiro1_vip, 30, $usuario1);
+$passagem_ida->realizar_check_in();
+
+//imprimir cartoes de embarque na tela
+echo $passagem_ida->get_cartao_de_embarque1();
