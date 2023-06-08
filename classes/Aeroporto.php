@@ -21,23 +21,23 @@ static public function getFilename() {
 public function gerarLogLeitura($entity, $attribute)
 {
     // Implementação do log de leitura específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+    $log = "\nUser: " . "Usuário - ";
+    $dateTime = (new DateTime('now', new DateTimeZone('America/Sao_Paulo')))->format('Y-m-d H:i:s');
     $log .= "Date/Time: " . $dateTime . "\n";
     $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Attribute: " . $attribute . "\n";
+    $log .= "       Attribute: " . $attribute . "\n";
 
     // Salvar o log em um arquivo ou em algum outro meio de armazenamento
     file_put_contents('logLeitura.txt', $log, FILE_APPEND);
 }
 public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
     // Implementação do log de escrita específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
+    $log = "\nUser: " . "Usuário - ";
+    $dateTime = (new DateTime('now', new DateTimeZone('America/Sao_Paulo')))->format('Y-m-d H:i:s');
     $log .= "Date/Time: " . $dateTime . "\n";
     $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Object before: " . $objectBefore . "\n";
-    $log .= "   Object after: " . $objectAfter . "\n";
+    $log .= "       Object before: " . $objectBefore . "\n";
+    $log .= "       Object after: " . $objectAfter . "\n";
 
     // Salvar o log em um arquivo ou em algum outro meio de armazenamento
     file_put_contents('logEscrita.txt', $log, FILE_APPEND);
@@ -52,25 +52,44 @@ public function validar_sigla_aero(string $sigla_s){
 }
 
 public function get_sigla_aero(){
+  $method = __METHOD__;
+  $this->gerarLogLeitura(get_called_class(), $method);
   return $this->sigla;
 }
 
 public function get_cidade(){
+  $method = __METHOD__;
+  $this->gerarLogLeitura(get_called_class(), $method);
   return $this->cidade;
 }
 
 public function get_estado(){
+  $method = __METHOD__;
+  $this->gerarLogLeitura(get_called_class(), $method);
   return $this->estado;
 }
 
 public function get_nome_aero(){
+  $method = __METHOD__;
+  $this->gerarLogLeitura(get_called_class(), $method);
   return $this->nome;
 }
 
 public function set_sigla_aero(string $sigla_f){
   try{
     if ($this->validar_sigla_aero($sigla_f)){
-      $this->sigla = $sigla_f;
+      if(isset($this->sigla)){
+        $objectBefore = $this->sigla;
+        $this->sigla = $sigla_f;
+        $objectAfter = $this->sigla;
+        $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+      }
+      else{
+        $objectBefore = null;
+        $this->sigla = $sigla_f;
+        $objectAfter = $this->sigla;
+        $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+      }
     }else{
       throw new Exception("Sigla inválida");
     }
@@ -80,21 +99,35 @@ public function set_sigla_aero(string $sigla_f){
 }
 
 public function set_cidade(string $cidade_f) {
-  // //try {
-  //   if (preg_match('/^[a-zA-Z\s]+$/', $cidade_f)) {
-       $this->cidade = $cidade_f;
-  //   } else {
-  //     throw new Exception("Cidade inválida");
-  //   }
-  // } catch(Exception $e) {
-  //   echo $e->getMessage();
-  // }
+  if(isset($this->cidade)){
+    $objectBefore = $this->cidade;
+    $this->cidade = $cidade_f;
+    $objectAfter = $this->cidade;
+    $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+  }
+  else{
+    $objectBefore = null;
+    $this->cidade = $cidade_f;
+    $objectAfter = $this->cidade;
+    $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+  }
 }
 
 public function set_estado(string $estado_f){
   try{
     if (ctype_alpha($estado_f)){
-      $this->estado = $estado_f;
+      if(isset($this->estado)){
+        $objectBefore = $this->estado;
+        $this->estado = $estado_f;
+        $objectAfter = $this->estado;
+        $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+      }
+      else{
+        $objectBefore = null;
+        $this->estado = $estado_f;
+        $objectAfter = $this->estado;
+        $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+      }
     }else{
       throw new Exception("Estado inválido");
     }
@@ -106,7 +139,18 @@ public function set_estado(string $estado_f){
 public function set_nome(string $nome_f){
   try{
     if (is_string($nome_f)){
-      $this->nome = $nome_f;
+      if(isset($this->nome)){
+        $objectBefore = $this->nome;
+        $this->nome = $nome_f;
+        $objectAfter = $this->nome;
+        $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+      }
+      else{
+        $objectBefore = null;
+        $this->nome = $nome_f;
+        $objectAfter = $this->nome;
+        $this->gerarLogEscrita(get_called_class(), $objectBefore, $objectAfter);
+      }
     }else{
       throw new Exception("Nome inválido");
     }

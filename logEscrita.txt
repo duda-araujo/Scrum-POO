@@ -1,40 +1,216 @@
-User: Usuário
-Date/Time: 2023-06-05 21:27:06
+User: Usuário - Date/Time: 2023-06-06 11:57:47
    Entity: Aeronave
-   Object before: 
-   Object after: Boeing
-User: Usuário
-Date/Time: 2023-06-05 21:27:06
+       Object before: 
+       Object after: Boeing
+User: Usuário - Date/Time: 2023-06-06 11:57:47
    Entity: Aeronave
-   Object before: 
-   Object after: AeroBus
-User: Usuário
-Date/Time: 2023-06-05 21:39:22
+       Object before: 
+       Object after: A-800
+User: Usuário - Date/Time: 2023-06-06 11:57:47
    Entity: Aeronave
-   Object before: 
-   Object after: Boeing
-User: Usuário
-Date/Time: 2023-06-05 21:39:22
+       Object before: 
+       Object after: 186
+User: Usuário - Date/Time: 2023-06-06 11:57:47
    Entity: Aeronave
-   Object before: 
-   Object after: AeroBus
-User: Usuário
-Date/Time: 2023-06-05 21:39:36
+       Object before: 
+       Object after: 600
+User: Usuário - Date/Time: 2023-06-06 11:57:47
    Entity: Aeronave
-   Object before: 
-   Object after: Boeing
-User: Usuário
-Date/Time: 2023-06-05 21:39:36
+       Object before: 
+       Object after: PR-GUO
+User: Usuário - Date/Time: 2023-06-06 11:57:47
    Entity: Aeronave
-   Object before: 
-   Object after: AeroBus
-User: Usuário
-Date/Time: 2023-06-05 21:39:49
+       Object before: 
+       Object after: Gol
+User: Usuário - Date/Time: 2023-06-06 11:57:47
    Entity: Aeronave
-   Object before: 
-   Object after: Boeing
-User: Usuário
-Date/Time: 2023-06-05 21:39:49
+       Object before: 
+       Object after: AeroBus
+User: Usuário - Date/Time: 2023-06-06 11:57:47
    Entity: Aeronave
-   Object before: 
-   Object after: AeroBus
+       Object before: 
+       Object after: M-650
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeronave
+       Object before: 
+       Object after: 186
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeronave
+       Object before: 
+       Object after: 600
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeronave
+       Object before: 
+       Object after: PR-GUO
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeronave
+       Object before: 
+       Object after: Gol
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: CNG
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: Congonhas
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: SP
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: Aeroporto de Congonhas
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: THE
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: Teresina
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: PI
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: Aeroporto de Teresina
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: GRU
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: Guarulhos
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: SP
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeroporto
+       Object before: 
+       Object after: Aeroporto de Guarulhos
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: Boeing
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: A-800
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: 186
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: 600
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: PR-GUO
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: Gol
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: AeroBus
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: M-650
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: 186
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: 600
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: PR-GUO
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Object before: 
+       Object after: Gol
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: CNG
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: Congonhas
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: SP
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: Aeroporto de Congonhas
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: THE
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: Teresina
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: PI
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: Aeroporto de Teresina
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: GRU
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: Guarulhos
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: SP
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Object before: 
+       Object after: Aeroporto de Guarulhos

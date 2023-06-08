@@ -1,0 +1,182 @@
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+User: Usuário - Date/Time: 2023-06-06 11:57:47
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_cidade
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_cidade
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_cidade
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_cidade
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+User: Usuário - Date/Time: 2023-06-06 11:57:48
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_cidade
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_cidade
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_cidade
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_cidade
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Usuário - Date/Time: 2023-06-06 12:00:59
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
