@@ -43,40 +43,23 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
 }
 
 public function Pontos_do_voo(DateTime $t,int $p){
+    $objectBefore = $this->passageiro->get_programa_de_milhagem();
+
     if ($this->passageiro->get_programa_de_milhagem() == null) {
         echo("\nPrograma de milhagem não definido");
     }
     else{
     $this->passageiro->adicionar_pontos($p,$t);}
+    $objectAfter = $this->passageiro->get_programa_de_milhagem();
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 static public function getFilename() {
     return get_called_class();
 }
-public function gerarLogLeitura($entity, $attribute)
-{
-    // Implementação do log de leitura específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Attribute: " . $attribute . "\n";
 
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logLeitura.txt', $log, FILE_APPEND);
-}
-public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
-    // Implementação do log de escrita específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Object before: " . $objectBefore . "\n";
-    $log .= "   Object after: " . $objectAfter . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logEscrita.txt', $log, FILE_APPEND);
-}
 public function get_estado_da_passagem(): string{
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->estado_da_passagem;
 }
 public function set_estado_da_passagem($estado_f): void {
@@ -84,33 +67,63 @@ public function set_estado_da_passagem($estado_f): void {
         if (!array_key_exists($estado_f, self::$dict_estados)){
             throw new Exception("\nErro: estado da passagem inválido");
         }
+        else{
+            if(isset($this->estado_da_passagem)){
+                $objectBefore = $this->estado_da_passagem;
+                $this->estado_da_passagem = $estado_f;
+                $objectAfter = $this->estado_da_passagem;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }
+            else{
+                $objectBefore = null;
+                $this->estado_da_passagem = $estado_f;
+                $objectAfter = $this->estado_da_passagem;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+            }
+        }
     }catch (Exception $e){
         echo $e->getMessage();
     }
     $this->estado_da_passagem = self::$dict_estados[$estado_f];
 }
 public function get_preco(): float{
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->preco;
 }
 public function get_voo(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->voo;
 }
 public function get_tarifa(): float{
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->voo->get_aviao()->get_companhia_aerea()->get_tarifa();    
 }
 public function get_cliente(): Passageiro{
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->passageiro;
 }
 public function get_origem(): Aeroporto{
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->voo->get_origem();
 }
 public function get_destino(): Aeroporto{
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->voo->get_destino();
 }
 public function get_franquia(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->franquia;
 }
 public function get_nbagagens(): int{
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->passageiro->get_nbagagens();
 }
 public static function get_passagens(string $cpf_passageiro_f): array{
@@ -121,6 +134,9 @@ public static function get_passagens(string $cpf_passageiro_f): array{
             $passagens_p[] = $passagens1;
         }
     } 
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
+    
     usort($passagens_p, function($a, $b){
         $hora_saida_a = $a->voo->get_hora_agenda_saida();
         $hora_saida_b = $b->voo->get_hora_agenda_saida();
@@ -155,18 +171,32 @@ public function comprar_bagagem(): float{
 //     } return $new_passagens;
 // }
 public function set_voo($origem_f, $destino_f): void{
+    try {
     echo "\nVerificando conexão";
+
+    $objectBefore = $this->voo;
     $voos = self::verificar_conexão($origem_f, $destino_f);
+    $objectAfter = $voos[0];
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     //array to string conversion
+    $objectBefore = $this->conexao;
     $this->voo = $voos[0];
     $this->conexao = $voos[1];
+    $objectAfter = $this->conexao;
+    new logEscrita(get_called_class(),$objectBefore, $objectAfter);
+    }catch (Exception $e){
+        echo $e->getMessage();
+    }
 }
 
 
 public function set_cliente($cliente_f): void{
     try {
         if ($cliente_f instanceof Passageiro){
+            $objectBefore = $this->passageiro;
             $this->passageiro = $cliente_f;
+            $objectAfter = $this->passageiro;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         } else {
             throw new InvalidArgumentException("\nErro: o cliente não existe");
         }
@@ -176,13 +206,17 @@ public function set_cliente($cliente_f): void{
 }
 public function verificar_conexão(Aeroporto $origem, Aeroporto $destino) {
     try{
-        $voos_proximos = VooPlanejado::buscar_proximos_voos();
+        $objectBefore = VooPlanejado::buscar_proximos_voos();
+        $voos_proximos = $objectBefore;
         $voos = [];
         // Verifica se existe algum voo direto
         foreach ($voos_proximos as $voo) {
             if ($voo->get_origem() === $origem && $voo->get_destino() === $destino) {
                 array_push($voos, $voo, null);
                 echo "\nVoo direto";
+
+                $objectAfter = $voos;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
                 return $voos;
             }
         }
@@ -194,6 +228,9 @@ public function verificar_conexão(Aeroporto $origem, Aeroporto $destino) {
                     if ($voo_conexao->get_destino() === $destino && $voo->get_hora_agenda_chegada() <= $voo_conexao->get_hora_agenda_saida()) {
                         array_push($voos, $voo, $voo_conexao);
                         echo "\nVoo com conexão";
+
+                        $objectAfter = $voos;
+                        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
                         return $voos;
                     }
                 }
@@ -205,25 +242,44 @@ public function verificar_conexão(Aeroporto $origem, Aeroporto $destino) {
     }
 }
 public function cancelar_passagem(): void{
+    $objectBefore = $this->estado_da_passagem;
     $this->set_estado_da_passagem(1);
+    $objectAfter = $this->estado_da_passagem;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     //liberar assento
     $this->voo->liberar_assento($this->passageiro->get_assento());
     echo "\nPassagem cancelada";
     if($this->preco>$this->voo->get_multa()){
     $a=$this->preco-$this->voo->get_multa();
+
+    $objectBefore = $this->get_origem();
+    $objectAfter = $this->get_destino();
+
+    $objectBefore = $a;
     $this->usuario_->passagem_cancelada($a,$this->get_origem(),$this->get_destino());
-    }
-    else{
+    $objectAfter = null;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
     $a=0.00;
+
+    $objectBefore = $this->get_origem();
+    $objectAfter = $this->get_destino();
+    $objectBefore = $a;
     $this->usuario_->passagem_cancelada($a,$this->get_origem(),$this->get_destino());
+    $objectAfter = null;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 
     }
 }
 
 public function get_cartao_de_embarque1(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->cartao_de_embarque1;
 }
 public function get_cartao_de_embarque2(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->cartao_de_embarque2;
 }
 
@@ -236,9 +292,16 @@ public function realizar_check_in(): void{
         $horario_partida = $this->voo->get_hora_agenda_saida();
         $diferenca_horas = $horario_partida->diff($now)->h;
         $diferenca_minutos = $horario_partida->diff($now)->i;
+
+        $objectBefore = $this->get_estado_da_passagem();
+
         if ($diferenca_horas <= 48 || ($diferenca_horas == 0 && $diferenca_minutos >= 30)) {
             if ($this->get_estado_da_passagem() == "Passagem Adquirida"){
+
+                $objectBefore = $this->get_estado_da_passagem();
                 $this->set_estado_da_passagem(2);
+                $objectAfter = $this->get_estado_da_passagem();
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
                 echo "\nCheck-in realizado";
 
                 $this->cartao_de_embarque1 = new CartaoDeEmbarque($this->voo,$this->passageiro);
@@ -259,7 +322,10 @@ public function realizar_check_in(): void{
     }
 }
 public function set_no_show(): void{
+    $objectBefore = $this->get_estado_da_passagem();
     $this->set_estado_da_passagem(3);
+    $objectAfter = $this->get_estado_da_passagem();
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     echo "\nNo show registrado";
 }
 
@@ -276,6 +342,8 @@ public function string_passagem(): string{
 
 public function set_franquia($franquia_f): void {//entre 0 e 3
     try {
+        $objectBefore = $this->franquia;
+
         if ($franquia_f < 0){
             throw new Exception("\nFranquia não pode ser negativa");
         }
@@ -283,7 +351,10 @@ public function set_franquia($franquia_f): void {//entre 0 e 3
             throw new Exception("\nFranquia maxima eh 3");
         }
         else{
+            $objectBefore = $this->franquia;
             $this->franquia = $franquia_f;
+            $objectAfter = $this->franquia;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         }
     } catch (Exception $e) {
         echo $e->getMessage();
@@ -291,6 +362,8 @@ public function set_franquia($franquia_f): void {//entre 0 e 3
 }
 
 public function set_preco($franquia_f){
+    $objectBefore = $this->preco;
+
     if($this->passageiro->get_vip() == false){ //Nao vip
     if($this->conexao == null){//nao vip sem conexao
       $a= $this->voo->get_aviao();
@@ -335,12 +408,19 @@ public function set_preco($franquia_f){
               }
     }
 }
+$objectAfter = $this->preco;
+new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
     public function set_usuario($usuario_f){
+        $objectBefore = $this->usuario_;
         $this->usuario_=$usuario_f;
+        $objectAfter = $this->usuario_;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
 
     public function get_usuario(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->usuario_;
     }
 }

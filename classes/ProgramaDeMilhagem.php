@@ -27,41 +27,28 @@ class ProgramaDeMilhagem extends persist{
         $this->set_nome($nome);
         $this->set_companhia($companhia);
     }
-    public function gerarLogLeitura($entity, $attribute)
-{
-    // Implementação do log de leitura específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Attribute: " . $attribute . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logLeitura.txt', $log, FILE_APPEND);
-}
-public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
-    // Implementação do log de escrita específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Object before: " . $objectBefore . "\n";
-    $log .= "   Object after: " . $objectAfter . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logEscrita.txt', $log, FILE_APPEND);
-}
+    
     public function get_nome(): string{
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->nome;
     }
     public function set_nome(string $nome): void{
+        $objectBefore = $this->nome;
         $this->nome = $nome;
+        $objectAfter = $this->nome;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function get_companhia(): CompanhiaAerea{
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->companhia;
     }
     public function set_companhia(CompanhiaAerea $companhia): void{
+        $objectBefore = $this->companhia;
         $this->companhia = $companhia;
+        $objectAfter = $this->companhia;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function get_categoria($pontos): int{
         foreach(self::$categoria as $key => $value){
@@ -69,6 +56,8 @@ public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
                 $categoria = $key;
             }
         }
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $categoria;
     }
     public function get_pontos_categoria($categoria): int{
@@ -77,6 +66,8 @@ public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
                 $pontos = $value;
             }
         }
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $pontos;
     }
     public function get_desconto($categoria, $valor): float{
@@ -86,6 +77,8 @@ public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
             }
         }
         $desconto = $valor * $porcentagem;
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $desconto;
     }
 
