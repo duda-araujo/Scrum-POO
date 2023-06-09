@@ -26,6 +26,11 @@ public static $dict_estados = [
     5 => "Check-in Não Realizado"
 ];
 public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f, int $franquia_f,Usuario $usuario_f){
+    try{
+        if(Sistema::checkSessionState()==FALSE){
+            throw new Exception("usuario nao foi inicializado");
+        }
+        else{
     $this->set_usuario($usuario_f);
     $this->set_voo($origem_f, $destino_f);
     $this->set_cliente($passageiro_f);
@@ -39,7 +44,10 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
     self::$passagens[] = $this;
     $this->usuario_->passagem_comprada($this->get_preco(),$origem_f,$destino_f);
     // $this->set_ordem_cronologica();
-
+}
+}catch(Exception $e){
+    echo $e->getMessage();
+}
 }
 
 public function Pontos_do_voo(DateTime $t,int $p){

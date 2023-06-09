@@ -20,6 +20,11 @@ protected CompanhiaAerea $companhiaAerea;
 protected Aeroporto $Aeroporto_base;
 
 public function __construct($nome_p,$sobrenome_p,$documento_p,$cpf_p,$nacionalidade_p,DateTime $data_nascimento_p,$email_p,$cht_p,$logradouro_p,$numero_p,$bairro_p,$cidade_p,$estado_p,$Aerop_base_p,$companhiaAerea_p ){
+  try{
+    if(Sistema::checkSessionState()==FALSE){
+        throw new Exception("usuario nao foi inicializado");
+    }
+    else{
     $this->set_nome($nome_p);
     $this->set_sobrenome($sobrenome_p);
     $this->set_documento($documento_p);
@@ -36,6 +41,10 @@ public function __construct($nome_p,$sobrenome_p,$documento_p,$cpf_p,$nacionalid
     $this->set_origem($Aerop_base_p);
     $companhiaAerea_p->set_tripulacao($this);
     $companhiaAerea_p->set_piloto($this);
+  }
+}catch(Exception $e){
+    echo $e->getMessage();
+}
 }
 static public function getFilename() {
     return get_called_class();

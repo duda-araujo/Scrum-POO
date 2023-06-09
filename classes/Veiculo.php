@@ -9,10 +9,19 @@ class Veiculo extends persist{
     protected int $capacidade;
     protected int $velocidade_media = 18;
     public function __construct(CompanhiaAerea $companhia_f, Aeroporto $aeroporto_f, string $modelo_f, int $capacidade_f){
+        try{
+            if(Sistema::checkSessionState()==FALSE){
+                throw new Exception("usuario nao foi inicializado");
+            }
+            else{
         $this->companhia = $companhia_f;
         $this->aeroporto = $aeroporto_f;
         $this->modelo = $modelo_f;
         $this->capacidade = $capacidade_f;
+    }
+}catch(Exception $e){
+    echo $e->getMessage();
+}
     }
     static public function getFilename() {
         return get_called_class();

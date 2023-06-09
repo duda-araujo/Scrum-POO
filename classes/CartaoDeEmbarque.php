@@ -15,7 +15,11 @@ protected string $assento;
 
 
 public function __construct($voo_planejado_f,$passageiro_f){
-Sistema::checkSessionState();
+  try{
+    if(Sistema::checkSessionState()==FALSE){
+        throw new Exception("usuario nao foi inicializado");
+    }
+    else{
 $this->set_nome($passageiro_f->get_nome_passageiro());
 $this->set_sobrenome($passageiro_f->get_sobrenome_passageiro());
 $this->set_origem($voo_planejado_f->get_origem());
@@ -23,6 +27,10 @@ $this->set_destino($voo_planejado_f->get_destino());
 $this->set_horario_viagem($voo_planejado_f->get_hora_agenda_saida());
 $this->set_assento($passageiro_f->get_assento());
 $this->set_horario_embarque();
+}
+}catch(Exception $e){
+    echo $e->getMessage();
+}
 }
 static public function getFilename() {
     return get_called_class();

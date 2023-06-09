@@ -6,10 +6,19 @@ class GoogleMapsAPI extends persist
     
     public function __construct()
     {
-        Sistema::checkSessionState();
+        try{
+            if(Sistema::checkSessionState()==FALSE){
+                throw new Exception("usuario nao foi inicializado");
+            }
+            else{
+            
         $this->ch = curl_init();
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, false);
+    }
+}catch(Exception $e){
+    echo $e->getMessage();
+}
     }
     static public function getFilename() {
         return get_called_class();

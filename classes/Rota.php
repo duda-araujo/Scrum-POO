@@ -19,11 +19,20 @@ class Rota extends persist{
 
     
     public function __construct($aeroporto_f, $veiculo_f,$tripulacao_f,$voo_f) {
+        try{
+            if(Sistema::checkSessionState()==FALSE){
+                throw new Exception("usuario nao foi inicializado");
+            }
+            else{
         $this->set_aeroporto($aeroporto_f);
         $this->set_veiculo($veiculo_f);
         $this->set_tripulacao($tripulacao_f);
         $this->set_voo($voo_f);
         $this->set_hora_transporte();
+    }
+}catch(Exception $e){
+    echo $e->getMessage();
+}
     }
 
     static public function getFilename() {
