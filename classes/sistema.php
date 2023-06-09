@@ -15,7 +15,11 @@ class Sistema extends persist{
             return false;
             #throw new Exception("Não existe um usuário logado");
         }else {
-            self::checkLoginTime();
+            if(self::checkLoginTime()){
+                return true;
+            }else{
+                return false;
+            }
         }
     }
     public static function checkLoginTime(){
