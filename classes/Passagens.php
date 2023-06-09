@@ -174,7 +174,12 @@ public function set_voo($origem_f, $destino_f): void{
     try {
     echo "\nVerificando conexão";
 
-    $objectBefore = $this->voo;
+    if(isset($this->voo)){
+        $objectBefore = $this->voo;
+      }
+      else{
+        $objectBefore = null;
+      }
     $voos = self::verificar_conexão($origem_f, $destino_f);
     $objectAfter = $voos[0];
     new logEscrita(get_called_class(), $objectBefore, $objectAfter);
@@ -193,7 +198,12 @@ public function set_voo($origem_f, $destino_f): void{
 public function set_cliente($cliente_f): void{
     try {
         if ($cliente_f instanceof Passageiro){
-            $objectBefore = $this->passageiro;
+            if(isset($this->passageiro)){
+                $objectBefore = $this->preco;
+              }
+              else{
+                $objectBefore = null;
+              }
             $this->passageiro = $cliente_f;
             $objectAfter = $this->passageiro;
             new logEscrita(get_called_class(), $objectBefore, $objectAfter);
@@ -342,8 +352,6 @@ public function string_passagem(): string{
 
 public function set_franquia($franquia_f): void {//entre 0 e 3
     try {
-        $objectBefore = $this->franquia;
-
         if ($franquia_f < 0){
             throw new Exception("\nFranquia não pode ser negativa");
         }
@@ -351,7 +359,12 @@ public function set_franquia($franquia_f): void {//entre 0 e 3
             throw new Exception("\nFranquia maxima eh 3");
         }
         else{
-            $objectBefore = $this->franquia;
+            if(isset($this->franquia)){
+                $objectBefore = $this->franquia;
+              }
+              else{
+                $objectBefore = null;
+              }
             $this->franquia = $franquia_f;
             $objectAfter = $this->franquia;
             new logEscrita(get_called_class(), $objectBefore, $objectAfter);
@@ -362,14 +375,20 @@ public function set_franquia($franquia_f): void {//entre 0 e 3
 }
 
 public function set_preco($franquia_f){
-    $objectBefore = $this->preco;
-
+    if(isset($this->preco)){
+        $objectBefore = $this->preco;
+      }
+      else{
+        $objectBefore = null;
+      }
     if($this->passageiro->get_vip() == false){ //Nao vip
     if($this->conexao == null){//nao vip sem conexao
       $a= $this->voo->get_aviao();
       $b=$a->get_companhia_aerea();
       $c=$b->get_preco_bagagem();
       $this->preco=$this->voo->get_preco_trajeto() + $franquia_f * $c;
+      $objectAfter = $this->preco;
+      new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
     else {//nao vip com conexao
       $a= $this->voo->get_aviao();
@@ -378,41 +397,56 @@ public function set_preco($franquia_f){
       $d= $this->conexao->get_aviao();
       $e=$d->get_companhia_aerea();
       $f=$e->get_preco_bagagem();
+      if(isset($this->preco)){
+        $objectBefore = $this->preco;
+      }
+      else{
+        $objectBefore = null;
+      }
       $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto() + $franquia_f *($c + $f);
+      $objectAfter = $this->preco;
+      new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
 }
     else{//vip
-            if($this->conexao == null){//vip sem conexao
-              $a= $this->voo->get_aviao();
-              $b=$a->get_companhia_aerea();
-              $c=$b->get_preco_bagagem();
-              if($franquia_f!=0){//vip sem conexao e com bagagem
-              $this->preco=$this->voo->get_preco_trajeto() + ($franquia_f - 1) * ($c/2);
-              }
-              else{//vip sem conexao sem bagagem
-              $this->preco=$this->voo->get_preco_trajeto();
-              }
+        if($this->conexao == null){//vip sem conexao
+            $a= $this->voo->get_aviao();
+            $b=$a->get_companhia_aerea();
+            $c=$b->get_preco_bagagem();
+            if($franquia_f!=0){//vip sem conexao e com bagagem
+            $this->preco=$this->voo->get_preco_trajeto() + ($franquia_f - 1) * ($c/2);
+            }
+            else{//vip sem conexao sem bagagem
+            $this->preco=$this->voo->get_preco_trajeto();
+            }
+            $objectAfter = $this->preco;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         }
-            else {//vip com conexao
-              $a= $this->voo->get_aviao();
-              $b=$a->get_companhia_aerea();
-              $c=$b->get_preco_bagagem();
-              $d= $this->conexao->get_aviao();
-              $e=$d->get_companhia_aerea();
-              $f=$e->get_preco_bagagem();
-              if($franquia_f !=0){//vip com conexao e bagagem
-              $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto() + ($franquia_f - 1) *(($c + $f)/2);
-              }
-              else{//vip com conexao sem bagagem
-              $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto();
-              }
+        else {//vip com conexao
+            $a= $this->voo->get_aviao();
+            $b=$a->get_companhia_aerea();
+            $c=$b->get_preco_bagagem();
+            $d= $this->conexao->get_aviao();
+            $e=$d->get_companhia_aerea();
+            $f=$e->get_preco_bagagem();
+            if($franquia_f !=0){//vip com conexao e bagagem
+            $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto() + ($franquia_f - 1) *(($c + $f)/2);
+            }
+            else{//vip com conexao sem bagagem
+            $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto();
+            }
     }
 }
 $objectAfter = $this->preco;
 new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
     public function set_usuario($usuario_f){
-        $objectBefore = $this->usuario_;
+        if(isset($this->usuario_)){
+            $objectBefore = $this->usuario_;
+        }
+        else{
+            $objectBefore = null;
+        }
         $this->usuario_=$usuario_f;
         $objectAfter = $this->usuario_;
         new logEscrita(get_called_class(), $objectBefore, $objectAfter);

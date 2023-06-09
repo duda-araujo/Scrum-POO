@@ -41,91 +41,173 @@ static public function getFilename() {
     return get_called_class();
   }
 public function set_nome($nome_p){
-    $objectBefore = $this->nome;
+    if(isset($this->nome)){
+        $objectBefore = $this->nome;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->nome = $nome_p;
     $objectAfter = $this->nome;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 
 }
 public function set_sobrenome($sobrenome_p){
-    $objectBefore = $this->sobrenome;
+    if(isset($this->sobrenome)){
+        $objectBefore = $this->sobrenome;
+      }
+      else{
+        $objectBefore = null;
+      }
     $this->sobrenome = $sobrenome_p;
     $objectAfter = $this->sobrenome;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_documento($documento_p){
-    $objectBefore = $this->documento;
+    if(isset($this->documento)){
+        $objectBefore = $this->documento;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->documento = $documento_p;
     $objectAfter = $this->documento;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_cpf($cpf_p){
-    $objectBefore = $this->cpf;
+    if(isset($this->cpf)){
+        $objectBefore = $this->cpf;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->cpf = $cpf_p;
     $objectAfter = $this->cpf;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_nacionalidade($nacionalidade_p){
-    $objectBefore = $this->nacionalidade;
+    if(isset($this->nacionalidade)){
+        $objectBefore = $this->nacionalidade;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->nacionalidade = $nacionalidade_p;
     $objectAfter = $this->nacionalidade;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_data_nascimento(DateTime $data_nascimento_p){
-    $objectBefore = $this->data_nascimento;
+    if(isset($this->data_nascimento)){
+        $objectBefore = $this->data_nascimento;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->data_nascimento = $data_nascimento_p;
     $objectAfter = $this->data_nascimento;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_email($email_p){
-    $objectBefore = $this->email;
+    if(isset($this->email)){
+        $objectBefore = $this->email;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->email = $email_p;
     $objectAfter = $this->email;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_cht($cht_p){
-    $objectBefore = $this->cht;
+    if(isset($this->cht)){
+        $objectBefore = $this->cht;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->cht = $cht_p;
     $objectAfter = $this->cht;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_logradouro($logradouro_p){
-    $objectBefore = $this->logradouro;
+    if(isset($this->logradouro)){
+        $objectBefore = $this->logradouro;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->logradouro = $logradouro_p;
     $objectAfter = $this->logradouro;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_numero($numero_p){
-    $objectBefore = $this->numero;
+    if(isset($this->numero)){
+        $objectBefore = $this->numero;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->numero = $numero_p;
     $objectAfter = $this->numero;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_bairro($bairro_p){
-    $objectBefore = $this->bairro;
+    if(isset($this->bairro)){
+        $objectBefore = $this->bairro;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->bairro = $bairro_p;
     $objectAfter = $this->bairro;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_cidade($cidade_p){
-    $objectBefore = $this->cidade;
+    if(isset($this->cidade)){
+        $objectBefore = $this->cidade;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->cidade = $cidade_p;
     $objectAfter = $this->cidade;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_estado($estado_p){
-    $objectBefore = $this->estado;
+    if(isset($this->estado)){
+        $objectBefore = $this->estado;
+      }
+      else{
+        $objectBefore = null;
+      }
+
     $this->estado = $estado_p;
     $objectAfter = $this->estado;
     new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_origem($Aerop_base_p): void {
     try {
-        $objectBefore = $this->Aeroporto_base;
+        if(isset($this->Aeroporto_base)){
+            $objectBefore = $this->Aeroporto_base;
+          }
+          else{
+            $objectBefore = null;
+          }
         if ($Aerop_base_p instanceof Aeroporto){
+            $this->Aeroporto_base = $Aerop_base_p;
             $objectAfter = $this->Aeroporto_base;
             new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
-            $this->Aeroporto_base = $Aerop_base_p;
         } else{
             throw new Exception("\nAeroporto base invalido");
         }
@@ -135,7 +217,13 @@ public function set_origem($Aerop_base_p): void {
 }
 public function set_companhia(CompanhiaAerea $companhia_aerea_p){
     try {
-        $objectBefore = $this->companhiaAerea;
+        if(isset($this->companhiaAerea)){
+            $objectBefore = $this->companhiaAerea;
+          }
+          else{
+            $objectBefore = null;
+          }
+
         if ($companhia_aerea_p instanceof CompanhiaAerea==false){
             throw new Exception("Companhia Aérea inválida");
         }

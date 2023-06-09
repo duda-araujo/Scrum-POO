@@ -26,37 +26,61 @@ class Usuario extends persist{
       }
       
     public function set_nome($nome_u){
-        $objectBefore = $this->nome;
+        if(isset($this->nome)){
+            $objectBefore = $this->nome;
+        }else{
+            $objectBefore = null;
+        }
         $this->nome = $nome_u;
         $objectAfter = $this->nome;
         new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_sobrenome($sobrenome_u){
-        $objectBefore = $this->sobrenome;
+        if(isset($this->sobrenome)){
+            $objectBefore = $this->sobrenome;
+        }else{
+            $objectBefore = null;
+        }
         $this->sobrenome = $sobrenome_u;
         $objectAfter = $this->sobrenome;
         new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_email($email_u){
-        $objectBefore = $this->email;
+        if(isset($this->email)){
+            $objectBefore = $this->email;
+        }else{
+            $objectBefore = null;
+        }
         $this->email = $email_u;
         $objectAfter = $this->email;
         new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_login($login_u){
-        $objectBefore = $this->login;
+        if(isset($this->login)){
+            $objectBefore = $this->login;
+        }else{
+            $objectBefore = null;
+        }
         $this->login = $login_u;
         $objectAfter = $this->login;
         new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_senha($senha_u){
-        $objectBefore = $this->senha;
+        if(isset($this->senha)){
+            $objectBefore = $this->senha;
+        }else{  
+            $objectBefore = null;
+        }
         $this->senha = $senha_u;
         $objectAfter = $this->senha;
         new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_passagens($passagem_f){
-        $objectBefore = $this->passagens;
+        if(isset($this->passagens)){
+            $objectBefore = $this->passagens;
+        }else{
+            $objectBefore = null;
+        }
         $this->passagens[] = $passagem_f;
         $objectAfter = $this->passagens;
         new LogEscrita(get_called_class(), $objectBefore, $objectAfter);

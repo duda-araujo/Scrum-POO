@@ -31,6 +31,7 @@ public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_b
 static public function getFilename() {
     return get_called_class();
 }
+
 public function valida_sigla_companhia($sigla_f){
 // Deve ser formado por 2 letras
     if (ctype_alpha($sigla_f) && strlen($sigla_f) == 2){
@@ -122,17 +123,14 @@ public function set_tarifa($tarifa_f){
         throw new Exception("Tarifa tem que ser positiva\n");
     }
     else{
-        if(isset($tarifa_f)){
+        if(isset($this->tarifa)){
             $objectBefore = $this->tarifa;
-            $this->tarifa=round($tarifa_f,2);
-            $objectAfter = $this->tarifa;
-            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         }else{
             $objectBefore = null;
-            $this->tarifa=round($tarifa_f,2);
-            $objectAfter = $this->tarifa;
-            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         }
+        $this->tarifa = $tarifa_f;
+        $objectAfter = $this->tarifa;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         
     }
 }catch(Exception $e){
@@ -144,7 +142,7 @@ public function set_nome_comp($nome_f){
     // Deve ser formado apenas por letras e espaços
     try{
         if (ctype_alpha(str_replace(' ', '', $nome_f))){
-            if (isset($nome_f)){
+            if (isset($this->nome)){
                 $objectBefore = $this->nome;
                 $this->nome = $nome_f;
                 $objectAfter = $this->nome;
@@ -166,7 +164,7 @@ public function set_nome_comp($nome_f){
 public function set_razao($razao_f){
     try{
         if (is_string($razao_f)){
-            if(isset($razao_f)){
+            if(isset($this->razao_social)){
                 $objectBefore = $this->razao_social;
                 $this->razao_social = $razao_f;
                 $objectAfter = $this->razao_social;
@@ -188,7 +186,7 @@ public function set_razao($razao_f){
 public function set_codigo($codigo){
     try{
         if (ctype_digit($codigo)){
-            if(isset($codigo)){
+            if(isset($this->codigo)){
                 $objectBefore = $this->codigo;
                 $this->codigo = $codigo;
                 $objectAfter = $this->codigo;
@@ -209,7 +207,7 @@ public function set_codigo($codigo){
 public function set_cnpj($cnpj_f){
     try{
         if ($this->valida_cnpj($cnpj_f)){
-            if(isset($cnpj_f)){
+            if(isset($this->cnpj)){
                 $objectBefore = $this->cnpj;
                 $this->cnpj = $cnpj_f;
                 $objectAfter = $this->cnpj;
@@ -230,7 +228,7 @@ public function set_cnpj($cnpj_f){
 public function set_sigla($sigla_f){
     try{
         if ($this->valida_sigla_companhia($sigla_f)){
-            if(isset($sigla_f)){
+            if(isset($this->sigla)){
                 $objectBefore = $this->sigla;
                 $this->sigla = $sigla_f;
                 $objectAfter = $this->sigla;
@@ -249,7 +247,7 @@ public function set_sigla($sigla_f){
     }
 }
 public function set_avioes($avioes_f){
-    if(isset($avioes_f)){
+    if(isset($this->avioes)){
         $objectBefore = $this->avioes;
         $this->avioes[] = $avioes_f;
         $objectAfter = $this->avioes;
@@ -262,17 +260,14 @@ public function set_avioes($avioes_f){
     }
 }
 public function set_preco_bagagem($preco_bagagem_f){
-    if(isset($preco_bagagem_f)){
+    if(isset($this->preco_bagagem)){
         $objectBefore = $this->preco_bagagem;
-        $this->preco_bagagem = $preco_bagagem_f;
-        $objectAfter = $this->preco_bagagem;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }else{
         $objectBefore = null;
-        $this->preco_bagagem = $preco_bagagem_f;
-        $objectAfter = $this->preco_bagagem;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
+    $this->preco_bagagem = $preco_bagagem_f;
+    $objectAfter = $this->preco_bagagem;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function set_tripulacao($tripulacao_f){
     if(isset($tripulacao_f)){

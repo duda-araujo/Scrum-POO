@@ -1,4 +1,4 @@
-<?
+<?php
 class logLeitura extends Log{
     protected $attribute;
     public function __construct($entity, $attribute){
@@ -7,7 +7,7 @@ class logLeitura extends Log{
         $this->gerarLog();
     }
     protected function gerarLog(){
-        $this->gerarLogLeitura(parent::$entity, $this->attribute);
+        $this->gerarLogLeitura(self::$entity, $this->attribute);
     }
     static public function getFilename() {
         return get_called_class();
@@ -15,7 +15,7 @@ class logLeitura extends Log{
     protected function gerarLogLeitura($entity, $attribute){
     // Implementação do log de leitura específico para Aeroporto
     $log = "\nUser: " . "Usuário - ";
-    $dateTime = parent::$dateTime->format('Y-m-d H:i:s');
+    $dateTime = self::$dateTime->format('Y-m-d H:i:s');
     $log .= "Date/Time: " . $dateTime . "\n";
     $log .= "   Entity: " . $entity . "\n";
     $log .= "       Attribute: " . $attribute . "\n";

@@ -34,7 +34,11 @@ class ProgramaDeMilhagem extends persist{
         return $this->nome;
     }
     public function set_nome(string $nome): void{
-        $objectBefore = $this->nome;
+        if(isset($this->nome)){
+            $objectBefore = $this->nome;
+        }else{
+            $objectBefore = null;
+        }
         $this->nome = $nome;
         $objectAfter = $this->nome;
         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
@@ -45,7 +49,11 @@ class ProgramaDeMilhagem extends persist{
         return $this->companhia;
     }
     public function set_companhia(CompanhiaAerea $companhia): void{
-        $objectBefore = $this->companhia;
+        if(isset($this->companhia)){
+            $objectBefore = $this->companhia;
+        }else{
+            $objectBefore = null;
+        }
         $this->companhia = $companhia;
         $objectAfter = $this->companhia;
         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
