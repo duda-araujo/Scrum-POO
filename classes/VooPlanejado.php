@@ -55,53 +55,47 @@ public function voo_com_frequencia($frequencia){//frequencia eh um valor de zero
     if($frequencia==0){
         return 0;
     }
-    else if($frequencia==1){
-        for ($i=1; $i<365; $i++){
-        $dias=$i;
-        $a=$this->hora_agendada_saida;
-        $b=$a->modify("+{$dias} days");
-        $c=$this->hora_agendada_chegada;
-        $d=$c->modify("+{$dias} days");
-        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
-        }
-        echo "\nVoo diário planejado com sucesso!\n";
-    }
-    else if($frequencia==2){
-        for ($i=1; $i<52; $i++){
-        $dias=7*$i;
-        $a=$this->hora_agendada_saida;
-        $b=$a->modify("+{$dias} days");
-        $c=$this->hora_agendada_chegada;
-        $d=$c->modify("+{$dias} days");
-        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
-      
-        }
-        echo "\nVoo semanal planejado com sucesso!\n";
-    }
-    else if($frequencia==3){
-       for ($i=1; $i<26; $i++){
-        $dias=15*$i;
-        $a=$this->hora_agendada_saida;
-        $b=$a->modify("+{$dias} days");
-        $c=$this->hora_agendada_chegada;
-        $d=$c->modify("+{$dias} days");
-        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
-        }
-        echo "\nVoo quinzenal planejado com sucesso!\n";
-    }
-    else if($frequencia==4){
-        for ($i=1; $i<12; $i++){
-        $mes=1*$i;
-        $a=$this->hora_agendada_saida;
-        $b=$a->modify("+{$mes} month");
-        $c=$this->hora_agendada_chegada;
-        $d=$c->modify("+{$mes} month");
-        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
-        }
-        echo "\nVoo mensal planejado com sucesso!\n";
-    }
-    else{
-        return 0;
+    switch($frequencia){
+        case 1:
+            for ($i = 1; $i<= 365; $i++){
+                $saida = clone $this->hora_agendada_saida;
+                $chegada = clone $this->hora_agendada_chegada;
+                $saida->modify("+{$i} days");
+                $chegada->modify("+{$i} days");
+                $voo = new VooPlanejado($this->codigo, $this->Aeroporto_origem, $this->Aeroporto_destino, $chegada, $saida, $this->Aviao, $this->preco_trajeto, $this->pontos_viagem, $this->multa);
+            }
+            break;
+        case 2:
+            for ($i = 1; $i<= 52; $i++){
+                $saida = clone $this->hora_agendada_saida;
+                $chegada = clone $this->hora_agendada_chegada;
+                $saida->modify("+{$i} weeks");
+                $chegada->modify("+{$i} weeks");
+                $voo = new VooPlanejado($this->codigo, $this->Aeroporto_origem, $this->Aeroporto_destino, $chegada, $saida, $this->Aviao, $this->preco_trajeto, $this->pontos_viagem, $this->multa);
+            }
+            break;
+        case 3:
+            for ($i = 1; $i<= 26; $i++){
+                $quinzenal = $i*2;
+                $saida = clone $this->hora_agendada_saida;
+                $chegada = clone $this->hora_agendada_chegada;
+                $saida->modify("+{$quinzenal} weeks");
+                $chegada->modify("+{$quinzenal} weeks");
+                $voo = new VooPlanejado($this->codigo, $this->Aeroporto_origem, $this->Aeroporto_destino, $chegada, $saida, $this->Aviao, $this->preco_trajeto, $this->pontos_viagem, $this->multa);
+            }
+            break;
+        case 4:
+            for ($i = 1; $i<= 12; $i++){
+                $saida = clone $this->hora_agendada_saida;
+                $chegada = clone $this->hora_agendada_chegada;
+                $saida->modify("+{$i} months");
+                $chegada->modify("+{$i} months");
+                $voo = new VooPlanejado($this->codigo, $this->Aeroporto_origem, $this->Aeroporto_destino, $chegada, $saida, $this->Aviao, $this->preco_trajeto, $this->pontos_viagem, $this->multa);
+            }
+            break;
+        default :
+            echo "Frequência inválida";
+            break;
     }
 }
 
