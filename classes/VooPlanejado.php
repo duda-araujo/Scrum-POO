@@ -12,7 +12,7 @@ protected Aeroporto $Aeroporto_destino;
 protected DateTime $hora_agendada_chegada;
 protected DateTime $hora_agendada_saida;
 protected Aeronave $Aviao;
-protected array $Frequencia_voo = ['dia', 'frequencia'];
+// protected array $Frequencia_voo = ['dia', 'frequencia'];
 protected float $preco_trajeto;
 protected float $multa;
 protected array $assentos;
@@ -21,21 +21,21 @@ protected array $passageiros_compraram = [];
 protected int $pontos_viagem;
 public static array $historico_planejado = [];    
 
-public static $dict_frequencias = [
-    '1' => 'Diário',
-    '2' => 'Semanal',
-    '3' => 'Quinzenal',
-    '4' => 'Mensal',
-];
-public static $dict_dias = [
-    '1' => 'Domingo',
-    '2' =>'Segunda',
-    '3' => 'Terça',
-    '4' => 'Quarta',
-    '5' =>'Quinta',
-    '6' => 'Sexta',  
-    '7' => 'Sábado',
-];
+// public static $dict_frequencias = [
+//     '1' => 'Diário',
+//     '2' => 'Semanal',
+//     '3' => 'Quinzenal',
+//     '4' => 'Mensal',
+// ];
+// public static $dict_dias = [
+//     '1' => 'Domingo',
+//     '2' =>'Segunda',
+//     '3' => 'Terça',
+//     '4' => 'Quarta',
+//     '5' =>'Quinta',
+//     '6' => 'Sexta',  
+//     '7' => 'Sábado',
+// ];
 public static $dict_assentos = [
     'A' => 1,
     'B' => 2,
@@ -52,58 +52,53 @@ public static $dict_assentos = [
 ];
 
 public function voo_com_frequencia($frequencia){//frequencia eh um valor de zero a 4
-    if($frequencia=0){
+    if($frequencia==0){
         return 0;
     }
-    else if($frequencia=1){
-        $i=1;
-        while($i<365){
-        $segundos=86400*$i;
+    else if($frequencia==1){
+        for ($i=1; $i<365; $i++){
+        $dias=$i;
         $a=$this->hora_agendada_saida;
-        $b=$a->add(new DateInterval("PT{$segundos}S"));
+        $b=$a->modify("+{$dias} days");
         $c=$this->hora_agendada_chegada;
-        $d=$c->add(new DateInterval("PT{$segundos}S"));
-        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,0,0,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
-        $i++;
+        $d=$c->modify("+{$dias} days");
+        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
         }
         echo "\nVoo diário planejado com sucesso!\n";
     }
-    else if($frequencia=2){
-        $i=1;
-        while($i<52){
-        $segundos=604800*$i;
+    else if($frequencia==2){
+        for ($i=1; $i<52; $i++){
+        $dias=7*$i;
         $a=$this->hora_agendada_saida;
-        $b=$a->add(new DateInterval("PT{$segundos}S"));
+        $b=$a->modify("+{$dias} days");
         $c=$this->hora_agendada_chegada;
-        $d=$c->add(new DateInterval("PT{$segundos}S"));
-        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,0,0,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
-        $i++;
+        $d=$c->modify("+{$dias} days");
+        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
+      
         }
+        echo "\nVoo semanal planejado com sucesso!\n";
     }
-    else if($frequencia=3){
-        $i=1;
-        while($i<26){
-        $segundos=1209600*$i;
+    else if($frequencia==3){
+       for ($i=1; $i<26; $i++){
+        $dias=15*$i;
         $a=$this->hora_agendada_saida;
-        $b=$a->add(new DateInterval("PT{$segundos}S"));
+        $b=$a->modify("+{$dias} days");
         $c=$this->hora_agendada_chegada;
-        $d=$c->add(new DateInterval("PT{$segundos}S"));
-        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,0,0,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
-        $i++;
+        $d=$c->modify("+{$dias} days");
+        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
         }
+        echo "\nVoo quinzenal planejado com sucesso!\n";
     }
-    else if($frequencia=4){
-        $i=1;
-        while($i<12){
-        $segundos=2419200*$i;
+    else if($frequencia==4){
+        for ($i=1; $i<12; $i++){
+        $mes=1*$i;
         $a=$this->hora_agendada_saida;
-        $b=$a->add(new DateInterval("PT{$segundos}S"));
+        $b=$a->modify("+{$mes} month");
         $c=$this->hora_agendada_chegada;
-        $d=$c->add(new DateInterval("PT{$segundos}S"));
-        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,0,0,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
-        $i++;
+        $d=$c->modify("+{$mes} month");
+        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
         }
-
+        echo "\nVoo mensal planejado com sucesso!\n";
     }
     else{
         return 0;
@@ -111,15 +106,14 @@ public function voo_com_frequencia($frequencia){//frequencia eh um valor de zero
 }
 
 public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
-                            $Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, 
-                            $dia_f,$frequencia_voo_f, $preco_f,$pontos_f, $multa_f) {
+                            $Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, $preco_f,$pontos_f, $multa_f) {
     $this->set_aviao($Aviao_f);
     $this->set_codigo($codigo_f);
     $this->set_origem($Aerop_origem_f);
     $this->set_destino($Aerop_destino_f);
     $this->set_hora_agenda_chegada($Hora_agen_chegada_f);
     $this->set_hora_agenda_saida($Hora_agen_saida_f);
-    $this->set_frequencia($frequencia_voo_f, $dia_f); 
+    // $this->set_frequencia($frequencia_voo_f, $dia_f); 
     $this->set_preco_trajeto($preco_f);
     $this->set_multa($multa_f);
     $this->set_pontos_voo($pontos_f);
@@ -173,42 +167,42 @@ public function get_ressarcimento(): float {
     new logLeitura(get_called_class(), $method);
     return $ressarcimento_f;
 }
-public function get_frequencia(): string {
-    //retornar uma string com o dia e a frequencia
-    $str = '';
-    $str .= $this->Frequencia_voo[0];
-    $str .= ' ';
-    $str .= $this->Frequencia_voo[1];
-    $method = __METHOD__;
-    new logLeitura(get_called_class(), $method);
-    return $str;
-}
-public function set_frequencia($frequencia_voo_f, $dia_f): void {
-    $dia = '';
-    $frequencia = '';
-    try{
-        if (isset(self::$dict_frequencias[$frequencia_voo_f])) {
-            $frequencia = self::$dict_frequencias[$frequencia_voo_f];
-        } else {
-            throw new Exception("\nCódigo de frequência inválido.");
-        }
-        if (isset(self::$dict_dias[$dia_f])) {
-            $dia = self::$dict_dias[$dia_f];
-        } else {
-            throw new Exception("\nCódigo de dia inválido.\n");
-        }
-    }catch(Exception $e){
-        echo $e->getMessage();
-    }
-    if (isset($this->Frequencia_voo)){
-        $objectBefore = $this->Frequencia_voo;
-    } else {
-        $objectBefore = null;
-    }
-    $this->Frequencia_voo = [$dia, $frequencia];
-    $objectAfter = $this->Frequencia_voo;
-    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-}
+// public function get_frequencia(): string {
+//     //retornar uma string com o dia e a frequencia
+//     $str = '';
+//     $str .= $this->Frequencia_voo[0];
+//     $str .= ' ';
+//     $str .= $this->Frequencia_voo[1];
+//     $method = __METHOD__;
+//     new logLeitura(get_called_class(), $method);
+//     return $str;
+// }
+// public function set_frequencia($frequencia_voo_f, $dia_f): void {
+//     $dia = '';
+//     $frequencia = '';
+//     try{
+//         if (isset(self::$dict_frequencias[$frequencia_voo_f])) {
+//             $frequencia = self::$dict_frequencias[$frequencia_voo_f];
+//         } else {
+//             throw new Exception("\nCódigo de frequência inválido.");
+//         }
+//         if (isset(self::$dict_dias[$dia_f])) {
+//             $dia = self::$dict_dias[$dia_f];
+//         } else {
+//             throw new Exception("\nCódigo de dia inválido.\n");
+//         }
+//     }catch(Exception $e){
+//         echo $e->getMessage();
+//     }
+//     if (isset($this->Frequencia_voo)){
+//         $objectBefore = $this->Frequencia_voo;
+//     } else {
+//         $objectBefore = null;
+//     }
+//     $this->Frequencia_voo = [$dia, $frequencia];
+//     $objectAfter = $this->Frequencia_voo;
+//     new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+// }
 public function get_origem(): Aeroporto {
     $method = __METHOD__;
     new logLeitura(get_called_class(), $method);
