@@ -37,7 +37,7 @@ public function set_nome($nome_f){
       else{
         $objectBefore = null;
         $this->nome_passageiro = $nome_f;
-        $objectAfter = $this->nome_f;
+        $objectAfter = $this->nome_passageiro;
         new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
       }
     $this->nome_passageiro = $nome_f;
@@ -52,7 +52,7 @@ public function set_sobrenome($sobrenome_f){
       else{
         $objectBefore = null;
         $this->sobrenome_passageiro = $sobrenome_f;
-        $objectAfter = $this->sobrenome_f;
+        $objectAfter = $this->sobrenome_passageiro;
        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
       }
     $this->sobrenome_passageiro = $sobrenome_f;
@@ -67,7 +67,7 @@ public function set_origem($origem_f){
       else{
         $objectBefore = null;
         $this->origem_do_voo = $origem_f;
-        $objectAfter = $this->origem_f;
+        $objectAfter = $this->origem_do_voo;
        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
       }
    
@@ -83,7 +83,7 @@ public function set_destino($destino_f){
       else{
         $objectBefore = null;
         $this->destino_do_voo = $destino_f;
-        $objectAfter = $this->destino_f;
+        $objectAfter = $this->destino_do_voo;
        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
       }
    
@@ -103,11 +103,11 @@ public function set_horario_viagem($horario_f){
       }
       else{
         $objectBefore = null;
-        $this->horario_viagem = $viagem_f;
-        $objectAfter = $this->viagem_f;
+        $this->horario_viagem = $horario_f;
+        $objectAfter = $this->horario_embarque;
        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
       }
-    $this->horario_viagem = $viagem_f;
+    $this->horario_viagem = $horario_f;
 }
 public function set_assento($assento_f){
     if(isset($this->assento)){
@@ -119,7 +119,7 @@ public function set_assento($assento_f){
       else{
         $objectBefore = null;
         $this->assento = $assento_f;
-        $objectAfter = $this->assento_f;
+        $objectAfter = $this->assento;
        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
       }
    
@@ -156,7 +156,7 @@ public function get_destino(){
    new LogLeitura(get_called_class(), $method);
     return $this->destino_do_voo;
 }
-public function get_horario_voo(){
+public function get_horario_viagem(){
     $method = __METHOD__;
     new LogLeitura(get_called_class(), $method);
     return $this->horario_viagem;
@@ -169,7 +169,7 @@ public function get_horario_embarque(){
 public function get_assento(){
     $method = __METHOD__;
     new LogLeitura(get_called_class(), $method);
-    return $this->assent;
+    return $this->assento;
 }
 
 }
