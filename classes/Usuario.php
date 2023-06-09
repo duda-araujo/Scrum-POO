@@ -24,64 +24,71 @@ class Usuario extends persist{
     static public function getFilename() {
         return get_called_class();
       }
-      public function gerarLogLeitura($entity, $attribute)
-      {
-          // Implementação do log de leitura específico para Aeroporto
-          $log = "User: " . "Usuário" . "\n";
-          $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-          $log .= "Date/Time: " . $dateTime . "\n";
-          $log .= "   Entity: " . $entity . "\n";
-          $log .= "   Attribute: " . $attribute . "\n";
       
-          // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-          file_put_contents('logLeitura.txt', $log, FILE_APPEND);
-      }
-      public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
-          // Implementação do log de escrita específico para Aeroporto
-          $log = "User: " . "Usuário" . "\n";
-          $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-          $log .= "Date/Time: " . $dateTime . "\n";
-          $log .= "   Entity: " . $entity . "\n";
-          $log .= "   Object before: " . $objectBefore . "\n";
-          $log .= "   Object after: " . $objectAfter . "\n";
-      
-          // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-          file_put_contents('logEscrita.txt', $log, FILE_APPEND);
-      }
     public function set_nome($nome_u){
+        $objectBefore = $this->nome;
         $this->nome = $nome_u;
+        $objectAfter = $this->nome;
+        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_sobrenome($sobrenome_u){
+        $objectBefore = $this->sobrenome;
         $this->sobrenome = $sobrenome_u;
+        $objectAfter = $this->sobrenome;
+        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_email($email_u){
+        $objectBefore = $this->email;
         $this->email = $email_u;
+        $objectAfter = $this->email;
+        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_login($login_u){
+        $objectBefore = $this->login;
         $this->login = $login_u;
+        $objectAfter = $this->login;
+        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_senha($senha_u){
+        $objectBefore = $this->senha;
         $this->senha = $senha_u;
+        $objectAfter = $this->senha;
+        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_passagens($passagem_f){
+        $objectBefore = $this->passagens;
         $this->passagens[] = $passagem_f;
+        $objectAfter = $this->passagens;
+        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function get_nome(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method); 
         return $this->nome;
     }
     public function get_sobrenome(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->sobrenome;
     }
     public function get_email(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->email;
     }
     public function get_login(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->login;
     }
     public function get_senha(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->senha;
     }
     public function get_passagens(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->passagens;
     }
     // public static function getUsuariosCadastrados(){
@@ -90,19 +97,27 @@ class Usuario extends persist{
     //     return $usuarios_cadastrados;
     // }
     public function realizar_login($login_u, $senha_u){
+        $objectBefore = $this->UsuariosCadastrados;
      
         foreach($this->UsuariosCadastrados as $usuario){
             if($usuario->get_login() == $login_u && $usuario->get_senha() == $senha_u){
                 echo "Login realizado com sucesso!\n";
+
+                $objectAfter = $this->UsuariosCadastrados;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
                 return $usuario;
             }
         }
         echo "Login ou senha incorretos!\n";
     }
     public function cadastrar_usuario(Usuario $usuario_cadastrado) {
+        $objectBefore = $this->UsuariosCadastrados;
         foreach ($this->UsuariosCadastrados as $usuario) {
             if ($usuario->get_login() == $usuario_cadastrado->get_login()) {
                 echo "Login já cadastrado!\n";
+
+                $objectAfter = $this->UsuariosCadastrados;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
                 return;
             }
         }

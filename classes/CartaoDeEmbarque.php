@@ -104,6 +104,7 @@ public function set_horario_viagem($horario_f){
       else{
         $objectBefore = null;
         $this->horario_viagem = $horario_f;
+
         $objectAfter = $this->horario_embarque;
        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
       }
@@ -128,7 +129,7 @@ public function set_assento($assento_f){
 
 public function get_horario_voo(){
     $method = __METHOD__;
-   new LogLeitura(get_called_class(), $method);
+    new LogLeitura(get_called_class(), $method);
     return $this->horario_viagem;
 }
 public function get_passagem(){
@@ -156,11 +157,7 @@ public function get_destino(){
    new LogLeitura(get_called_class(), $method);
     return $this->destino_do_voo;
 }
-public function get_horario_viagem(){
-    $method = __METHOD__;
-    new LogLeitura(get_called_class(), $method);
-    return $this->horario_viagem;
-}
+
 public function get_horario_embarque(){
     $method = __METHOD__;
     new LogLeitura(get_called_class(), $method);
