@@ -13,13 +13,22 @@ protected CompanhiaAerea $CompanhiaAerea_;
 
 
 public function __construct($fabricante_f,$modelo_f,$carga_f,$passageiros_f,$registro_f,$companhiaAerea_f){
-    $this->set_fabricante($fabricante_f);
-    $this->set_modelo($modelo_f);
-    $this->set_carga($carga_f);
-    $this->set_passageiros($passageiros_f);
-    $this->set_registro($registro_f);
-    $this->set_companhia($companhiaAerea_f);
-    $companhiaAerea_f->set_avioes($this);
+    try{
+        if(Sistema::checkSessionState() == false){
+            throw new Exception("Sistema não está em execução\n");
+        }
+        else{
+        $this->set_fabricante($fabricante_f);
+        $this->set_modelo($modelo_f);
+        $this->set_carga($carga_f);
+        $this->set_passageiros($passageiros_f);
+        $this->set_registro($registro_f);
+        $this->set_companhia($companhiaAerea_f);
+        $companhiaAerea_f->set_avioes($this);
+        }
+    }catch(Exception $e){
+        echo $e->getMessage();
+}
 }
 public function validar_registro($registro_f) {
     $prefixo = substr($registro_f, 0, 2);
