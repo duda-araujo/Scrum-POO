@@ -328,36 +328,40 @@ public function get_codigo(): string {
 }
 public function set_codigo($codigo_f): void {
     try {
-      $codigo_valido = $this->validar_codigo($codigo_f, $this->get_aviao());
-        if ($codigo_valido === true) {
-            if(isset($this->codigo)){
-                $objectBefore = $this->codigo;
+        if(isset($this->codigo)){
+            $objectBefore = $this->codigo;
+        } else {
+            $objectBefore = null;
+        }
+        if($this->validar_codigo($codigo_f)){
+            if (substr($codigo_f, 0, 2) != $this->Aviao->get_companhia_aerea()->get_sigla()){
+            $codigoCorrigido = $this->Aviao->get_companhia_aerea()->get_sigla().substr($codigo_f, 2, 4);
+            echo "\nCodigo corrigido para: ".$codigoCorrigido;
             } else {
-                $objectBefore = null;
-            }
-            $this->codigo = $codigo_f;
+            $codigoCorrigido = $codigo_f;
+            }    
+            $this->codigo = $codigoCorrigido;
             $objectAfter = $this->codigo;
             new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-      } else {
-        throw new Exception("\nCodigo invalido");
-      }
+        } else {
+            throw new Exception("\nCodigo invalido");
+        }
     } catch (Exception $e) {
-      echo $e->getMessage();
+    echo $e->getMessage();
     }
   }
+public function validar_codigo($codigo_f){
+    #O codigo deve ser composto por 2 letras seguidas de 4 numeros
+    $letras = substr($codigo_f, 0, 2);
+    $numeros = substr($codigo_f, 2, 4);
+    if (ctype_alpha($letras) && ctype_digit($numeros)){
+        return true;
+    } else {
+        return false;
+    }
+
+}
   
-// public function set_codigo($codigo_f): void {
-//     try {
-//         if ($this->validar_codigo($codigo_f, $this->get_aviao())){
-//             $this->codigo = $codigo_f;
-//         } else{
-//             throw new Exception("\nCodigo invalido");
-            
-//         }
-//     }catch(Exception $e){
-//         echo $e->getMessage();
-//     }
-// }
 public function get_aviao(): Aeronave {
     $method = __METHOD__;
     new logLeitura(get_called_class(), $method);
@@ -520,30 +524,6 @@ public static function proximos_voos_string(): string {
         new logLeitura(get_called_class(), $method);
         return $string;
 }
-public function validar_codigo($codigo, $Aviao_esperado_f) {
-    // Codigo composto por 2 letras e 4 numeros
-    $letras = substr($codigo, 0, 2);
-    $sigla_comp_aerea = $Aviao_esperado_f->get_companhia_aerea()->get_sigla();
-    
-    if ($letras != $sigla_comp_aerea) {
-    //   echo "\nErro: Codigo do voo nao corresponde a companhia aerea";
-    //   echo "\nO codigo esperado deveria ser: " . $Aviao_esperado_f->get_companhia_aerea()->get_sigla();
-      
-      // Alterar o registro com a sigla correta
-      $codigo_corrigido = $sigla_comp_aerea . substr($codigo, 2);
-      //echo "\nCodigo corrigido: " . $codigo_corrigido;
-      $method = __METHOD__;
-      new logLeitura(get_called_class(), $method);
-      return $codigo_corrigido;
-    }
-    
-    $numeros = substr($codigo, 2, 4);
-    if (ctype_alpha($letras) && ctype_digit($numeros)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
 
 public function get_pontos_voo(){
     $method = __METHOD__;

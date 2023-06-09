@@ -1,7 +1,7 @@
 <?php
 require_once "global.php";
-#$usuario = new Usuario("Vinicius", "Cabral", "viniciusmc.2109@gmail.com", "aabbccdd", "123456");
-#new Sistema($usuario);
+$usuario = new Usuario("Vinicius", "Cabral", "viniciusmc.2109@gmail.com", "aabbccdd", "123456");
+new Sistema($usuario);
 $saida = new DateTime("now");
 $chegada = new DateTime("tomorrow");
 $congonhas = new Aeroporto("CNG", "Congonhas", "SP", "Aeroporto de Congonhas");
