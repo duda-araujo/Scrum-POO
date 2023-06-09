@@ -130,40 +130,34 @@ public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
 static public function getFilename() {
     return get_called_class();
 }
-public function gerarLogLeitura($entity, $attribute)
-{
-    // Implementação do log de leitura específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Attribute: " . $attribute . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logLeitura.txt', $log, FILE_APPEND);
-}
-public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
-    // Implementação do log de escrita específico para Aeroporto
-    $log = "User: " . "Usuário" . "\n";
-    $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-    $log .= "Date/Time: " . $dateTime . "\n";
-    $log .= "   Entity: " . $entity . "\n";
-    $log .= "   Object before: " . $objectBefore . "\n";
-    $log .= "   Object after: " . $objectAfter . "\n";
-
-    // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-    file_put_contents('logEscrita.txt', $log, FILE_APPEND);
-}
 public function set_passageiros_compraram(Passagens $passagem_f): void {
+    if(isset($this->passageiros_compraram)){
+        $objectBefore = $this->passageiros_compraram;
+    } else {
+        $objectBefore = null;
+    }
     array_push($this->passageiros_compraram, $passagem_f);
+    $objectAfter = $this->passageiros_compraram;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function get_passageiros_compraram(): array {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->passageiros_compraram;
 }
 public function set_multa($multa_f): void{
-    $this->multa=$multa_f;
+    if(isset($this->multa)){
+        $objectBefore = $this->multa;
+    } else {
+        $objectBefore = null;
+    }
+    $this->multa = $multa_f;
+    $objectAfter = $this->multa;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function get_multa(): float {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->multa;
 }
 public function get_ressarcimento(): float {
@@ -174,6 +168,8 @@ public function get_ressarcimento(): float {
     } else {
         $ressarcimento_f = $preco_trajeto_f-$multa_f;
     }
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $ressarcimento_f;
 }
 public function get_frequencia(): string {
@@ -182,6 +178,8 @@ public function get_frequencia(): string {
     $str .= $this->Frequencia_voo[0];
     $str .= ' ';
     $str .= $this->Frequencia_voo[1];
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $str;
 }
 public function set_frequencia($frequencia_voo_f, $dia_f): void {
@@ -201,15 +199,31 @@ public function set_frequencia($frequencia_voo_f, $dia_f): void {
     }catch(Exception $e){
         echo $e->getMessage();
     }
+    if (isset($this->Frequencia_voo)){
+        $objectBefore = $this->Frequencia_voo;
+    } else {
+        $objectBefore = null;
+    }
     $this->Frequencia_voo = [$dia, $frequencia];
+    $objectAfter = $this->Frequencia_voo;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function get_origem(): Aeroporto {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->Aeroporto_origem;
 }
 public function set_origem($Aerop_origem_f): void {
     try {
         if ($Aerop_origem_f instanceof Aeroporto){
+            if(isset($this->Aeroporto_origem)){
+                $objectBefore = $this->Aeroporto_origem;
+            } else {
+                $objectBefore = null;
+            }
             $this->Aeroporto_origem = $Aerop_origem_f;
+            $objectAfter = $this->Aeroporto_origem;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         } else{
             throw new Exception("\nAeroporto de origem invalido");
         }
@@ -218,12 +232,21 @@ public function set_origem($Aerop_origem_f): void {
     }
 }
 public function get_destino(): Aeroporto {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->Aeroporto_destino;
 }
 public function set_destino($Aerop_destino_f): void {
     try {
         if ($Aerop_destino_f instanceof Aeroporto){
+            if(isset($this->Aeroporto_destino)){
+                $objectBefore = $this->Aeroporto_destino;
+            } else {
+                $objectBefore = null;
+            }
             $this->Aeroporto_destino = $Aerop_destino_f;
+            $objectAfter = $this->Aeroporto_destino;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         } else{
             throw new Exception("\nAeroporto de destino invalido");
         }
@@ -232,6 +255,8 @@ public function set_destino($Aerop_destino_f): void {
     }
 }
 public function get_preco_trajeto(): float {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->preco_trajeto;
 }
 public function set_preco_trajeto($preco_f): void {//positivo com duas casas decimais
@@ -240,19 +265,35 @@ public function set_preco_trajeto($preco_f): void {//positivo com duas casas dec
             throw new Exception("\nPreço não pode ser negativo");
         }
         else{
+            if(isset($this->preco_trajeto)){
+                $objectBefore = $this->preco_trajeto;
+            } else {
+                $objectBefore = null;
+            }
             $this->preco_trajeto = round($preco_f,2);
+            $objectAfter = $this->preco_trajeto;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         }
     } catch (Exception $e) {
         echo $e->getMessage();
     }
 }
 public function get_hora_agenda_chegada(): DateTime {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->hora_agendada_chegada;
 }
 public function set_hora_agenda_chegada($hora_agendada_chegada_f): void {
     try {
         if ($hora_agendada_chegada_f instanceof DateTime){
+            if(isset($this->hora_agendada_chegada)){
+                $objectBefore = $this->hora_agendada_chegada;
+            } else {
+                $objectBefore = null;
+            }
             $this->hora_agendada_chegada = $hora_agendada_chegada_f;
+            $objectAfter = $this->hora_agendada_chegada;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         } else{
             throw new Exception("\nHora invalida");
         }
@@ -261,12 +302,21 @@ public function set_hora_agenda_chegada($hora_agendada_chegada_f): void {
     }
 }
 public function get_hora_agenda_saida(): DateTime {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->hora_agendada_saida;
 }
 public function set_hora_agenda_saida($hora_agendada_saida_f): void {
     try {
         if ($hora_agendada_saida_f instanceof DateTime){
+            if(isset($this->hora_agendada_saida)){
+                $objectBefore = $this->hora_agendada_saida;
+            } else {
+                $objectBefore = null;
+            }
             $this->hora_agendada_saida = $hora_agendada_saida_f;
+            $objectAfter = $this->hora_agendada_saida;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         } else{
             throw new Exception("\nHora invalida");
         }
@@ -275,17 +325,24 @@ public function set_hora_agenda_saida($hora_agendada_saida_f): void {
     }
 }
 public function get_codigo(): string {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->codigo;
 }
 public function set_codigo($codigo_f): void {
     try {
       $codigo_valido = $this->validar_codigo($codigo_f, $this->get_aviao());
-      if ($codigo_valido === true) {
-        $this->codigo = $codigo_f;
+        if ($codigo_valido === true) {
+            if(isset($this->codigo)){
+                $objectBefore = $this->codigo;
+            } else {
+                $objectBefore = null;
+            }
+            $this->codigo = $codigo_f;
+            $objectAfter = $this->codigo;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
       } else {
-        //throw new Exception("\nCodigo invalido");
-        // Utilize o código corrigido passado como parâmetro
-        $this->codigo = $codigo_valido;
+        throw new Exception("\nCodigo invalido");
       }
     } catch (Exception $e) {
       echo $e->getMessage();
@@ -305,12 +362,21 @@ public function set_codigo($codigo_f): void {
 //     }
 // }
 public function get_aviao(): Aeronave {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->Aviao;
 }
 public function set_aviao($Aviao_f): void {
     try {
         if ($Aviao_f instanceof Aeronave){
+            if(isset($this->Aviao)){
+                $objectBefore = $this->Aviao;
+            } else {
+                $objectBefore = null;
+            }
             $this->Aviao = $Aviao_f;
+            $objectAfter = $this->Aviao;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         } else{
             throw new Exception("Aeronave invalida");
         }
@@ -320,6 +386,7 @@ public function set_aviao($Aviao_f): void {
 }
 public function inicializar_assento(){    
     //numero de assentos é definido pelo aviao
+    $objectBefore = null;
     $numero_de_assentos = $this->Aviao->get_passageiro();
     $fileiras = floor($numero_de_assentos/6);
     $resto = $numero_de_assentos%6;
@@ -336,6 +403,8 @@ public function inicializar_assento(){
             $this->assentos[$fileiras+1][$i] = [null, true];
         }
     }
+    $objectAfter = $this->assentos;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function comprar_assento(string $assento, Passageiro $passageiro){
     //verificar se o assento existe
@@ -360,8 +429,11 @@ public function comprar_assento(string $assento, Passageiro $passageiro){
     //verificar se o assento está disponivel
     try{
         if ($this->assentos[$fileira][$coluna][1] == null && $this->assentos[$fileira][$coluna][2] == true){
+            $objectBefore = $this->assentos;
             $this->assentos[$fileira][$coluna][1] = $passageiro;
             $this->assentos[$fileira][$coluna][2] = false;
+            $objectAfter = $this->assentos;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         }else{
             throw new Exception("\nComprar assento: Assento indisponivel.");
         }
@@ -392,8 +464,11 @@ public function liberar_assento(string $assento){
     //verificar se o assento está ocupado
     try{
         if ($this->assentos[$fileira][$coluna][1] != null && $this->assentos[$fileira][$coluna][2] == false){
+            $objectBefore = $this->assentos;
             $this->assentos[$fileira][$coluna][1] = null;
             $this->assentos[$fileira][$coluna][2] = true;
+            $objectAfter = $this->assentos;
+            new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         }else{
             throw new Exception("\nLiberar assento: Assento indisponivel.");
         }
@@ -410,6 +485,8 @@ public function get_assentos_ocupados(): string {
             }
         }
     }
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $ocupados;
 }
 public static function get_hist_planejado(): string {
@@ -418,6 +495,8 @@ public static function get_hist_planejado(): string {
     foreach (self::$historico_planejado as $voo){
         $string .= "Voo " . $voo->get_codigo() . " da " . $voo->get_aviao()->get_companhia_aerea()->get_nome() . " de " . $voo->get_origem()->get_sigla_aero() . " para " . $voo->get_destino()->get_sigla_aero() . " marcado para " . $voo->get_hora_agenda_saida()->format('d/m/Y H:i') . " com chegada " . $voo->get_hora_agenda_chegada()->format('d/m/Y H:i') . "\n";
     }
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $string;
 }
 public static function buscar_proximos_voos(): array {
@@ -430,7 +509,8 @@ public static function buscar_proximos_voos(): array {
                 $voos_proximos[] = $voo;
             }
         }
-
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $voos_proximos;
 }
 public static function proximos_voos_string(): string {
@@ -439,6 +519,8 @@ public static function proximos_voos_string(): string {
         foreach ($voos_proximos as $voo) {
             $string .= "Voo " . $voo->get_codigo() . " da " . $voo->get_aviao()->get_companhia_aerea()->get_nome() . " de " . $voo->get_origem()->get_sigla_aero() . " para " . $voo->get_destino()->get_sigla_aero() . " marcado para " . $voo->get_hora_agenda_saida()->format('d/m/Y H:i') . " com chegada " . $voo->get_hora_agenda_chegada()->format('d/m/Y H:i') . "\n";
         }
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $string;
 }
 public function validar_codigo($codigo, $Aviao_esperado_f) {
@@ -453,7 +535,8 @@ public function validar_codigo($codigo, $Aviao_esperado_f) {
       // Alterar o registro com a sigla correta
       $codigo_corrigido = $sigla_comp_aerea . substr($codigo, 2);
       //echo "\nCodigo corrigido: " . $codigo_corrigido;
-      
+      $method = __METHOD__;
+      new logLeitura(get_called_class(), $method);
       return $codigo_corrigido;
     }
     
@@ -466,11 +549,20 @@ public function validar_codigo($codigo, $Aviao_esperado_f) {
   }
 
 public function get_pontos_voo(){
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $this->pontos_viagem;
 }
 
 public function set_pontos_voo($p){
-    $this->pontos_viagem=$p;
+    if(isset($this->pontos_viagem)){
+        $objectBefore = $this->pontos_viagem;
+    }else{
+        $objectBefore = null;
+    }
+    $this->pontos_viagem = $p;
+    $objectAfter = $this->pontos_viagem;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 
 public function ordenar_voos($voos) : array
@@ -484,6 +576,8 @@ public function ordenar_voos($voos) : array
         }
         array_splice($voos_ordenados, $j, 0, $voos[$i]);
     }
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $voos_ordenados;
 }
 public function get_assentos_livres():int{
@@ -495,6 +589,8 @@ public function get_assentos_livres():int{
             }
         }
     }
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $livres;
 }
 public function buscar_voos(array $voos, int $numero_de_passagens) : array
@@ -506,6 +602,8 @@ public function buscar_voos(array $voos, int $numero_de_passagens) : array
         }
     }
     $voos_disponiveis = self::ordenar_voos($voos_disponiveis);
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
     return $voos_disponiveis;
 
 }
@@ -526,6 +624,8 @@ public function pesquisar_voos($origem, $destino, $data, $numero_de_passagens){
             echo "\nNão há voos disponiveis para a quantidade de passagens selecionada.";
             return false;
         }else{
+            $method = __METHOD__;
+            new logLeitura(get_called_class(), $method);
             return $voos_disponiveis;
         }
     }

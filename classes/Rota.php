@@ -31,21 +31,48 @@ class Rota extends persist{
     }
 
     public function set_aeroporto($aeroporto_f) {
+        if(isset($this->aeroporto)){
+            $objectBefore = $this->aeroporto;
+        }else{
+            $objectBefore = null;
+        }
         $this->aeroporto = $aeroporto_f;
+        $objectAfter = $this->aeroporto;
+        new logEscrita($this, $objectBefore, $objectAfter);
     }
     public function set_veiculo($veiculo_f) {
+        if(isset($this->veiculo)){
+            $objectBefore = $this->veiculo;
+        }else{
+            $objectBefore = null;
+        }
         $this->veiculo = $veiculo_f;
+        $objectAfter = $this->veiculo;
+        new logEscrita($this, $objectBefore, $objectAfter);
     }
     public function set_tripulacao($tripulacao_f) {
+        if(isset($this->tripulacao)){
+            $objectBefore = $this->tripulacao;
+        }else{
+            $objectBefore = null;
+        }
         $this->tripulacao = $tripulacao_f;
+        $objectAfter = $this->tripulacao;
+        new logEscrita($this, $objectBefore, $objectAfter);
     }
     public function get_aeroporto(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->aeroporto;
     }
     public function get_veiculo(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->veiculo;
     }
     public function get_tripulacao(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->tripulacao;
     }
     public function converter_endereco($endereco){
@@ -101,26 +128,40 @@ class Rota extends persist{
 
     }
 
-    public function obter_lang_long() {
-        
-    }
-
     public function set_hora_transporte () {
+        if(isset($this->hora_transporte)){
+            $objectBefore = $this->hora_transporte;
+        }else{
+            $objectBefore = null;
+        }
         $segundos = $this->definir_rota() / 18+5400;
         $a = clone $this->voo->get_hora_agenda_saida();
         $this->hora_transporte=$a->sub(new DateInterval("PT{$segundos}S"));
+        $objectAfter = $this->hora_transporte;
+        new logEscrita($this, $objectBefore, $objectAfter);
     }
     
     public function get_voo(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->voo;
 
     }
 
     public function set_voo($voo_f){
-        $this->voo=$voo_f;
+        if(isset($this->voo)){
+            $objectBefore = $this->voo;
+        }else{
+            $objectBefore = null;
+        }
+        $this->voo = $voo_f;
+        $objectAfter = $this->voo;
+        new logEscrita($this, $objectBefore, $objectAfter);
 
     }
     public function get_hora_transporte(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->hora_transporte;
     }
 }

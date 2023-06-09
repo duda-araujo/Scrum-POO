@@ -1,5 +1,6 @@
 <?php
 require_once "global.php";
+ini_set('memory_limit', '512M');
 
 $saida = new DateTime("2023-04-23 16:45:32");
 $chegada = new DateTime("2023-04-24 18:45:32");
@@ -78,7 +79,7 @@ echo $voo_planejado->get_assentos_ocupados();
 //public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f, int $franquia_f){
   
 
-$usuario = new Usuario("Gabriel","Lott","01905150660");
+$usuario = new Usuario("Gabriel","Lott","01905150660","lottlindo", "123456");
 $passagem1 = new Passagens($congonhas, $teresina, $passageiro1, 2,$usuario);
 echo $passagem1->string_passagem();
 echo $voo_planejado->get_assentos_ocupados();

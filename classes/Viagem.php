@@ -35,7 +35,12 @@ class Viagem extends VooPlanejado{
     }
     public function set_chegada($chegada_f): void {
         try {
-            $objectBefore = $this->chegada;
+            if(isset($this->chegada)){
+                $objectBefore = $this->aviao_voo;
+              }
+              else{
+                $objectBefore = null;
+              }
             if ($chegada_f instanceof DateTime){
                 $this->chegada = $chegada_f;
                 $objectAfter = $this->chegada;
@@ -54,11 +59,16 @@ class Viagem extends VooPlanejado{
     }
     public function set_saida($saida_f): void {
         try {
-            $objectBefore = $this->saida;
+            if(isset($this->saida)){
+                $objectBefore = $this->saida;
+              }
+              else{
+                $objectBefore = null;
+              }
             if ($saida_f instanceof DateTime){
+                $this->saida = $saida_f;
                 $objectAfter = $this->saida;
                 new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-                $this->saida = $saida_f;
             } else {
                 throw new InvalidArgumentException("\nErro: saida não é uma data");
             }
@@ -73,11 +83,16 @@ class Viagem extends VooPlanejado{
     }
     public function set_voo_anunciado($voo_anunciado_f): void {
         try {
-            $objectBefore = $this->voo_anunciado;
+            if(isset($this->voo_anunciado)){
+                $objectBefore = $this->voo_anunciado;
+              }
+              else{
+                $objectBefore = null;
+              }
             if ($voo_anunciado_f instanceof VooPlanejado){
+                $this->voo_anunciado = $voo_anunciado_f;
                 $objectAfter = $this->voo_anunciado;
                 new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-                $this->voo_anunciado = $voo_anunciado_f;
             } else {
                 throw new InvalidArgumentException("\nErro: o voo não existe");
             }
@@ -92,11 +107,16 @@ class Viagem extends VooPlanejado{
     }   
     public function set_aviao_voo($aviao_voo_f): void {
         try {
-            $objectBefore = $this->aviao_voo;
+            if(isset($this->aviao_voo)){
+                $objectBefore = $this->aviao_voo;
+              }
+              else{
+                $objectBefore = null;
+              }
             if ($aviao_voo_f instanceof Aeronave){
+                $this->aviao_voo = $aviao_voo_f;
                 $objectAfter = $this->aviao_voo;
                 new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-                $this->aviao_voo = $aviao_voo_f;
             } else {
                 throw new InvalidArgumentException("Erro: a aeronave não existe");
             }
@@ -107,11 +127,10 @@ class Viagem extends VooPlanejado{
 
     public function get_passageiros_embarcados(Embarque $embarque) {
         try{
-            $objectBefore = $this->get_passageiros_embarcados($embarque);
             if ($embarque->get_voo() == $this->get_voo_anunciado()){
                 if ($embarque->get_status_embarque()=="Embarque finalizado"){
-                    $objectAfter = $this->get_passageiros_embarcados($embarque);
-                    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+                    $method = __METHOD__;
+                    new logLeitura(get_called_class(), $method);
                     return $embarque->get_passageiros_embarcados();
                 } else {
                     throw new Exception("Erro: o embarque não foi finalizado");
@@ -140,24 +159,40 @@ class Viagem extends VooPlanejado{
         new logLeitura(get_called_class(), $method);
     }
     public function cadastrar_comissario_de_bordo(ComissarioDeBordo $comissario_de_bordo_f){
+        if(isset(self::$comissarios_de_bordo)){
+            $objectBefore = self::$comissarios_de_bordo;
+          }
+          else{
+            $objectBefore = null;
+          }
         foreach (self::$voo_anunciado->get_aviao()->get_companhia_aerea()->get_comissarios_de_bordo() as $comissario_de_bordo){
-            if ($comissario_de_bordo->get_cpf() == $comissario_de_bordo_f->get_cpf()){
+            if ($comissario_de_bordo->get_cpf() == $comissario_de_bordo_f->get_cpf()){         
                 array_push($this->comissarios_de_bordo, $comissario_de_bordo_f);
+                $objectAfter = self::$comissarios_de_bordo;
+                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
                 return;
             }
         }
-        $method = __METHOD__;
-        new logLeitura(get_called_class(), $method);
     }
     public function set_piloto(Piloto $piloto_f){
-       $objectBefore = $this->piloto;
+        if(isset($this->piloto)){
+            $objectBefore = $this->piloto;
+          }
+          else{
+            $objectBefore = null;
+          }
        $this->piloto = $piloto_f;
        $objectAfter = $this->piloto;
        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 
     }
     public function set_copiloto(Piloto $copiloto_f){
-        $objectBefore = $this->copiloto;
+        if(isset($this->copiloto)){
+            $objectBefore = $this->copiloto;
+          }
+          else{
+            $objectBefore = null;
+          }
         $this->copiloto = $copiloto_f;
         $objectAfter = $this->copiloto;
         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
