@@ -51,6 +51,64 @@ public static $dict_assentos = [
     6 => 'F',
 ];
 
+public function voo_com_frequencia($frequencia){//frequencia eh um valor de zero a 4
+    if($frequencia=0){
+        return 0;
+    }
+    else if($frequencia=1){
+        $i=1;
+        while($i<365){
+        $segundos=86400*$i;
+        $a=$this->hora_agendada_saida;
+        $b=$a->add(new DateInterval("PT{$segundos}S"));
+        $c=$this->hora_agendada_chegada;
+        $d=$c->add(new DateInterval("PT{$segundos}S"));
+        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,0,0,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
+        $i++;
+        }
+    }
+    else if($frequencia=2){
+        $i=1;
+        while($i<52){
+        $segundos=604800*$i;
+        $a=$this->hora_agendada_saida;
+        $b=$a->add(new DateInterval("PT{$segundos}S"));
+        $c=$this->hora_agendada_chegada;
+        $d=$c->add(new DateInterval("PT{$segundos}S"));
+        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,0,0,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
+        $i++;
+        }
+    }
+    else if($frequencia=3){
+        $i=1;
+        while($i<26){
+        $segundos=1209600*$i;
+        $a=$this->hora_agendada_saida;
+        $b=$a->add(new DateInterval("PT{$segundos}S"));
+        $c=$this->hora_agendada_chegada;
+        $d=$c->add(new DateInterval("PT{$segundos}S"));
+        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,0,0,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
+        $i++;
+        }
+    }
+    else if($frequencia=4){
+        $i=1;
+        while($i<12){
+        $segundos=2419200*$i;
+        $a=$this->hora_agendada_saida;
+        $b=$a->add(new DateInterval("PT{$segundos}S"));
+        $c=$this->hora_agendada_chegada;
+        $d=$c->add(new DateInterval("PT{$segundos}S"));
+        $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,0,0,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
+        $i++;
+        }
+
+    }
+    else{
+        return 0;
+    }
+}
+
 public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
                             $Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, 
                             $dia_f,$frequencia_voo_f, $preco_f,$pontos_f, $multa_f) {

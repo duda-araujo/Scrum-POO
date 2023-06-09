@@ -104,7 +104,8 @@ public function set_horario_viagem($horario_f){
       else{
         $objectBefore = null;
         $this->horario_viagem = $horario_f;
-        $objectAfter = $this->horario_viagem;
+
+        $objectAfter = $this->horario_embarque;
        new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
       }
     $this->horario_viagem = $horario_f;
