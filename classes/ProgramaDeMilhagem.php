@@ -24,8 +24,17 @@ class ProgramaDeMilhagem extends persist{
         3 => 0.3
     ];
     public function __construct(string $nome, CompanhiaAerea $companhia){
+        try{
+            if(Sistema::checkSessionState()==FALSE){
+                throw new Exception("usuario nao foi inicializado");
+            }
+            else{
         $this->set_nome($nome);
         $this->set_companhia($companhia);
+    }
+}catch(Exception $e){
+    echo $e->getMessage();
+}
     }
     
     public function get_nome(): string{

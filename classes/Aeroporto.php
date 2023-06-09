@@ -9,11 +9,19 @@ protected string $nome;
 
 
 public function __construct(string $sigla_f,string $cidade_f,string $estado_f,string $nome_f){
-    Sistema::checkSessionState();
+  try{
+    if(Sistema::checkSessionState()==FALSE){
+        throw new Exception("usuario nao foi inicializado");
+    }
+    else{
     $this->set_sigla_aero($sigla_f);
     $this->set_cidade($cidade_f);
     $this->set_estado($estado_f);
     $this->set_nome($nome_f);
+  }
+}catch(Exception $e){
+    echo $e->getMessage();
+}
 }
 
 static public function getFilename() {

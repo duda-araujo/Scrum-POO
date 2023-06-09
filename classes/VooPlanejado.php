@@ -98,29 +98,29 @@ public function voo_com_frequencia($frequencia){//frequencia eh um valor de zero
             break;
     }
 }
-
 public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
                             $Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, $preco_f,$pontos_f, $multa_f) {
-    try{
-        if(Sistema::checkSessionState() == false){
-            throw new Exception("Usuario não está logado ou sessão foi encerrada\n");
-        }
-        else{
-            $this->set_aviao($Aviao_f);
-            $this->set_codigo($codigo_f);
-            $this->set_origem($Aerop_origem_f);
-            $this->set_destino($Aerop_destino_f);
-            $this->set_hora_agenda_chegada($Hora_agen_chegada_f);
-            $this->set_hora_agenda_saida($Hora_agen_saida_f);
-            // $this->set_frequencia($frequencia_voo_f, $dia_f); 
-            $this->set_preco_trajeto($preco_f);
-            $this->set_multa($multa_f);
-            $this->set_pontos_voo($pontos_f);
-            self::inicializar_assento();
-            self::$historico_planejado[] = $this;
-        }}catch(Exception $e){
-            echo $e->getMessage();
-        }
+                                try{
+                                    if(Sistema::checkSessionState()==FALSE){
+                                        throw new Exception("usuario nao foi inicializado");
+                                    }
+                                    else{
+    $this->set_aviao($Aviao_f);
+    $this->set_codigo($codigo_f);
+    $this->set_origem($Aerop_origem_f);
+    $this->set_destino($Aerop_destino_f);
+    $this->set_hora_agenda_chegada($Hora_agen_chegada_f);
+    $this->set_hora_agenda_saida($Hora_agen_saida_f);
+    // $this->set_frequencia($frequencia_voo_f, $dia_f); 
+    $this->set_preco_trajeto($preco_f);
+    $this->set_multa($multa_f);
+    $this->set_pontos_voo($pontos_f);
+    self::inicializar_assento();
+    self::$historico_planejado[] = $this;
+     }
+    }catch(Exception $e){
+        echo $e->getMessage();
+    }
 }
 
 

@@ -8,6 +8,11 @@ protected string $numero_registro;
 
 
 public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p, $assento_p,$programa,$registro){
+    try{
+        if(Sistema::checkSessionState()==FALSE){
+            throw new Exception("usuario nao foi inicializado");
+        }
+        else{
     $this->set_nome_passageiro($nome_p);
     $this->set_sobrenome_passageiro($sobrenome_p);
     $this->set_documento_passageiro($documento_p);
@@ -19,6 +24,10 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
     $this->set_assento($assento_p);
     $this->set_milhagem($programa);
     $this->set_registro($registro);
+}
+}catch(Exception $e){
+    echo $e->getMessage();
+}
 }
 static public function getFilename() {
     return get_called_class();

@@ -16,6 +16,11 @@ class Passageiro extends persist{
     protected string $assento;
     protected bool $vip=false;    
 public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p, $assento_p, $programa = null){
+    try{
+        if(Sistema::checkSessionState()==FALSE){
+            throw new Exception("usuario nao foi inicializado");
+        }
+        else{
     $this->set_nome_passageiro($nome_p);
     $this->set_sobrenome_passageiro($sobrenome_p);
     $this->set_documento_passageiro($documento_p);
@@ -26,6 +31,10 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
     $this->set_email($email_p);
     $this->set_assento($assento_p);
     $this->set_programa_de_milhagem($programa);
+}
+}catch(Exception $e){
+    echo $e->getMessage();
+}
 
 }
 static public function getFilename() {

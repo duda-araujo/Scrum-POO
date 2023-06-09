@@ -7,10 +7,18 @@ class Categorias extends persist{
     protected string $nome;
     protected float $pontos_exigidos;
     public function __construct($programa_de_milhagem_f, $nome_f, $pontos_exigidos_f){
-        Sistema::checkSessionState();
+        try{
+            if(Sistema::checkSessionState()==FALSE){
+                throw new Exception("usuario nao foi inicializado");
+            }
+            else{
         $this->set_milhagem($programa_de_milhagem_f);
         $this->set_nome($nome_f);
         $this->set_pontos($pontos_exigidos_f);
+    }
+}catch(Exception $e){
+    echo $e->getMessage();
+}
     }
     static public function getFilename() {
         return get_called_class();

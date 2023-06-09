@@ -16,6 +16,11 @@ class Viagem extends VooPlanejado{
     protected Piloto $copiloto;
 
     public function __construct($voo_anunciado_f,$saida_f,$chegada_f,$Aviao_voo_f, $embarque_f,$piloto_f, $copiloto_f){
+        try{
+            if(Sistema::checkSessionState()==FALSE){
+                throw new Exception("usuario nao foi inicializado");
+            }
+            else{
         $this-> set_voo_anunciado($voo_anunciado_f);
         $this->set_saida($saida_f);
         $this->set_chegada($chegada_f);
@@ -24,6 +29,10 @@ class Viagem extends VooPlanejado{
         self::$historico_executado[] = $this;
         $this->set_piloto($piloto_f);
         $this->set_copiloto($copiloto_f);
+    }
+}catch(Exception $e){
+    echo $e->getMessage();
+}
     }
     static public function getFilename() {
         return get_called_class();

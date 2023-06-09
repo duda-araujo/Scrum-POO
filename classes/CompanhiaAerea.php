@@ -19,7 +19,11 @@ protected array $pilotos = [];
 
 
 public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_bagagem_f,$tarifa_f){
-    Sistema::checkSessionState();
+    try{
+        if(Sistema::checkSessionState()==FALSE){
+            throw new Exception("usuario nao foi inicializado");
+        }
+        else{
     $this->set_nome_comp($nome_f);
     $this->set_razao($razao_f);
     $this->set_codigo($codigo_f);
@@ -27,6 +31,10 @@ public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_b
     $this->set_sigla($sigla_f);
     $this->set_preco_bagagem($preco_bagagem_f);
     $this->set_tarifa($tarifa_f);
+}
+}catch(Exception $e){
+    echo $e->getMessage();
+}
 }
 
 static public function getFilename() {
