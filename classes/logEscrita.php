@@ -47,7 +47,7 @@ class logEscrita extends Log{
 
 // Função convertArrayToString() (incluída no mesmo arquivo)
 
-public function convertArrayToString($array) {
+public static function convertArrayToString($array) {
     $hasObjects = false;
     $convertedArray = [];
 
