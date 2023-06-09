@@ -16,55 +16,54 @@ class Veiculo extends persist{
     }
     static public function getFilename() {
         return get_called_class();
-      }public function gerarLogLeitura($entity, $attribute)
-      {
-          // Implementação do log de leitura específico para Aeroporto
-          $log = "User: " . "Usuário" . "\n";
-          $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-          $log .= "Date/Time: " . $dateTime . "\n";
-          $log .= "   Entity: " . $entity . "\n";
-          $log .= "   Attribute: " . $attribute . "\n";
-      
-          // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-          file_put_contents('logLeitura.txt', $log, FILE_APPEND);
-      }
-      public function gerarLogEscrita($entity, $objectBefore, $objectAfter){
-          // Implementação do log de escrita específico para Aeroporto
-          $log = "User: " . "Usuário" . "\n";
-          $dateTime = new DateTime('now', new DateTimeZone('America/Sao_Paulo'));
-          $log .= "Date/Time: " . $dateTime . "\n";
-          $log .= "   Entity: " . $entity . "\n";
-          $log .= "   Object before: " . $objectBefore . "\n";
-          $log .= "   Object after: " . $objectAfter . "\n";
-      
-          // Salvar o log em um arquivo ou em algum outro meio de armazenamento
-          file_put_contents('logEscrita.txt', $log, FILE_APPEND);
       }
     public function get_companhia(): CompanhiaAerea{
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->companhia;
     }
     public function get_aeroporto(): Aeroporto{
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->aeroporto;
     }
     public function get_modelo(): string{
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->modelo;
     }
     public function get_capacidade(): int{
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->capacidade;
     }
     public function get_velocidademedia(): int{
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
         return $this->velocidade_media;
     }
     public function set_companhia(CompanhiaAerea $companhia_f): void{
+        $objectBefore = $this->companhia;
         $this->companhia = $companhia_f;
+        $objectAfter = $this->companhia;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_aeroporto(Aeroporto $aeroporto_f): void{
+        $objectBefore = $this->aeroporto;
         $this->aeroporto = $aeroporto_f;
+        $objectAfter = $this->aeroporto;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_modelo(string $modelo_f): void{
+        $objectBefore = $this->modelo;
         $this->modelo = $modelo_f;
+        $objectAfter = $this->modelo;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_capacidade(int $capacidade_f): void{
+        $objectBefore = $this->capacidade;
         $this->capacidade = $capacidade_f;
+        $objectAfter = $this->capacidade;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
 }
