@@ -15,6 +15,7 @@ protected string $assento;
 
 
 public function __construct($voo_planejado_f,$passageiro_f){
+Sistema::checkSessionState();
 $this->set_nome($passageiro_f->get_nome_passageiro());
 $this->set_sobrenome($passageiro_f->get_sobrenome_passageiro());
 $this->set_origem($voo_planejado_f->get_origem());

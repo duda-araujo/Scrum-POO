@@ -6,6 +6,7 @@ class GoogleMapsAPI extends persist
     
     public function __construct()
     {
+        Sistema::checkSessionState();
         $this->ch = curl_init();
         curl_setopt($this->ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($this->ch, CURLOPT_SSL_VERIFYPEER, false);

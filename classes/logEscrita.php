@@ -13,11 +13,15 @@ class logEscrita extends Log{
         return get_called_class();
     }
     protected function gerarLog(){
-        $this->gerarLogEscrita(self::$entity, $this->objectBefore, $this->objectAfter);
+        $this->gerarLogEscrita(self::$user, self::$entity, $this->objectBefore, $this->objectAfter);
     }
-    protected function gerarLogEscrita($entity, $objectBefore, $objectAfter){
+    protected function gerarLogEscrita($user, $entity, $objectBefore, $objectAfter){
         // Implementação do log de escrita específico para Aeroporto
-        $log = "\nUser: " . "Usuário - ";
+        if (isset($user)){
+            $log = "\nUser: " . $user->get_nome() . "\n";
+        }else{
+            $log = "\nUser: " . "Usuário não logado" . "\n";
+        }
         $dateTime = self::$dateTime->format('Y-m-d H:i:s');
         $log .= "Date/Time: " . $dateTime . "\n";
         $log .= "   Entity: " . $entity . "\n";

@@ -7,14 +7,18 @@ class logLeitura extends Log{
         $this->gerarLog();
     }
     protected function gerarLog(){
-        $this->gerarLogLeitura(self::$entity, $this->attribute);
+        $this->gerarLogLeitura(self::$user, self::$entity, $this->attribute);
     }
     static public function getFilename() {
         return get_called_class();
     }
-    protected function gerarLogLeitura($entity, $attribute){
+    protected function gerarLogLeitura($user, $entity, $attribute){
     // Implementação do log de leitura específico para Aeroporto
-    $log = "\nUser: " . "Usuário - ";
+    if ($user != null){
+        $log = "\nUser: " . $user->get_nome() . "\n";
+    }else{
+        $log = "\nUser: " . "Usuário não logado" . "\n";
+    }
     $dateTime = self::$dateTime->format('Y-m-d H:i:s');
     $log .= "Date/Time: " . $dateTime . "\n";
     $log .= "   Entity: " . $entity . "\n";

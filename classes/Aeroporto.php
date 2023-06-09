@@ -9,6 +9,7 @@ protected string $nome;
 
 
 public function __construct(string $sigla_f,string $cidade_f,string $estado_f,string $nome_f){
+    Sistema::checkSessionState();
     $this->set_sigla_aero($sigla_f);
     $this->set_cidade($cidade_f);
     $this->set_estado($estado_f);

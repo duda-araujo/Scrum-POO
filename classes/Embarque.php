@@ -9,6 +9,7 @@ class Embarque extends VooPlanejado{
     protected array $passageiros_embarcados = [];
 
     public function __construct(VooPlanejado $voo){
+        Sistema::checkSessionState();
         $this->set_voo($voo);
         $this->set_status_embarque(2);
     }

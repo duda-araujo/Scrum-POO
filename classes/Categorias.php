@@ -7,6 +7,7 @@ class Categorias extends persist{
     protected string $nome;
     protected float $pontos_exigidos;
     public function __construct($programa_de_milhagem_f, $nome_f, $pontos_exigidos_f){
+        Sistema::checkSessionState();
         $this->set_milhagem($programa_de_milhagem_f);
         $this->set_nome($nome_f);
         $this->set_pontos($pontos_exigidos_f);

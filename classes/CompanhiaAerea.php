@@ -19,6 +19,7 @@ protected array $pilotos = [];
 
 
 public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_bagagem_f,$tarifa_f){
+    Sistema::checkSessionState();
     $this->set_nome_comp($nome_f);
     $this->set_razao($razao_f);
     $this->set_codigo($codigo_f);

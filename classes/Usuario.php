@@ -86,8 +86,6 @@ class Usuario extends persist{
         new LogEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function get_nome(){
-        $method = __METHOD__;
-        new logLeitura(get_called_class(), $method); 
         return $this->nome;
     }
     public function get_sobrenome(){
