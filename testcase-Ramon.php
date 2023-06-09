@@ -39,6 +39,14 @@ new DateTime("12:49"), new DateTime("11:49"), $aeronave1, 4, 1, "350.00", "100",
 $voo5_volta = new VooPlanejado("AD1332", $aeroporto4, $aeroporto1,
 new DateTime("18:49"), new DateTime("17:49"), $aeronave1, 3, 1, "350.00", "100", "50.00");
 
+$voo2_ida->voo_com_frequencia(1);
+$voo2_volta->voo_com_frequencia(1);
+$voo3_ida->voo_com_frequencia(1);
+$voo3_volta->voo_com_frequencia(1);
+$voo4_ida->voo_com_frequencia(1);
+$voo4_volta->voo_com_frequencia(1);
+$voo5_ida->voo_com_frequencia(1);
+$voo5_volta->voo_com_frequencia(1);
 
 $resultado = VooPlanejado::get_hist_planejado();
 echo $resultado;
@@ -55,4 +63,4 @@ $passagem_ida = new Passagens($aeroporto5, $aeroporto4, $passageiro1_vip, 30, $u
 $passagem_ida->realizar_check_in();
 
 //imprimir cartoes de embarque na tela
-echo $passagem_ida->get_cartao_de_embarque1();
+// echo $passagem_ida->get_cartao_de_embarque1(); 

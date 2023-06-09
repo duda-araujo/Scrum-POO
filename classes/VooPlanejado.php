@@ -66,6 +66,7 @@ public function voo_com_frequencia($frequencia){//frequencia eh um valor de zero
         $voo= new VooPlanejado($this->codigo,$this->Aeroporto_origem,$this->Aeroporto_destino,$d,$b,$this->Aviao,0,0,$this->preco_trajeto,$this->pontos_viagem,$this->multa);
         $i++;
         }
+        echo "\nVoo diário planejado com sucesso!\n";
     }
     else if($frequencia=2){
         $i=1;
