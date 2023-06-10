@@ -4,7 +4,7 @@ include_once("global.php");
 
 //Cadastro de um usuário
 $usuario = new Usuario("Vinicius", "Cabral", "viniciusmc.2109@gmail.com", "aabbccdd", "123456");
-// $user1->cadastrar_usuario($usuario);
+$usuario2 = new Usuario("Vinicius", "Cabral", "viniciusmc.2109@gmail.com", "aabbccdd", "123456");
 new Sistema($usuario);
 
 //Cadastro de duas companhias aéreas 

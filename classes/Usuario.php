@@ -11,7 +11,7 @@ class Usuario extends persist{
     protected string $senha;
     protected array $passagens;
     protected array $registro_financeiro=[];
-    protected array $UsuariosCadastrados = [];
+    protected static array $UsuariosCadastrados = [];
 
 
     public function __construct($nome_u,$sobrenome_u,$email_u,$login_u,$senha_u){
@@ -21,7 +21,7 @@ class Usuario extends persist{
         $this->set_login($login_u);
         $this->set_senha($senha_u);
         $this->cadastrar_usuario($this);
-        echo "Usuário ".$this->get_nome()." ".$this->get_sobrenome()." cadastrado com sucesso!\n";
+        #echo "usuario ".$this->get_nome()." ".$this->get_sobrenome()." cadastrado com sucesso\n";
     }
     static public function getFilename() {
         return get_called_class();
@@ -135,18 +135,18 @@ class Usuario extends persist{
         echo "Login ou senha incorretos!\n";
     }
     public function cadastrar_usuario(Usuario $usuario_cadastrado) {
-        $objectBefore = $this->UsuariosCadastrados;
-        foreach ($this->UsuariosCadastrados as $usuario) {
-            if ($usuario->get_login() == $usuario_cadastrado->get_login()) {
+        $objectBefore = self::$UsuariosCadastrados;
+        #checa se o login já está cadastrado
+        foreach(self::$UsuariosCadastrados as $usuario){
+            if($usuario->get_login() == $usuario_cadastrado->get_login()){
                 echo "Login já cadastrado!\n";
-
-                $objectAfter = $this->UsuariosCadastrados;
-                new logEscrita(get_called_class(), $objectBefore, $objectAfter);
                 return;
             }
         }
-        
-        $this->UsuariosCadastrados[] = $usuario_cadastrado;
+        self::$UsuariosCadastrados[] = $usuario_cadastrado;
+        $objectAfter = self::$UsuariosCadastrados;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+        echo "Cadastro realizado com sucesso!\n";
     }
     
     public function passagem_comprada($preco_f,$Aerop_origem_f,$Aerop_destino_f){
