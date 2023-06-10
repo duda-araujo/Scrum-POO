@@ -18,6 +18,7 @@ class Veiculo extends persist{
         $this->aeroporto = $aeroporto_f;
         $this->modelo = $modelo_f;
         $this->capacidade = $capacidade_f;
+        echo "veículo ".$this->get_modelo()." da companhia ".$this->get_companhia()->get_nome()." cadastrado com sucesso\n";
     }
 }catch(Exception $e){
     echo $e->getMessage();

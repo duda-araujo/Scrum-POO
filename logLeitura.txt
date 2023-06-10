@@ -2443,3 +2443,4773 @@ User: Vinicius
 Date/Time: 2023-06-09 19:24:38
    Entity: VooPlanejado
        Attribute: VooPlanejado::buscar_proximos_voos
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:18
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:18
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:18
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:18
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:18
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:18
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:18
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:18
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:48:19
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::buscar_proximos_voos
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::buscar_proximos_voos
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:49:28
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::proximos_voos_string
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::buscar_proximos_voos
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 14:50:44
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::proximos_voos_string
+
+User: Vinicius
+Date/Time: 2023-06-10 15:05:58
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:05:58
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:05:58
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:05:58
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:06:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:06:44
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:06:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:06:44
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:07:19
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:07:19
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:07:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:07:19
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::buscar_proximos_voos
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:08:31
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::proximos_voos_string
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::buscar_proximos_voos
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:17
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::proximos_voos_string
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::buscar_proximos_voos
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:09:41
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::proximos_voos_string
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::buscar_proximos_voos
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:10:15
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::proximos_voos_string
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_registro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_nome_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_sigla
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_passageiro
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::buscar_proximos_voos
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_codigo
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_aviao
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeronave
+       Attribute: Aeronave::get_companhia_aerea
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: CompanhiaAerea
+       Attribute: CompanhiaAerea::get_nome
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_origem
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_destino
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: Aeroporto
+       Attribute: Aeroporto::get_sigla_aero
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_saida
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::get_hora_agenda_chegada
+
+User: Vinicius
+Date/Time: 2023-06-10 15:12:09
+   Entity: VooPlanejado
+       Attribute: VooPlanejado::proximos_voos_string

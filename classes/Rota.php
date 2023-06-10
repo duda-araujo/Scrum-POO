@@ -29,6 +29,7 @@ class Rota extends persist{
         $this->set_tripulacao($tripulacao_f);
         $this->set_voo($voo_f);
         $this->set_hora_transporte();
+        echo "sistema de transporte do voo ".$this->get_voo()->get_codigo(). " criado com sucesso\n";
     }
 }catch(Exception $e){
     echo $e->getMessage();

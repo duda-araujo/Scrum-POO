@@ -31,6 +31,7 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
     $this->set_email($email_p);
     $this->set_assento($assento_p);
     $this->set_programa_de_milhagem($programa);
+    echo "\nPassageiro " . $this->get_nome_passageiro() . " cadastrado com sucesso";
 }
 }catch(Exception $e){
     echo $e->getMessage();

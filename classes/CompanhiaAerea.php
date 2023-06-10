@@ -31,7 +31,8 @@ public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_b
     $this->set_sigla($sigla_f);
     $this->set_preco_bagagem($preco_bagagem_f);
     $this->set_tarifa($tarifa_f);
-}
+    echo "\nCompanhia Aérea " . $this->get_nome() . " cadastrada com sucesso!\n";
+    }
 }catch(Exception $e){
     echo $e->getMessage();
 }

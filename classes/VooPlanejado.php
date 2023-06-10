@@ -117,6 +117,7 @@ public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
     $this->set_pontos_voo($pontos_f);
     self::inicializar_assento();
     self::$historico_planejado[] = $this;
+    echo  "Voo " . $this->get_codigo() . " da " . $this->get_aviao()->get_companhia_aerea()->get_nome() . " de " . $this->get_origem()->get_sigla_aero() . " para " . $this->get_destino()->get_sigla_aero() . " marcado para " . $this->get_hora_agenda_saida()->format('d/m/Y H:i') . " com chegada " . $this->get_hora_agenda_chegada()->format('d/m/Y H:i') . "\n";
      }
     }catch(Exception $e){
         echo $e->getMessage();
@@ -336,7 +337,7 @@ public function set_codigo($codigo_f): void {
         if($this->validar_codigo($codigo_f)){
             if (substr($codigo_f, 0, 2) != $this->Aviao->get_companhia_aerea()->get_sigla()){
             $codigoCorrigido = $this->Aviao->get_companhia_aerea()->get_sigla().substr($codigo_f, 2, 4);
-            echo "\nCodigo corrigido para: ".$codigoCorrigido;
+            echo "\nCodigo corrigido para: ".$codigoCorrigido . "\n";
             } else {
             $codigoCorrigido = $codigo_f;
             }    
@@ -514,6 +515,7 @@ public static function buscar_proximos_voos(): array {
         new logLeitura(get_called_class(), $method);
         return $voos_proximos;
 }
+
 public static function proximos_voos_string(): string {
         $voos_proximos = self::buscar_proximos_voos();
         $string = "";
