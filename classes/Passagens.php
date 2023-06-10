@@ -15,6 +15,7 @@ class Passagens extends persist{
     protected CartaoDeEmbarque $cartao_de_embarque1;
     protected ?CartaoDeEmbarque $cartao_de_embarque2 = null;
 
+    protected int $Numero_bagagens;
     protected Usuario $usuario_;
 
 public static $dict_estados = [
@@ -25,25 +26,26 @@ public static $dict_estados = [
     4 => "NO SHOW",
     5 => "Check-in Não Realizado"
 ];
-public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f, int $franquia_f,Usuario $usuario_f,DateTime $date){
+public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f, int $franquia_f,Usuario $usuario_f,int $quantidade_bagagens_f){
     try{
         if(Sistema::checkSessionState()==FALSE){
             throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
         }
         else{
-            // $voos = $this->verificar_conexão($origem_f, $destino_f, $date);
-            // if($voos[1] == null){
-            //     $this->voo = $voos[0];
-            //     $this->conexao = null;
-            // }else{
-            //     $this->voo = $voos[0];
-            //     $this->conexao = $voos[1];
-            // }
+            $voos = $this->verificar_conexão($origem_f, $destino_f);
+            if($voos[1] == null){
+                $this->voo = $voos[0];
+                $this->conexao = null;
+            }else{
+                $this->voo = $voos[0];
+                $this->conexao = $voos[1];
+            }
     $this->set_usuario($usuario_f);
-    $this->set_voo($origem_f, $destino_f, $date);
+    $this->set_voo($origem_f, $destino_f);
     $this->set_cliente($passageiro_f);
-    $this->set_franquia($franquia_f);
-    $this->set_preco($franquia_f);
+    $this->set_quantidade_bagagens($quantidade_bagagens_f);
+
+    $this->set_preco($franquia_f,$quantidade_bagagens_f);
     $this->set_estado_da_passagem(0);
     $this->voo->comprar_assento($passageiro_f->get_assento(), $passageiro_f);
     $this->voo->set_passageiros_compraram($this);
@@ -52,7 +54,7 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
     self::$passagens[] = $this;
     $this->usuario_->passagem_comprada($this->get_preco(),$origem_f,$destino_f);
     // $this->set_ordem_cronologica();
-    echo "\nPassagem comprada com sucesso\n";
+    echo "passagem comprada com sucesso\n";
 }
 }catch(Exception $e){
     echo $e->getMessage();
@@ -187,8 +189,9 @@ public function comprar_bagagem(): float{
 //         }
 //     } return $new_passagens;
 // }
-public function set_voo($origem_f, $destino_f, $date): void{
+public function set_voo($origem_f, $destino_f): void{
     try {
+    echo "\nVerificando conexão";
 
     if(isset($this->voo)){
         $objectBefore = $this->voo;
@@ -196,7 +199,7 @@ public function set_voo($origem_f, $destino_f, $date): void{
       else{
         $objectBefore = null;
       }
-    $voos = self::verificar_conexão($origem_f, $destino_f, $date);
+    $voos = self::verificar_conexão($origem_f, $destino_f);
     $objectAfter = $voos[0];
     new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     //array to string conversion
@@ -230,15 +233,14 @@ public function set_cliente($cliente_f): void{
         echo $e->getMessage();
     }
 }
-public function verificar_conexão(Aeroporto $origem, Aeroporto $destino, $date) {
+public function verificar_conexão(Aeroporto $origem, Aeroporto $destino) {
     try{
         $objectBefore = VooPlanejado::buscar_proximos_voos();
         $voos_proximos = $objectBefore;
         $voos = [];
-        $formattedDate = $date->format('d/m/Y');
         // Verifica se existe algum voo direto
         foreach ($voos_proximos as $voo) {
-            if ($voo->get_origem() == $origem && $voo->get_destino() == $destino && $voo->get_hora_agenda_saida()->format('d/m/Y') == $formattedDate) {
+            if ($voo->get_origem() === $origem && $voo->get_destino() === $destino) {
                 array_push($voos, $voo, null);
                 echo "\nVoo direto";
 
@@ -250,15 +252,9 @@ public function verificar_conexão(Aeroporto $origem, Aeroporto $destino, $date)
         
         // Verifica se existe algum voo com conexão
         foreach ($voos_proximos as $voo) {
-            if ($voo->get_origem() === $origem && $voo->get_hora_agenda_saida()->format('d/m/Y') === $formattedDate) {
-                $origem_conexão = $voo->get_destino();
+            if ($voo->get_origem() === $origem) {
                 foreach ($voos_proximos as $voo_conexao) {
-                    if ($origem_conexão == $voo_conexao->get_origem() && $voo_conexao->get_destino() === $destino && $voo->get_hora_agenda_chegada() <= $voo_conexao->get_hora_agenda_saida()) {
-                        // echo "\nHorario de saida: ".$voo->get_hora_agenda_saida()->format('d/m/Y').
-                        //     "\nHorario de chegada: ".$voo->get_hora_agenda_chegada()->format('d/m/Y').
-                        //     "\nOrigem: ". $voo_conexao->get_origem()->get_cidade().
-                        //     "\nDestino: ". $voo_conexao->get_destino()->get_cidade();
-
+                    if ($voo_conexao->get_destino() === $destino && $voo->get_hora_agenda_chegada() <= $voo_conexao->get_hora_agenda_saida()) {
                         array_push($voos, $voo, $voo_conexao);
                         echo "\nVoo com conexão";
 
@@ -373,12 +369,12 @@ public function string_passagem(): string{
     return "\nPassagem comprada para $nome $sobrenome, de $origem para $destino, com franquia de $franquia kg e preço de R$$preco";
 }       
 
-public function set_franquia($franquia_f): void {//entre 0 e 3
+public function set_quantidade_bagagens($quantidade_bagagens_f): void {//entre 0 e 3
     try {
-        if ($franquia_f < 0){
+        if ($quantidade_bagagens_f < 0){
             throw new Exception("\nFranquia não pode ser negativa");
         }
-        else if($franquia_f > 3){
+        else if($quantidade_bagagens_f > 3){
             throw new Exception("\nFranquia maxima eh 3");
         }
         else{
@@ -388,7 +384,7 @@ public function set_franquia($franquia_f): void {//entre 0 e 3
               else{
                 $objectBefore = null;
               }
-            $this->franquia = $franquia_f;
+            $this->franquia = $quantidade_bagagens_f;
             $objectAfter = $this->franquia;
             new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         }
@@ -397,7 +393,7 @@ public function set_franquia($franquia_f): void {//entre 0 e 3
     }
 }
 
-public function set_preco($franquia_f){
+public function set_preco($franquia_f,$quantidade_bagagens_f){
     if(isset($this->preco)){
         $objectBefore = $this->preco;
       }
@@ -409,7 +405,7 @@ public function set_preco($franquia_f){
       $a= $this->voo->get_aviao();
       $b=$a->get_companhia_aerea();
       $c=$b->get_preco_bagagem();
-      $this->preco=$this->voo->get_preco_trajeto() + $franquia_f * $c;
+      $this->preco=$this->voo->get_preco_trajeto() + $franquia_f * $quantidade_bagagens_f;
       $objectAfter = $this->preco;
       new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
@@ -426,7 +422,7 @@ public function set_preco($franquia_f){
       else{
         $objectBefore = null;
       }
-      $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto() + $franquia_f *($c + $f);
+      $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto() + $franquia_f *$quantidade_bagagens_f;
       $objectAfter = $this->preco;
       new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
@@ -437,7 +433,7 @@ public function set_preco($franquia_f){
             $b=$a->get_companhia_aerea();
             $c=$b->get_preco_bagagem();
             if($franquia_f!=0){//vip sem conexao e com bagagem
-            $this->preco=$this->voo->get_preco_trajeto() + ($franquia_f - 1) * ($c/2);
+            $this->preco=$this->voo->get_preco_trajeto() + ($quantidade_bagagens_f - 1) * ($franquia_f/2);
             }
             else{//vip sem conexao sem bagagem
             $this->preco=$this->voo->get_preco_trajeto();
@@ -453,7 +449,7 @@ public function set_preco($franquia_f){
             $e=$d->get_companhia_aerea();
             $f=$e->get_preco_bagagem();
             if($franquia_f !=0){//vip com conexao e bagagem
-            $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto() + ($franquia_f - 1) *(($c + $f)/2);
+            $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto() + ($quantidade_bagagens_f - 1) *($franquia_f/2);
             }
             else{//vip com conexao sem bagagem
             $this->preco= $this->voo->get_preco_trajeto() + $this->conexao->get_preco_trajeto();
