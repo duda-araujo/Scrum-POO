@@ -11,7 +11,7 @@ class Veiculo extends persist{
     public function __construct(CompanhiaAerea $companhia_f, Aeroporto $aeroporto_f, string $modelo_f, int $capacidade_f){
         try{
             if(Sistema::checkSessionState()==FALSE){
-                throw new Exception("usuario nao foi inicializado");
+                throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
             }
             else{
         $this->companhia = $companhia_f;

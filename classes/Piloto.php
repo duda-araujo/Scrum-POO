@@ -22,7 +22,7 @@ protected Aeroporto $Aeroporto_base;
 public function __construct($nome_p,$sobrenome_p,$documento_p,$cpf_p,$nacionalidade_p,DateTime $data_nascimento_p,$email_p,$cht_p,$logradouro_p,$numero_p,$bairro_p,$cidade_p,$estado_p,$Aerop_base_p,$companhiaAerea_p ){
   try{
     if(Sistema::checkSessionState()==FALSE){
-        throw new Exception("usuario nao foi inicializado");
+        throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
     }
     else{
     $this->set_nome($nome_p);

@@ -102,7 +102,7 @@ public function __construct($codigo_f, $Aerop_origem_f, $Aerop_destino_f,
                             $Hora_agen_chegada_f,$Hora_agen_saida_f,$Aviao_f, $preco_f,$pontos_f, $multa_f) {
                                 try{
                                     if(Sistema::checkSessionState()==FALSE){
-                                        throw new Exception("usuario nao foi inicializado");
+                                        throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
                                     }
                                     else{
     $this->set_aviao($Aviao_f);

@@ -17,7 +17,7 @@ protected string $assento;
 public function __construct($voo_planejado_f,$passageiro_f){
   try{
     if(Sistema::checkSessionState()==FALSE){
-        throw new Exception("usuario nao foi inicializado");
+        throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
     }
     else{
 $this->set_nome($passageiro_f->get_nome_passageiro());

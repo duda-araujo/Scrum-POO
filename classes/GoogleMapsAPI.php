@@ -8,7 +8,7 @@ class GoogleMapsAPI extends persist
     {
         try{
             if(Sistema::checkSessionState()==FALSE){
-                throw new Exception("usuario nao foi inicializado");
+                throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
             }
             else{
             

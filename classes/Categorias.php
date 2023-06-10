@@ -9,7 +9,7 @@ class Categorias extends persist{
     public function __construct($programa_de_milhagem_f, $nome_f, $pontos_exigidos_f){
         try{
             if(Sistema::checkSessionState()==FALSE){
-                throw new Exception("usuario nao foi inicializado");
+                throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
             }
             else{
         $this->set_milhagem($programa_de_milhagem_f);

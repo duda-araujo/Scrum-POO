@@ -28,7 +28,7 @@ public static $dict_estados = [
 public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f, int $franquia_f,Usuario $usuario_f){
     try{
         if(Sistema::checkSessionState()==FALSE){
-            throw new Exception("usuario nao foi inicializado");
+            throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
         }
         else{
     $this->set_usuario($usuario_f);

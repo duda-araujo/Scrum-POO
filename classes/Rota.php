@@ -21,7 +21,7 @@ class Rota extends persist{
     public function __construct($aeroporto_f, $veiculo_f,$tripulacao_f,$voo_f) {
         try{
             if(Sistema::checkSessionState()==FALSE){
-                throw new Exception("usuario nao foi inicializado");
+                throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
             }
             else{
         $this->set_aeroporto($aeroporto_f);

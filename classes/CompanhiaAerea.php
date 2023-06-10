@@ -21,7 +21,7 @@ protected array $pilotos = [];
 public function __construct($nome_f,$razao_f,$codigo_f,$cnpj_f,$sigla_f,$preco_bagagem_f,$tarifa_f){
     try{
         if(Sistema::checkSessionState()==FALSE){
-            throw new Exception("usuario nao foi inicializado");
+            throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
         }
         else{
     $this->set_nome_comp($nome_f);
