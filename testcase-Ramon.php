@@ -1,5 +1,4 @@
 <?php
-
 include_once("global.php");
 ini_set('memory_limit', '512M');
 //Teste de funcionalidade antes do cadastro de usuário 
@@ -64,9 +63,9 @@ echo("\n".VooPlanejado::proximos_voos_string());
 $data_amanha = new DateTime("tomorrow");
 $programa_azul = new ProgramaDeMilhagem("TudoAzul", $companhia2);
 $passageiro_vip = new PassageiroVip("Bruno", "Rodrigues", "MG-10.123.345", 2, true, "brasileiro", "948.884.119-21", new DateTime("1995-03-15"), new DateTime("now"), "bruno@gmail.com", "2A", $programa_azul, "102");
-$passagem_vip = new Passagens($aeroporto5, $aeroporto4, $passageiro_vip, 30, $usuario, new DateTime("now"));
+$passagem_vip = new Passagens($aeroporto5, $aeroporto4, $passageiro_vip, 30, $usuario,2, new DateTime("now"));
 $amanhã = ((new DateTime("now"))->modify('+3 days'));
-$passagem_volta = new Passagens($aeroporto4, $aeroporto5, $passageiro_vip, 30, $usuario, $amanhã);
+$passagem_volta = new Passagens($aeroporto4, $aeroporto5, $passageiro_vip, 30, $usuario,2, $amanhã);
 $passagem_vip->realizar_check_in();
 $passagem_volta->cancelar_passagem();
 $passagem_volta->realizar_check_in();
