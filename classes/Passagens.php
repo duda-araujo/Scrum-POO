@@ -44,6 +44,7 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
     self::$passagens[] = $this;
     $this->usuario_->passagem_comprada($this->get_preco(),$origem_f,$destino_f);
     // $this->set_ordem_cronologica();
+    echo "passagem comprada com sucesso\n";
 }
 }catch(Exception $e){
     echo $e->getMessage();

@@ -31,6 +31,7 @@ class ProgramaDeMilhagem extends persist{
             else{
         $this->set_nome($nome);
         $this->set_companhia($companhia);
+        echo "programa de milhagem ". $this->get_nome()." cadastrado com sucesso\n";
     }
 }catch(Exception $e){
     echo $e->getMessage();

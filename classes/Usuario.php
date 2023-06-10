@@ -20,6 +20,7 @@ class Usuario extends persist{
         $this->set_email($email_u);
         $this->set_login($login_u);
         $this->set_senha($senha_u);
+        echo "usuario ".$this->get_nome()." ".$this->get_sobrenome()." cadastrado com sucesso\n";
     }
     static public function getFilename() {
         return get_called_class();

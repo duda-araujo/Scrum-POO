@@ -24,6 +24,7 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
     $this->set_assento($assento_p);
     $this->set_milhagem($programa);
     $this->set_registro($registro);
+    echo "passageiro vip".$this->get_nome_passageiro()." ".$this->get_sobrenome_passageiro()." cadastrado com sucesso"."\n";
 }
 }catch(Exception $e){
     echo $e->getMessage();
