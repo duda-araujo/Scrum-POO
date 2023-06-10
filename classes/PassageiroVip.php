@@ -2,7 +2,9 @@
 
 class PassageiroVip extends Passageiro{
 protected bool $vip = true;
-protected ProgramaDeMilhagem $programa_milhagem;
+protected ProgramaDeMilhagem $programa_de_milhagem;
+protected string $categoria;
+protected int $pontos;
 protected string $numero_registro;
 
 
@@ -43,7 +45,7 @@ public function get_vip(){
 public function get_milhagem(){
     $method = __METHOD__;
     new logLeitura(get_called_class(), $method);
-    return $this->programa_milhagem;
+    return $this->programa_de_milhagem;
 }
 
 public function set_milhagem(ProgramaDeMilhagem $p){
@@ -71,5 +73,74 @@ public function get_registro(){
     $method = __METHOD__;
     new logLeitura(get_called_class(), $method);
     return $this->numero_registro;
+}
+public function get_categoria() {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
+    return $this->categoria;
+}
+public function set_categoria($pontos) {
+    if(isset($this->programa_de_milhagem)){
+        $objectBefore = $this->categoria;
+        $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
+        $objectAfter = $this->categoria;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
+        $objectAfter = $this->categoria;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
+}
+public function get_pontos() {
+    $method = __METHOD__;
+    new logLeitura(get_called_class(), $method);
+    return $this->pontos;
+}
+public function set_pontos($pontos_f) {
+    if(isset($this->programa_de_milhagem)){
+        $objectBefore = $this->pontos;
+        $this->pontos = $pontos_f;
+        $objectAfter = $this->pontos;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this->pontos = $pontos_f;
+        $objectAfter = $this->pontos;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }
+}
+public function adicionar_pontos($pontos, DateTime $data){
+    $this->pontos += $pontos;
+    $this->historico_de_pontos[$data->format('d-m-Y')] = $pontos;
+}
+// Caso a quantidade mínima de pontos acumulados nos últimos 12 meses 
+// de uma categoria não seja mantida, o passageiro vip tem um downgrade e retorna à categoria anterior.
+// Checa o array historico_de_pontos e retorna a quantidade de pontos acumulados nos ultimos 12 meses
+public function ultimos_doze_meses(DateTime $data_atual) {
+    if ($this->programa_de_milhagem == null) {
+        echo("\nPrograma de milhagem não definido");
+    }
+    else{
+    $pontos_ultimos_doze_meses = 0;
+    foreach($this->historico_de_pontos as $data => $pontos) {
+        $data_formatada = DateTime::createFromFormat('d-m-Y', $data);
+        $diferenca = $data_atual->diff($data_formatada);
+        if($diferenca->y == 0 && $diferenca->m <= 12) {
+            $pontos_ultimos_doze_meses += $pontos;
+        }
+    }
+    $categoria = $this->programa_de_milhagem->get_categoria($pontos_ultimos_doze_meses);
+    if(isset($this->categoria)){
+        $objectBefore = $this->categoria;
+        $this -> categoria = $categoria;
+        $objectAfter = $this -> categoria;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }else{
+        $objectBefore = null;
+        $this -> categoria = $categoria;
+        $objectAfter = $this -> categoria;
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+    }}
 }
 }

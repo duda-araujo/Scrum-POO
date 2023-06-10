@@ -4,7 +4,7 @@ include_once("global.php");
 
 //Cadastro de um usuário
 $usuario = new Usuario("Vinicius", "Cabral", "viniciusmc.2109@gmail.com", "aabbccdd", "123456");
-$user1->cadastrar_usuario($usuario);
+// $user1->cadastrar_usuario($usuario);
 new Sistema($usuario);
 
 //Cadastro de duas companhias aéreas 
@@ -48,8 +48,8 @@ $voo5_volta = new VooPlanejado("LA1336", $aeroporto4, $aeroporto1,
 new DateTime("18:49"), new DateTime("17:49"), $aeronave1,  "350.00", "100", "50.00");
 
 // $newLogEscrita = new logEscrita(0, 0, 0);
-$resultado = VooPlanejado::proximos_voos_string();
-echo $resultado;
+// $resultado = VooPlanejado::proximos_voos_string();
+// echo $resultado;
 
 #$listaVoos = logEscrita::convertArrayToString($resultado);
 #echo $listaVoos;

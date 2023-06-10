@@ -20,7 +20,8 @@ class Usuario extends persist{
         $this->set_email($email_u);
         $this->set_login($login_u);
         $this->set_senha($senha_u);
-        echo "usuario ".$this->get_nome()." ".$this->get_sobrenome()." cadastrado com sucesso\n";
+        $this->cadastrar_usuario($this);
+        echo "Usuário ".$this->get_nome()." ".$this->get_sobrenome()." cadastrado com sucesso!\n";
     }
     static public function getFilename() {
         return get_called_class();
@@ -146,7 +147,6 @@ class Usuario extends persist{
         }
         
         $this->UsuariosCadastrados[] = $usuario_cadastrado;
-        echo "Cadastro realizado com sucesso!\n";
     }
     
     public function passagem_comprada($preco_f,$Aerop_origem_f,$Aerop_destino_f){

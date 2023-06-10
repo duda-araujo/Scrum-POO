@@ -18,7 +18,7 @@ public function __construct(string $sigla_f,string $cidade_f,string $estado_f,st
     $this->set_cidade($cidade_f);
     $this->set_estado($estado_f);
     $this->set_nome($nome_f);
-    echo "\n" .  $this->get_nome_aero() . " cadastrado com sucesso\n";
+    echo "\n" .  $this->get_nome_aero() . " cadastrado com sucesso!\n";
   }
 }catch(Exception $e){
     echo $e->getMessage();

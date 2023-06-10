@@ -7,15 +7,14 @@ class Passageiro extends persist{
     protected string $nacionalidade;
     protected string $cpf;
     protected DateTime $data_de_nascimento;
-    protected ?ProgramaDeMilhagem $programa_de_milhagem = null;
-    protected string $categoria;
-    protected int $pontos;
+    // protected string $categoria;
+    // protected int $pontos;
     protected array $historico_de_pontos=[];
     protected string $email;
     protected int $numero_bagagens;
     protected string $assento;
     protected bool $vip=false;    
-public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p, $assento_p, $programa = null){
+public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p, $assento_p){
     try{
         if(Sistema::checkSessionState()==FALSE){
             throw new Exception("usuario nao foi inicializado");
@@ -30,7 +29,6 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
     $this->set_data_de_nascimento($data_de_nascimento_p, $data_atual_p);
     $this->set_email($email_p);
     $this->set_assento($assento_p);
-    $this->set_programa_de_milhagem($programa);
     echo "\nPassageiro " . $this->get_nome_passageiro() . " cadastrado com sucesso";
 }
 }catch(Exception $e){
@@ -41,24 +39,24 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
 static public function getFilename() {
    return get_called_class();
 }
-public function set_programa_de_milhagem(?ProgramaDeMilhagem $p){
-    if(isset($this->programa_de_milhagem)){
-        $objectBefore = $this->programa_de_milhagem;
-        $this->programa_de_milhagem = $p;
-        $objectAfter = $this->programa_de_milhagem;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-    }else{
-        $objectBefore = null;
-        $this->programa_de_milhagem = $p;
-        $objectAfter = $this->programa_de_milhagem;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-    }
-}
-public function get_programa_de_milhagem(){
-    $method = __METHOD__;
-    new logLeitura(get_called_class(), $method);
-    return $this->programa_de_milhagem;
-}
+// public function set_programa_de_milhagem(?ProgramaDeMilhagem $p){
+//     if(isset($this->programa_de_milhagem)){
+//         $objectBefore = $this->programa_de_milhagem;
+//         $this->programa_de_milhagem = $p;
+//         $objectAfter = $this->programa_de_milhagem;
+//         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+//     }else{
+//         $objectBefore = null;
+//         $this->programa_de_milhagem = $p;
+//         $objectAfter = $this->programa_de_milhagem;
+//         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+//     }
+// }
+// public function get_programa_de_milhagem(){
+//     $method = __METHOD__;
+//     new logLeitura(get_called_class(), $method);
+//     return $this->programa_de_milhagem;
+// }
 public function set_assento($assento_p){
     if(isset($this->assento)){
         $objectBefore = $this->assento;
@@ -294,74 +292,74 @@ public function get_email() {
     new logLeitura(get_called_class(), $method);
     return $this->email;
 }
-public function get_categoria() {
-    $method = __METHOD__;
-    new logLeitura(get_called_class(), $method);
-    return $this->categoria;
-}
-public function set_categoria($pontos) {
-    if(isset($this->programa_de_milhagem)){
-        $objectBefore = $this->categoria;
-        $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
-        $objectAfter = $this->categoria;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-    }else{
-        $objectBefore = null;
-        $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
-        $objectAfter = $this->categoria;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-    }
-}
-public function get_pontos() {
-    $method = __METHOD__;
-    new logLeitura(get_called_class(), $method);
-    return $this->pontos;
-}
-public function set_pontos($pontos_f) {
-    if(isset($this->programa_de_milhagem)){
-        $objectBefore = $this->pontos;
-        $this->pontos = $pontos_f;
-        $objectAfter = $this->pontos;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-    }else{
-        $objectBefore = null;
-        $this->pontos = $pontos_f;
-        $objectAfter = $this->pontos;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-    }
-}
-public function adicionar_pontos($pontos, DateTime $data){
-    $this->pontos += $pontos;
-    $this->historico_de_pontos[$data->format('d-m-Y')] = $pontos;
-}
+// public function get_categoria() {
+//     $method = __METHOD__;
+//     new logLeitura(get_called_class(), $method);
+//     return $this->categoria;
+// }
+// public function set_categoria($pontos) {
+//     if(isset($this->programa_de_milhagem)){
+//         $objectBefore = $this->categoria;
+//         $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
+//         $objectAfter = $this->categoria;
+//         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+//     }else{
+//         $objectBefore = null;
+//         $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
+//         $objectAfter = $this->categoria;
+//         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+//     }
+// }
+// public function get_pontos() {
+//     $method = __METHOD__;
+//     new logLeitura(get_called_class(), $method);
+//     return $this->pontos;
+// }
+// public function set_pontos($pontos_f) {
+//     if(isset($this->programa_de_milhagem)){
+//         $objectBefore = $this->pontos;
+//         $this->pontos = $pontos_f;
+//         $objectAfter = $this->pontos;
+//         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+//     }else{
+//         $objectBefore = null;
+//         $this->pontos = $pontos_f;
+//         $objectAfter = $this->pontos;
+//         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+//     }
+// }
+// public function adicionar_pontos($pontos, DateTime $data){
+//     $this->pontos += $pontos;
+//     $this->historico_de_pontos[$data->format('d-m-Y')] = $pontos;
+// }
 //Caso a quantidade mínima de pontos acumulados nos últimos 12 meses 
 //de uma categoria não seja mantida, o passageiro vip tem um downgrade e retorna à categoria anterior.
 //Checa o array historico_de_pontos e retorna a quantidade de pontos acumulados nos ultimos 12 meses
-public function ultimos_doze_meses(DateTime $data_atual) {
-    if ($this->programa_de_milhagem == null) {
-        echo("\nPrograma de milhagem não definido");
-    }
-    else{
-    $pontos_ultimos_doze_meses = 0;
-    foreach($this->historico_de_pontos as $data => $pontos) {
-        $data_formatada = DateTime::createFromFormat('d-m-Y', $data);
-        $diferenca = $data_atual->diff($data_formatada);
-        if($diferenca->y == 0 && $diferenca->m <= 12) {
-            $pontos_ultimos_doze_meses += $pontos;
-        }
-    }
-    $categoria = $this->programa_de_milhagem->get_categoria($pontos_ultimos_doze_meses);
-    if(isset($this->categoria)){
-        $objectBefore = $this->categoria;
-        $this -> categoria = $categoria;
-        $objectAfter = $this -> categoria;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-    }else{
-        $objectBefore = null;
-        $this -> categoria = $categoria;
-        $objectAfter = $this -> categoria;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
-    }}
-}
+// public function ultimos_doze_meses(DateTime $data_atual) {
+//     if ($this->programa_de_milhagem == null) {
+//         echo("\nPrograma de milhagem não definido");
+//     }
+//     else{
+//     $pontos_ultimos_doze_meses = 0;
+//     foreach($this->historico_de_pontos as $data => $pontos) {
+//         $data_formatada = DateTime::createFromFormat('d-m-Y', $data);
+//         $diferenca = $data_atual->diff($data_formatada);
+//         if($diferenca->y == 0 && $diferenca->m <= 12) {
+//             $pontos_ultimos_doze_meses += $pontos;
+//         }
+//     }
+//     $categoria = $this->programa_de_milhagem->get_categoria($pontos_ultimos_doze_meses);
+//     if(isset($this->categoria)){
+//         $objectBefore = $this->categoria;
+//         $this -> categoria = $categoria;
+//         $objectAfter = $this -> categoria;
+//         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+//     }else{
+//         $objectBefore = null;
+//         $this -> categoria = $categoria;
+//         $objectAfter = $this -> categoria;
+//         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+//     }}
+// }
 }
     
