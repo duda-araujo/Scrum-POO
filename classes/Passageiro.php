@@ -6,7 +6,7 @@ class Passageiro extends persist{
     protected string $documento_passageiro;
     protected string $nacionalidade;
     protected string $cpf;
-    protected ?ProgramaDeMilhagem $programa_de_milhagem;
+    protected ProgramaDeMilhagem $programa_de_milhagem;
     protected DateTime $data_de_nascimento;
     protected string $categoria;
     protected int $pontos;
@@ -331,7 +331,12 @@ public function set_pontos($pontos_f) {
     }
 }
 public function adicionar_pontos($pontos, DateTime $data){
-    $this->pontos += $pontos;
+    if(isset($this->pontos)){
+        $this->pontos += $pontos;
+    }
+    else{
+        $this->pontos = $pontos;
+    }
     $this->historico_de_pontos[$data->format('d-m-Y')] = $pontos;
 }
 // Caso a quantidade mínima de pontos acumulados nos últimos 12 meses 

@@ -511,6 +511,10 @@ public static function buscar_proximos_voos(): array {
                 $voos_proximos[] = $voo;
             }
         }
+        #ordenar voos
+        usort($voos_proximos, function ($a, $b) {
+            return $a->hora_agendada_saida <=> $b->hora_agendada_saida;
+        });
         $method = __METHOD__;
         new logLeitura(get_called_class(), $method);
         return $voos_proximos;
@@ -608,5 +612,11 @@ public function pesquisar_voos($origem, $destino, $data, $numero_de_passagens){
             return $voos_disponiveis;
         }
     }
+}
+public static function compararVoos(VooPlanejado $voo1,VooPlanejado $voo2){
+    if ($voo1->get_hora_agenda_saida() == $voo2->get_hora_agenda_saida()) {
+        return 0;
+    }
+    return ($voo1->get_hora_agenda_saida() < $voo2->get_hora_agenda_saida()) ? -1 : 1;
 }
 }

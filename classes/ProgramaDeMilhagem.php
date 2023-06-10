@@ -68,17 +68,18 @@ class ProgramaDeMilhagem extends persist{
         $objectAfter = $this->companhia;
         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
-    public function get_categoria($pontos): int{
-        foreach(self::$categoria as $key => $value){
-            if($pontos >= $value){
-                $categoria = $key;
+    public function get_categoria($pontos){
+        #função para retornar a categoria do cliente baseada nos pontos
+        foreach(self::$pontos as $categoria => $pontosLimite){
+            if($pontos >= $pontosLimite){
+                $categoria = self::$categoria[$categoria];
             }
         }
         $method = __METHOD__;
         new logLeitura(get_called_class(), $method);
         return $categoria;
     }
-    public function get_pontos_categoria($categoria): int{
+    public function get_pontos_categoria($categoria){
         foreach(self::$pontos as $key => $value){
             if($categoria == $key){
                 $pontos = $value;
