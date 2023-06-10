@@ -477,4 +477,9 @@ new logEscrita(get_called_class(), $objectBefore, $objectAfter);
         new logLeitura(get_called_class(), $method);
         return $this->usuario_;
     }
+    public function get_conexao(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
+        return $this->conexao;
+    }
 }
