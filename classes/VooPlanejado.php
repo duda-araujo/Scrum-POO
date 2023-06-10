@@ -57,7 +57,7 @@ public function voo_com_frequencia($frequencia){//frequencia eh um valor de zero
     }
     switch($frequencia){
         case 1:
-            for ($i = 1; $i<= 365; $i++){
+            for ($i = 1; $i<= 30; $i++){
                 $saida = clone $this->hora_agendada_saida;
                 $chegada = clone $this->hora_agendada_chegada;
                 $saida->modify("+{$i} days");
@@ -66,7 +66,7 @@ public function voo_com_frequencia($frequencia){//frequencia eh um valor de zero
             }
             break;
         case 2:
-            for ($i = 1; $i<= 52; $i++){
+            for ($i = 1; $i<= 4; $i++){
                 $saida = clone $this->hora_agendada_saida;
                 $chegada = clone $this->hora_agendada_chegada;
                 $saida->modify("+{$i} weeks");
@@ -75,7 +75,7 @@ public function voo_com_frequencia($frequencia){//frequencia eh um valor de zero
             }
             break;
         case 3:
-            for ($i = 1; $i<= 26; $i++){
+            for ($i = 1; $i<= 2; $i++){
                 $quinzenal = $i*2;
                 $saida = clone $this->hora_agendada_saida;
                 $chegada = clone $this->hora_agendada_chegada;
@@ -85,7 +85,7 @@ public function voo_com_frequencia($frequencia){//frequencia eh um valor de zero
             }
             break;
         case 4:
-            for ($i = 1; $i<= 12; $i++){
+            for ($i = 1; $i<= 1; $i++){
                 $saida = clone $this->hora_agendada_saida;
                 $chegada = clone $this->hora_agendada_chegada;
                 $saida->modify("+{$i} months");

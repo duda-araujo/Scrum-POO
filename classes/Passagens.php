@@ -25,22 +25,22 @@ public static $dict_estados = [
     4 => "NO SHOW",
     5 => "Check-in Não Realizado"
 ];
-public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f, int $franquia_f,Usuario $usuario_f){
+public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageiro $passageiro_f, int $franquia_f,Usuario $usuario_f,DateTime $date){
     try{
         if(Sistema::checkSessionState()==FALSE){
             throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
         }
         else{
-            $voos = $this->verificar_conexão($origem_f, $destino_f);
-            if($voos[1] == null){
-                $this->voo = $voos[0];
-                $this->conexao = null;
-            }else{
-                $this->voo = $voos[0];
-                $this->conexao = $voos[1];
-            }
+            // $voos = $this->verificar_conexão($origem_f, $destino_f, $date);
+            // if($voos[1] == null){
+            //     $this->voo = $voos[0];
+            //     $this->conexao = null;
+            // }else{
+            //     $this->voo = $voos[0];
+            //     $this->conexao = $voos[1];
+            // }
     $this->set_usuario($usuario_f);
-    $this->set_voo($origem_f, $destino_f);
+    $this->set_voo($origem_f, $destino_f, $date);
     $this->set_cliente($passageiro_f);
     $this->set_franquia($franquia_f);
     $this->set_preco($franquia_f);
@@ -52,7 +52,7 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
     self::$passagens[] = $this;
     $this->usuario_->passagem_comprada($this->get_preco(),$origem_f,$destino_f);
     // $this->set_ordem_cronologica();
-    echo "passagem comprada com sucesso\n";
+    echo "\nPassagem comprada com sucesso\n";
 }
 }catch(Exception $e){
     echo $e->getMessage();
@@ -187,7 +187,7 @@ public function comprar_bagagem(): float{
 //         }
 //     } return $new_passagens;
 // }
-public function set_voo($origem_f, $destino_f): void{
+public function set_voo($origem_f, $destino_f, $date): void{
     try {
     echo "\nVerificando conexão";
 
@@ -197,7 +197,7 @@ public function set_voo($origem_f, $destino_f): void{
       else{
         $objectBefore = null;
       }
-    $voos = self::verificar_conexão($origem_f, $destino_f);
+    $voos = self::verificar_conexão($origem_f, $destino_f, $date);
     $objectAfter = $voos[0];
     new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     //array to string conversion
@@ -231,14 +231,15 @@ public function set_cliente($cliente_f): void{
         echo $e->getMessage();
     }
 }
-public function verificar_conexão(Aeroporto $origem, Aeroporto $destino) {
+public function verificar_conexão(Aeroporto $origem, Aeroporto $destino, $date) {
     try{
         $objectBefore = VooPlanejado::buscar_proximos_voos();
         $voos_proximos = $objectBefore;
         $voos = [];
+        $formattedDate = $date->format('d/m/Y');
         // Verifica se existe algum voo direto
         foreach ($voos_proximos as $voo) {
-            if ($voo->get_origem() === $origem && $voo->get_destino() === $destino) {
+            if ($voo->get_origem() == $origem && $voo->get_destino() == $destino && $voo->get_hora_agenda_saida()->format('d/m/Y') == $formattedDate) {
                 array_push($voos, $voo, null);
                 echo "\nVoo direto";
 
@@ -250,10 +251,18 @@ public function verificar_conexão(Aeroporto $origem, Aeroporto $destino) {
         
         // Verifica se existe algum voo com conexão
         foreach ($voos_proximos as $voo) {
-            if ($voo->get_origem() === $origem) {
+            if ($voo->get_origem() === $origem && $voo->get_hora_agenda_saida()->format('d/m/Y') === $formattedDate) {
+                $origem_conexão = $voo->get_destino();
                 foreach ($voos_proximos as $voo_conexao) {
-                    if ($voo_conexao->get_destino() === $destino && $voo->get_hora_agenda_chegada() <= $voo_conexao->get_hora_agenda_saida()) {
+                    if ($origem_conexão == $voo_conexao->get_origem() && $voo_conexao->get_destino() === $destino && $voo->get_hora_agenda_chegada() <= $voo_conexao->get_hora_agenda_saida()) {
+                        // echo "\nHorario de saida: ".$voo->get_hora_agenda_saida()->format('d/m/Y').
+                        //     "\nHorario de chegada: ".$voo->get_hora_agenda_chegada()->format('d/m/Y').
+                        //     "\nOrigem: ". $voo_conexao->get_origem()->get_cidade().
+                        //     "\nDestino: ". $voo_conexao->get_destino()->get_cidade();
+
                         array_push($voos, $voo, $voo_conexao);
+                        echo "\nCONEXÃO - Origem: ".$voo->get_origem()->get_cidade(). " " . $voo->get_destino()->get_cidade()."\n".
+                                "Destino: ".$voo_conexao->get_origem()->get_cidade(). " " . $voo_conexao->get_destino()->get_cidade();
                         echo "\nVoo com conexão";
 
                         $objectAfter = $voos;

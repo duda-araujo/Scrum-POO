@@ -1,7 +1,7 @@
 <?php
 
 include_once("global.php");
-
+ini_set('memory_limit', '512M');
 //Teste de funcionalidade antes do cadastro de usuário 
 $aeroporto_teste = new Aeroporto("CNG", "Congonhas", "SP", "Aeroporto de Congonhas");
 
@@ -27,39 +27,51 @@ $aeroporto5 = new Aeroporto("CNF","Confins","MG", "Aeroporto Internacional Tancr
 //O código deve validar o código do voo, tratar a exceção e alterar o código para utilizar a sigla correta
 $voo1 = new VooPlanejado("AC1329", $aeroporto5, $aeroporto3,
 new DateTime("10:45"), new DateTime("09:45"),$aeronave2,"350.00","100", "50.00");
-$voo1->voo_com_frequencia(2);
+$voo1->voo_com_frequencia(1);
 
 
 $voo2_ida = new VooPlanejado("AD1329", $aeroporto5, $aeroporto3,
 new DateTime("12:49"),new DateTime("11:49"), $aeronave2,"350.00","100", "50.00");
-$voo2_ida->voo_com_frequencia(2);
+$voo2_ida->voo_com_frequencia(1);
 
 $voo2_volta = new VooPlanejado("AD1330", $aeroporto3, $aeroporto5,
 new DateTime("18:49"), new DateTime("17:49"), $aeronave2,  "350.00","100", "50.00");
-$voo2_volta->voo_com_frequencia(2);
+$voo2_volta->voo_com_frequencia(1);
 
 $voo3_ida = new VooPlanejado("AD1331", $aeroporto5, $aeroporto1, 
 new DateTime("12:49"), new DateTime("11:49"), $aeronave2,  "350.00","100", "50.00");
+$voo3_ida->voo_com_frequencia(1);
 $voo3_volta = new VooPlanejado("AD1332", $aeroporto1, $aeroporto5, 
 new DateTime("18:49"), new DateTime("17:49"), $aeronave2,  "350.00","100", "50.00");
+$voo3_volta->voo_com_frequencia(1);
 
 $voo4_ida = new VooPlanejado("LA1333", $aeroporto3, $aeroporto2,
 new DateTime("12:49"), new DateTime("11:49"), $aeronave1, "350.00", "100", "50.00");
+$voo4_ida->voo_com_frequencia(1);
 $voo4_volta = new VooPlanejado("LA1334", $aeroporto2, $aeroporto3,
 new DateTime("18:49"), new DateTime("17:49"), $aeronave1,  "350.00", "100", "50.00");
+$voo4_volta->voo_com_frequencia(1);
 
 $voo5_ida = new VooPlanejado("LA1335", $aeroporto1, $aeroporto4,
 new DateTime("12:49"), new DateTime("11:49"), $aeronave1,  "350.00", "100", "50.00");
+$voo5_ida->voo_com_frequencia(1);
 $voo5_volta = new VooPlanejado("LA1336", $aeroporto4, $aeroporto1,
 new DateTime("18:49"), new DateTime("17:49"), $aeronave1,  "350.00", "100", "50.00");
+$voo5_volta->voo_com_frequencia(1);
 
 echo("\n".VooPlanejado::proximos_voos_string());
 
 $data_amanha = new DateTime("tomorrow");
 $programa_azul = new ProgramaDeMilhagem("TudoAzul", $companhia2);
 $passageiro_vip = new PassageiroVip("Bruno", "Rodrigues", "MG-10.123.345", 2, true, "brasileiro", "948.884.119-21", new DateTime("1995-03-15"), new DateTime("now"), "bruno@gmail.com", "2A", $programa_azul, "102");
-$passagem_vip = new Passagens($aeroporto5, $aeroporto4, $passageiro_vip, 30, $usuario);
+$passagem_vip = new Passagens($aeroporto5, $aeroporto4, $passageiro_vip, 30, $usuario, new DateTime("now"));
+$amanhã = ((new DateTime("now"))->modify('+3 days'));
+$passagem_volta = new Passagens($aeroporto4, $aeroporto5, $passageiro_vip, 30, $usuario, $amanhã);
 $passagem_vip->realizar_check_in();
+$passagem_volta->cancelar_passagem();
+$passagem_volta->realizar_check_in();
+
+
 
 // $newLogEscrita = new logEscrita(0, 0, 0);
 // $resultado = VooPlanejado::proximos_voos_string();

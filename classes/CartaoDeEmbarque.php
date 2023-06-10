@@ -27,7 +27,10 @@ $this->set_destino($voo_planejado_f->get_destino());
 $this->set_horario_viagem($voo_planejado_f->get_hora_agenda_saida());
 $this->set_assento($passageiro_f->get_assento());
 $this->set_horario_embarque();
-echo "\nCartao de embarque do passageiro" . $this->get_nome_passagerio() . "/n". $this->get_sobrenome_passageiro() . "cadastrado com sucesso";
+echo "\nCartao de embarque do passageiro: " . $this->get_nome_passagerio() . " ". $this->get_sobrenome_passageiro() . 
+    "\nVoo de: " . $this->get_origem()->get_cidade() . " para: " . $this->get_destino()->get_cidade().
+    "\nHorario de embarque: " . $this->get_horario_embarque()->format('d-m-Y H:i:s') .
+    "\nAssento: " . $this->get_assento() . "\n";
 }
 }catch(Exception $e){
     echo $e->getMessage();
