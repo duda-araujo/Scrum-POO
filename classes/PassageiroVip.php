@@ -12,7 +12,7 @@ protected string $numero_registro;
 public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p, $assento_p,$programa,$registro){
     try{
         if(Sistema::checkSessionState()==FALSE){
-            throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
+            throw new Exception("\nUsuario não foi inicializado! Não é possível acessar o sistema\n");
         }
         else{
     $this->set_nome_passageiro($nome_p);
@@ -26,7 +26,7 @@ public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $
     $this->set_assento($assento_p);
     $this->set_milhagem($programa);
     $this->set_registro($registro);
-    echo "passageiro vip".$this->get_nome_passageiro()." ".$this->get_sobrenome_passageiro()." cadastrado com sucesso"."\n";
+    echo "\nPassageiro vip ".$this->get_nome_passageiro()." ".$this->get_sobrenome_passageiro()." cadastrado com sucesso"."\n";
 }
 }catch(Exception $e){
     echo $e->getMessage();

@@ -26,12 +26,12 @@ class ProgramaDeMilhagem extends persist{
     public function __construct(string $nome, CompanhiaAerea $companhia){
         try{
             if(Sistema::checkSessionState()==FALSE){
-                throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
+                throw new Exception("\nUsuario não foi inicializado! Não é possível acessar o sistema\n");
             }
             else{
         $this->set_nome($nome);
         $this->set_companhia($companhia);
-        echo "programa de milhagem ". $this->get_nome()." cadastrado com sucesso\n";
+        echo "\nPrograma de milhagem ". $this->get_nome()." cadastrado com sucesso!\n";
     }
 }catch(Exception $e){
     echo $e->getMessage();

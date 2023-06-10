@@ -189,7 +189,6 @@ public function comprar_bagagem(): float{
 // }
 public function set_voo($origem_f, $destino_f, $date): void{
     try {
-    echo "\nVerificando conexão";
 
     if(isset($this->voo)){
         $objectBefore = $this->voo;
@@ -261,8 +260,6 @@ public function verificar_conexão(Aeroporto $origem, Aeroporto $destino, $date)
                         //     "\nDestino: ". $voo_conexao->get_destino()->get_cidade();
 
                         array_push($voos, $voo, $voo_conexao);
-                        echo "\nCONEXÃO - Origem: ".$voo->get_origem()->get_cidade(). " " . $voo->get_destino()->get_cidade()."\n".
-                                "Destino: ".$voo_conexao->get_origem()->get_cidade(). " " . $voo_conexao->get_destino()->get_cidade();
                         echo "\nVoo com conexão";
 
                         $objectAfter = $voos;
