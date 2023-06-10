@@ -31,6 +31,14 @@ public function __construct(Aeroporto $origem_f, Aeroporto $destino_f, Passageir
             throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
         }
         else{
+            $voos = $this->verificar_conexão($origem_f, $destino_f);
+            if($voos[1] == null){
+                $this->voo = $voos[0];
+                $this->conexao = null;
+            }else{
+                $this->voo = $voos[0];
+                $this->conexao = $voos[1];
+            }
     $this->set_usuario($usuario_f);
     $this->set_voo($origem_f, $destino_f);
     $this->set_cliente($passageiro_f);
