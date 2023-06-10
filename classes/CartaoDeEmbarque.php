@@ -175,6 +175,16 @@ public function get_assento(){
     new LogLeitura(get_called_class(), $method);
     return $this->assento;
 }
-
+public function string_cartao() : string{
+  $a="cartão de embarque impresso para o voo".$this->passagem->get_voo()->get_codigo()."de ".$this->origem_do_voo->get_cidade()."para".$this->destino_do_voo->get_cidade()." em nome do passageiro".$this->nome_passageiro." ".$this->sobrenome_passageiro."\n";
+  return $a;
 }
 
+
+
+
+
+
+
+
+}
