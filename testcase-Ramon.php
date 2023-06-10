@@ -2,9 +2,11 @@
 
 include_once("global.php");
 
+//Teste de funcionalidade antes do cadastro de usuário 
+$aeroporto_teste = new Aeroporto("CNG", "Congonhas", "SP", "Aeroporto de Congonhas");
+
 //Cadastro de um usuário
 $usuario = new Usuario("Vinicius", "Cabral", "viniciusmc.2109@gmail.com", "aabbccdd", "123456");
-$usuario2 = new Usuario("Vinicius", "Cabral", "viniciusmc.2109@gmail.com", "aabbccdd", "123456");
 new Sistema($usuario);
 
 //Cadastro de duas companhias aéreas 
