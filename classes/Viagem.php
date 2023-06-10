@@ -18,7 +18,7 @@ class Viagem extends VooPlanejado{
     public function __construct($voo_anunciado_f,$saida_f,$chegada_f,$Aviao_voo_f, $embarque_f,$piloto_f, $copiloto_f){
         try{
             if(Sistema::checkSessionState()==FALSE){
-                throw new Exception("usuario nao foi inicializado");
+                throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
             }
             else{
         $this-> set_voo_anunciado($voo_anunciado_f);

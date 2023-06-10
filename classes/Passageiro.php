@@ -17,7 +17,7 @@ class Passageiro extends persist{
 public function __construct($nome_p, $sobrenome_p, $documento_p, $nbagagens_p, $vip_p, $nacionalidade_p, $cpf_p, $data_de_nascimento_p, $data_atual_p, $email_p, $assento_p){
     try{
         if(Sistema::checkSessionState()==FALSE){
-            throw new Exception("usuario nao foi inicializado");
+            throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
         }
         else{
     $this->set_nome_passageiro($nome_p);

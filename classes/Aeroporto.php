@@ -11,7 +11,7 @@ protected string $nome;
 public function __construct(string $sigla_f,string $cidade_f,string $estado_f,string $nome_f){
   try{
     if(Sistema::checkSessionState()==FALSE){
-        throw new Exception("usuario nao foi inicializado");
+        throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
     }
     else{
     $this->set_sigla_aero($sigla_f);

@@ -15,7 +15,7 @@ protected CompanhiaAerea $CompanhiaAerea_;
 public function __construct($fabricante_f,$modelo_f,$carga_f,$passageiros_f,$registro_f,$companhiaAerea_f){
     try{
     if(Sistema::checkSessionState()==FALSE){
-        throw new Exception("usuario nao foi inicializado");
+        throw new Exception("usuario nao foi inicializado\n");
     }
     else{
     
