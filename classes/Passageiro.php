@@ -301,15 +301,12 @@ public function get_categoria() {
 public function set_categoria($pontos) {
     if(isset($this->programa_de_milhagem)){
         $objectBefore = $this->categoria;
-        $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
-        $objectAfter = $this->categoria;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }else{
         $objectBefore = null;
-        $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
-        $objectAfter = $this->categoria;
-        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
+    $this->categoria = $this->programa_de_milhagem->get_categoria($pontos);
+    $objectAfter = $this->categoria;
+    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 }
 public function get_pontos() {
     $method = __METHOD__;
