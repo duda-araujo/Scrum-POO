@@ -99,6 +99,7 @@ class Rota extends persist{
         return $array;
     }
     public function definir_rota() {
+        $arrayDistancias = [];
         $googleMaps = new GoogleMapsAPI();
         $waypoints = $this->endereço_to_string();
         $nome_aero = $this -> aeroporto -> get_nome_aero();
@@ -115,21 +116,19 @@ class Rota extends persist{
         // Verificar se a requisição foi bem-sucedida
         if ($data['status'] === 'OK') {
             $routes = $data['routes'];
-            $totalDistance = 0;
 
             // Calcular a distância total percorrida em todas as rotas
             foreach ($routes as $route) {
                 $legs = $route['legs'];
                 foreach ($legs as $leg) {
-                    $distance = $leg['distance']['value'];
-                    $totalDistance += $distance;
+                    $i = 0;
+                    $distance = ($leg['distance']['value'])/1000;
+                    #adiciona a distancia de cada rota no array
+                    $arrayDistancias[$this->tripulacao[$i]->get_nome()] = $distance;
                 }
             }
-
-            // Converter a distância total para a unidade desejada (por exemplo, km)
-            $totalDistanceKm = $totalDistance / 1000;
-
-            echo "Distância total: $totalDistanceKm km";
+            echo "\n Rota calculada!";
+            return $arrayDistancias;
         } else {
             echo "Erro na requisição: " . $data['status'];
         }
