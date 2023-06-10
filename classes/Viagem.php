@@ -29,6 +29,7 @@ class Viagem extends VooPlanejado{
         self::$historico_executado[] = $this;
         $this->set_piloto($piloto_f);
         $this->set_copiloto($copiloto_f);
+        echo "viagem de ".$this->get_voo_anunciado()->get_origem()->get_cidade()." para ".$this->get_voo_anunciado()->get_origem()->get_cidade()." cadastrada com sucesso\n";
     }
 }catch(Exception $e){
     echo $e->getMessage();
