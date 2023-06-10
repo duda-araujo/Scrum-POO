@@ -12,6 +12,7 @@ class Embarque extends VooPlanejado{
         Sistema::checkSessionState();
         $this->set_voo($voo);
         $this->set_status_embarque(2);
+        echo "Embarque do voo " . $this->get_voo()->get_codigo() . " aberto com sucesso";
     }
     public static $dict_status = [
         1 => "Embarque fechado",

@@ -336,7 +336,7 @@ public function set_codigo($codigo_f): void {
         if($this->validar_codigo($codigo_f)){
             if (substr($codigo_f, 0, 2) != $this->Aviao->get_companhia_aerea()->get_sigla()){
             $codigoCorrigido = $this->Aviao->get_companhia_aerea()->get_sigla().substr($codigo_f, 2, 4);
-            echo "\nCodigo corrigido para: ".$codigoCorrigido;
+            echo "\nCodigo corrigido para: ".$codigoCorrigido . "\n";
             } else {
             $codigoCorrigido = $codigo_f;
             }    

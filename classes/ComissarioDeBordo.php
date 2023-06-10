@@ -43,6 +43,7 @@ public function __construct($nome_c,$sobrenome_c,$documento_c,$cpf_c,$nacionalid
     $this->set_origem($Aerop_base_c);
     $companhiaAerea_c->set_tripulacao($this);
     $companhiaAerea_c->set_comissarios_de_bordo($this);
+    echo "\nComissario de Bordo" . $this->get_nome() . "cadastrado com sucesso";
 }
 }catch(Exception $e){
     echo $e->getMessage();

@@ -26,6 +26,7 @@ public function __construct($fabricante_f,$modelo_f,$carga_f,$passageiros_f,$reg
     $this->set_registro($registro_f);
     $this->set_companhia($companhiaAerea_f);
     $companhiaAerea_f->set_avioes($this);
+    echo "\nAeronave " . $this->get_registro() . " da Companhia Aérea " . $this->get_companhia_aerea()->get_nome() . " cadastrada com sucesso!\n";
     }
     }catch(Exception $e){
         echo $e->getMessage();
@@ -42,7 +43,7 @@ public function validar_registro($registro_f) {
     } else {
         $prefixo_corrigido = "PP";
         $registro_corrigido = strtoupper($prefixo_corrigido) . '-' . strtoupper($sufixo);
-        echo "Registro inválido, corrigido para: " . $registro_corrigido . "\n";
+        echo "\nRegistro inválido, corrigido para: " . $registro_corrigido . "\n";
         return $registro_corrigido;
     }
 }
