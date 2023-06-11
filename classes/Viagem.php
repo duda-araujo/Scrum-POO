@@ -15,20 +15,27 @@ class Viagem extends VooPlanejado{
     protected Piloto $piloto;
     protected Piloto $copiloto;
 
-    public function __construct($voo_anunciado_f,$saida_f,$chegada_f,$Aviao_voo_f, $embarque_f,$piloto_f, $copiloto_f){
+    protected Rota $rota;
+
+    public function __construct($voo_anunciado_f,$saida_f,$chegada_f,$Aviao_voo_f, $embarque_f,Rota $rota){
         try{
             if(Sistema::checkSessionState()==FALSE){
                 throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
             }
             else{
+        $a=$rota->get_tripulacao();
         $this-> set_voo_anunciado($voo_anunciado_f);
         $this->set_saida($saida_f);
         $this->set_chegada($chegada_f);
         $this->set_aviao_voo($Aviao_voo_f);
         $this->comparar_passageiros($embarque_f);
         self::$historico_executado[] = $this;
-        $this->set_piloto($piloto_f);
-        $this->set_copiloto($copiloto_f);
+        $this->set_piloto($a[0]);
+        $this->set_copiloto($a[1]);
+        $this->set_rota($rota);
+        for($i=2;$i<=sizeof($a);$i++){
+            $this->comissarios_de_bordo[$i-2]=$a[$i];
+        }
         echo "viagem de ".$this->get_voo_anunciado()->get_origem()->get_cidade()." para ".$this->get_voo_anunciado()->get_origem()->get_cidade()." cadastrada com sucesso\n";
     }
 }catch(Exception $e){
@@ -61,6 +68,30 @@ class Viagem extends VooPlanejado{
         } catch (InvalidArgumentException $e) {
             echo $e->getMessage();
         }
+    }
+    public function set_rota($rota_f){
+            try {
+                if(isset($this->rota)){
+                    $objectBefore = $this->rota;
+                  }
+                  else{
+                    $objectBefore = null;
+                  }
+                if ($rota_f instanceof Rota){
+                    $this->rota = $rota_f;
+                    $objectAfter = $this->rota;
+                    new logEscrita(get_called_class(), $objectBefore, $objectAfter);
+                } else {
+                    throw new InvalidArgumentException("Erro: a aeronave não existe");
+                }
+            } catch (InvalidArgumentException $e) {
+                echo $e->getMessage();
+            }
+        }
+    public function get_rota(){
+        $method = __METHOD__;
+        new logLeitura(get_called_class(), $method);
+        return $this->rota;
     }
     public function get_saida(): DateTime {
         $method = __METHOD__;
