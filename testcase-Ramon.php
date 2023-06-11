@@ -83,12 +83,12 @@ $transporte = new Rota($aeroporto5,$carro_vrum_vrum,$tripulacao,$passagem_vip->g
 $piloto_3= new Piloto("Aninha","Aninha","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Avenida Afonso Pena","3111","Funcionários","São Paulo","São Paulo",$aeroporto1,$companhia2);
 $piloto_4= new Piloto("Ana","Ana","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Avenida Paulista","1374","Jardins","São Paulo","São Paulo",$aeroporto1,$companhia2);
 $comissario_1= new ComissarioDeBordo("Antônio","Antônio","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Rua dos Bandeirantes","456","Bom Retiro","São Paulo","São Paulo",$aeroporto1,$companhia2);
-$tripulacao_conexao[0]=$piloto_3;
+$transporte_conexao[0]=$piloto_3;
 $transporte_conexao[1]=$piloto_4;
 $transporte_conexao[2]=$comissario_1;
 $moto_vrum_vrum = new Veiculo($companhia2,$aeroporto1,"helicoptero",18);
-$transporte_conexao = (new Rota($aeroporto1,$moto_vrum_vrum,$transporte_conexao,$passagem_vip->get_conexao()))->definir_rota();
-print_r($transporte_conexao);
+$transporte_conexao = new Rota($aeroporto1,$moto_vrum_vrum,$transporte_conexao,$passagem_vip->get_conexao());
+print_r($transporte_conexao->definir_rota());
 // $newLogEscrita = new logEscrita(0, 0, 0);
 // $resultado = VooPlanejado::proximos_voos_string();
 // echo $resultado;

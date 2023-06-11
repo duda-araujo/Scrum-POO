@@ -48,7 +48,7 @@ class GoogleMapsAPI extends persist
         // Adiciona waypoints se existirem
         if (!empty($waypoints) && is_array($waypoints)) {
             $waypoints = array_map(function($item) {
-                return $item[0]; // Extrai a string do array interno
+                return $item['location']; // Extrai a string do array interno
             }, $waypoints);
             $waypointsParam = implode('|', $waypoints);
             $queryParams['waypoints'] = $waypointsParam;}

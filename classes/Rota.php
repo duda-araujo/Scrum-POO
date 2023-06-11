@@ -28,7 +28,7 @@ class Rota extends persist{
         $this->set_veiculo($veiculo_f);
         $this->set_tripulacao($tripulacao_f);
         $this->set_voo($voo_f);
-        $this->set_hora_transporte();
+        #$this->set_hora_transporte();
         echo "sistema de transporte do voo ".$this->get_voo()->get_codigo(). " criado com sucesso\n";
     }
 }catch(Exception $e){
@@ -119,13 +119,18 @@ class Rota extends persist{
             $routes = $data['routes'];
 
             // Calcular a distância total percorrida em todas as rotas
+            $i = 0;
             foreach ($routes as $route) {
                 $legs = $route['legs'];
                 foreach ($legs as $leg) {
-                    $i = 0;
                     $distance = ($leg['distance']['value'])/1000;
                     #adiciona a distancia de cada rota no array
-                    $arrayDistancias[$this->tripulacao[$i]->get_nome()] = $distance;
+                    if($i>=sizeof($this->tripulacao)){
+                        break;
+                    }
+                    $nome = $this->tripulacao[$i]->get_nome();
+                    $arrayDistancias["$nome"] = $distance;
+                    $i++;
                 }
             }
             echo "\n Rota calculada!";
