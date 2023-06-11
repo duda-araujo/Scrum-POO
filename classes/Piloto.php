@@ -41,7 +41,7 @@ public function __construct($nome_p,$sobrenome_p,$documento_p,$cpf_p,$nacionalid
     $this->set_origem($Aerop_base_p);
     $companhiaAerea_p->set_tripulacao($this);
     $companhiaAerea_p->set_piloto($this);
-    echo "piloto ".$this->get_nome()." ".$this->get_sobrenome()." cadastrado com sucesso \n";
+    echo "\nPiloto ".$this->get_nome()." ".$this->get_sobrenome()." cadastrado com sucesso \n";
   }
 }catch(Exception $e){
     echo $e->getMessage();
