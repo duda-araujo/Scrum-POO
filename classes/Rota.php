@@ -48,7 +48,7 @@ class Rota extends persist{
         }
         $this->aeroporto = $aeroporto_f;
         $objectAfter = $this->aeroporto;
-        new logEscrita($this, $objectBefore, $objectAfter);
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_veiculo($veiculo_f) {
         if(isset($this->veiculo)){
@@ -58,7 +58,7 @@ class Rota extends persist{
         }
         $this->veiculo = $veiculo_f;
         $objectAfter = $this->veiculo;
-        new logEscrita($this, $objectBefore, $objectAfter);
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function set_tripulacao($tripulacao_f) {
         if(isset($this->tripulacao)){
@@ -68,7 +68,7 @@ class Rota extends persist{
         }
         $this->tripulacao = $tripulacao_f;
         $objectAfter = $this->tripulacao;
-        new logEscrita($this, $objectBefore, $objectAfter);
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     public function get_aeroporto(){
         $method = __METHOD__;
@@ -108,6 +108,7 @@ class Rota extends persist{
         $origin = $nome_aero .= ", " . $cidade_aero .= ", " . $estado_aero;
         $destination = $nome_aero .= ", " . $cidade_aero .= ", " . $estado_aero;
         // Fazer a requisição de direções com os waypoints
+        print_r($waypoints);
         $response = $googleMaps->directions($origin, $destination, $waypoints, $optimize = true);
 
         // Converter a resposta JSON em array
@@ -147,7 +148,7 @@ class Rota extends persist{
         $a = clone $this->voo->get_hora_agenda_saida();
         $this->hora_transporte=$a->sub(new DateInterval("PT{$segundos}S"));
         $objectAfter = $this->hora_transporte;
-        new logEscrita($this, $objectBefore, $objectAfter);
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     
     public function get_voo(){
@@ -165,7 +166,7 @@ class Rota extends persist{
         }
         $this->voo = $voo_f;
         $objectAfter = $this->voo;
-        new logEscrita($this, $objectBefore, $objectAfter);
+        new logEscrita(get_called_class(), $objectBefore, $objectAfter);
 
     }
     public function get_hora_transporte(){

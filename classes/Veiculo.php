@@ -11,14 +11,14 @@ class Veiculo extends persist{
     public function __construct(CompanhiaAerea $companhia_f, Aeroporto $aeroporto_f, string $modelo_f, int $capacidade_f){
         try{
             if(Sistema::checkSessionState()==FALSE){
-                throw new Exception("Usuario não foi inicializado! Não é possível acessar o sistema\n");
+                throw new Exception("\nUsuario não foi inicializado! Não é possível acessar o sistema\n");
             }
             else{
         $this->companhia = $companhia_f;
         $this->aeroporto = $aeroporto_f;
         $this->modelo = $modelo_f;
         $this->capacidade = $capacidade_f;
-        echo "veículo ".$this->get_modelo()." da companhia ".$this->get_companhia()->get_nome()." cadastrado com sucesso\n";
+        echo "\nVeículo ".$this->get_modelo()." da companhia ".$this->get_companhia()->get_nome()." cadastrado com sucesso\n";
     }
 }catch(Exception $e){
     echo $e->getMessage();
