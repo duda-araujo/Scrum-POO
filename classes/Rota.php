@@ -28,7 +28,7 @@ class Rota extends persist{
         $this->set_veiculo($veiculo_f);
         $this->set_tripulacao($tripulacao_f);
         $this->set_voo($voo_f);
-        #$this->set_hora_transporte();
+        $this->set_hora_transporte();
         echo "sistema de transporte do voo ".$this->get_voo()->get_codigo(). " criado com sucesso\n";
     }
 }catch(Exception $e){
@@ -149,7 +149,8 @@ class Rota extends persist{
         }else{
             $objectBefore = null;
         }
-        $arrayTempo = [];
+        $a = clone $this->voo->get_hora_agenda_saida();
+        $h = $a->format('H:i:s');
         $orderded_routes = [];
         $routes[] = $this->definir_rota();
         $route_buff = 0;
@@ -157,14 +158,13 @@ class Rota extends persist{
         foreach ($routes as $route) {
             if($route > $route_buff){
                 $route_buff == $route;
-                $tempo = 0;
-                array_push($orderded_routes, $this->tripulacao[$i]->get_nome(), $tempo);
+                $segundos = $route[$this->tripulacao[$i]->get_nome()]*3600/(1000*50); #tempo em segundos com velocidade média de 50km/h
+                $tempo = date("H:i:s", $segundos);
+                $orderded_routes[$this->tripulacao[$i]->get_nome()] = $tempo;
                 $i++;
             }
-        } 
-        $segundos = $this->definir_rota();
-        $a = clone $this->voo->get_hora_agenda_saida();
-        $this->hora_transporte=$a->sub(new DateInterval("PT{$segundos}S"));
+        } $tempo_max = max($orderded_routes);
+        $this->hora_transporte= $h->diff($tempo_max);
         $objectAfter = $this->hora_transporte;
         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
