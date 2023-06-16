@@ -80,7 +80,7 @@ $tripulacao[2]=$comissario;
 $carro_1 = new Veiculo($companhia2,$aeroporto5,"Onibus",18);
 $transporte = new Rota($aeroporto5,$carro_1,$tripulacao,$passagem_vip->get_voo());
 
-$piloto_3= new Piloto("Aninha","Patrícia","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Avenida Afonso Pena","3111","Funcionários","São Paulo","São Paulo",$aeroporto1,$companhia2);
+$piloto_3= new Piloto("Ana","Patrícia","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Avenida Afonso Pena","3111","Funcionários","São Paulo","São Paulo",$aeroporto1,$companhia2);
 $piloto_4= new Piloto("Ana","Fernandes","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Avenida Paulista","1374","Jardins","São Paulo","São Paulo",$aeroporto1,$companhia2);
 $comissario_1= new ComissarioDeBordo("Antônio","Souza","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Rua dos Bandeirantes","456","Bom Retiro","São Paulo","São Paulo",$aeroporto1,$companhia2);
 $transporte_conexao[0]=$piloto_3;

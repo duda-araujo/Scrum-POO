@@ -133,7 +133,7 @@ class Rota extends persist{
                     $i++;
                 }
             }
-            echo "\n Rota calculada!";
+            echo "\n Rota calculada!\n";
             return $arrayDistancias;
         } else {
             echo "Erro na requisição: " . $data['status'];
@@ -149,7 +149,20 @@ class Rota extends persist{
         }else{
             $objectBefore = null;
         }
-        $segundos = $this->definir_rota() / 18+5400;
+        $arrayTempo = [];
+        $orderded_routes = [];
+        $routes[] = $this->definir_rota();
+        $route_buff = 0;
+        $i = 0;
+        foreach ($routes as $route) {
+            if($route > $route_buff){
+                $route_buff == $route;
+                $tempo = 0;
+                array_push($orderded_routes, $this->tripulacao[$i]->get_nome(), $tempo);
+                $i++;
+            }
+        } 
+        $segundos = $this->definir_rota();
         $a = clone $this->voo->get_hora_agenda_saida();
         $this->hora_transporte=$a->sub(new DateInterval("PT{$segundos}S"));
         $objectAfter = $this->hora_transporte;
