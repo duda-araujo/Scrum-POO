@@ -158,8 +158,8 @@ class Rota extends persist{
             if($route > $route_buff){
                 $route_buff == $route;
                 $segundos = $route[$this->tripulacao[$i]->get_nome()]*3600/(60); #tempo em segundos com velocidade média de 50km/h           
-                $hora_tripulacao = new DateTime('0000-00-00 00:00:00');
-                $hora_tripulacao->modify('+'.$segundos.'seconds');
+                $hora_tripulacao = new DateTime("0000-00-00 00:00:00 GMT-0700");
+                $hora_tripulacao->modify('+' . $segundos . 'seconds');
                 $orderded_routes[$this->tripulacao[$i]->get_nome()] = $hora_tripulacao;
                 $i++;
                 echo $hora_tripulacao->format('Y-m-d H:i:s');
