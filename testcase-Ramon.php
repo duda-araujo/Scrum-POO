@@ -71,24 +71,26 @@ $passagem_volta->cancelar_passagem();
 $passagem_volta->realizar_check_in();
 
 $nascimento = new DateTime("15-03-1995");
-$piloto_1= new Piloto("Jorge","Jorge","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Avenida Brasil","1438","Santa Efigênia","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
-$piloto_2= new Piloto("Jorginho","Jorginho","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Rua Antônio Aleixo","205","Lourdes","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
-$comissario = new ComissarioDeBordo("Marcos","Marcos","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Rua Olegário Maciel","126","Lourdes","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
+$piloto_1= new Piloto("Jorge","Santos","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","092675","Avenida Brasil","1438","Santa Efigênia","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
+$piloto_2= new Piloto("Jorginho","Reis","01906650660","01906650660","Brasileiro",$nascimento,"jorginho@gmail.com","143978","Rua Antônio Aleixo","205","Lourdes","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
+$comissario = new ComissarioDeBordo("Marcos","Teixeira","01906650660","01906650660","Brasileiro",$nascimento,"marcos@gmail.com","665091","Rua Olegário Maciel","126","Lourdes","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
 $tripulacao[0]=$piloto_1;
 $tripulacao[1]=$piloto_2;
 $tripulacao[2]=$comissario;
 $carro_vrum_vrum = new Veiculo($companhia2,$aeroporto5,"jet ski",18);
 $transporte = new Rota($aeroporto5,$carro_vrum_vrum,$tripulacao,$passagem_vip->get_voo());
 
-$piloto_3= new Piloto("Aninha","Aninha","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Avenida Afonso Pena","3111","Funcionários","São Paulo","São Paulo",$aeroporto1,$companhia2);
-$piloto_4= new Piloto("Ana","Ana","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Avenida Paulista","1374","Jardins","São Paulo","São Paulo",$aeroporto1,$companhia2);
-$comissario_1= new ComissarioDeBordo("Antônio","Antônio","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Rua dos Bandeirantes","456","Bom Retiro","São Paulo","São Paulo",$aeroporto1,$companhia2);
+$piloto_3= new Piloto("Aninha","Gonçalves","01906650660","01906650660","Brasileiro",$nascimento,"aninha@gmail.com","210430","Avenida Afonso Pena","3111","Funcionários","São Paulo","São Paulo",$aeroporto1,$companhia2);
+$piloto_4= new Piloto("Ana","Clara","01906650660","01906650660","Brasileiro",$nascimento,"ana@gmail.com","266435","Avenida Paulista","1374","Jardins","São Paulo","São Paulo",$aeroporto1,$companhia2);
+$comissario_1= new ComissarioDeBordo("Antônio","Silva","01906650660","01906650660","Brasileiro",$nascimento,"antonio@gmail.com","987123","Rua dos Bandeirantes","456","Bom Retiro","São Paulo","São Paulo",$aeroporto1,$companhia2);
+
 $transporte_conexao[0]=$piloto_3;
 $transporte_conexao[1]=$piloto_4;
 $transporte_conexao[2]=$comissario_1;
 $moto_vrum_vrum = new Veiculo($companhia2,$aeroporto1,"helicoptero",18);
 $transporte_conexao = new Rota($aeroporto1,$moto_vrum_vrum,$transporte_conexao,$passagem_vip->get_conexao());
 print_r($transporte_conexao->definir_rota());
+
 // $newLogEscrita = new logEscrita(0, 0, 0);
 // $resultado = VooPlanejado::proximos_voos_string();
 // echo $resultado;
@@ -106,3 +108,8 @@ print_r($transporte_conexao->definir_rota());
 
 // $passagem_ida = new Passagens($aeroporto5, $aeroporto4, $passageiro1_vip, 30, $usuario1);
 // $passagem_ida->realizar_check_in();
+
+$conteudo_log_leitura = file_get_contents('logLeitura.txt');
+$conteudo_log_escrita = file_get_contents('logEscrita.txt');
+//echo $conteudo_log_leitura;
+//echo $conteudo_log_escrita;
