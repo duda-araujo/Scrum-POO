@@ -71,18 +71,18 @@ $passagem_volta->cancelar_passagem();
 $passagem_volta->realizar_check_in();
 
 $nascimento = new DateTime("15-03-1995");
-$piloto_1= new Piloto("Jorge","Pereira","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Avenida Brasil","1438","Santa Efigênia","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
-$piloto_2= new Piloto("Pedro","Augusto","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Rua Antônio Aleixo","205","Lourdes","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
-$comissario = new ComissarioDeBordo("Marcos","Silva","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Rua Olegário Maciel","126","Lourdes","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
+$piloto_1= new Piloto("Jorge","Pereira","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","092675","Avenida Brasil","1438","Santa Efigênia","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
+$piloto_2= new Piloto("Pedro","Augusto","01906650660","01906650660","Brasileiro",$nascimento,"pedro@gmail.com","143978","Rua Antônio Aleixo","205","Lourdes","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
+$comissario = new ComissarioDeBordo("Marcos","Silva","01906650660","01906650660","Brasileiro",$nascimento,"marcos@gmail.com","665091","Rua Olegário Maciel","126","Lourdes","Belo Horizonte","Minas Gerais",$aeroporto5,$companhia2);
 $tripulacao[0]=$piloto_1;
 $tripulacao[1]=$piloto_2;
 $tripulacao[2]=$comissario;
 $carro_1 = new Veiculo($companhia2,$aeroporto5,"Onibus",18);
 $transporte = new Rota($aeroporto5,$carro_1,$tripulacao,$passagem_vip->get_voo());
 
-$piloto_3= new Piloto("Ana","Patrícia","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Avenida Afonso Pena","3111","Funcionários","São Paulo","São Paulo",$aeroporto1,$companhia2);
-$piloto_4= new Piloto("Ana","Fernandes","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Avenida Paulista","1374","Jardins","São Paulo","São Paulo",$aeroporto1,$companhia2);
-$comissario_1= new ComissarioDeBordo("Antônio","Souza","01906650660","01906650660","Brasileiro",$nascimento,"jorge@gmail.com","naoseioqehisso","Rua dos Bandeirantes","456","Bom Retiro","São Paulo","São Paulo",$aeroporto1,$companhia2);
+$piloto_3= new Piloto("Ana","Patrícia","01906650660","01906650660","Brasileiro",$nascimento,"aninha@gmail.com","210430","Avenida Afonso Pena","3111","Funcionários","São Paulo","São Paulo",$aeroporto1,$companhia2);
+$piloto_4= new Piloto("Ana","Fernandes","01906650660","01906650660","Brasileiro",$nascimento,"ana@gmail.com","266435","Avenida Paulista","1374","Jardins","São Paulo","São Paulo",$aeroporto1,$companhia2);
+$comissario_1= new ComissarioDeBordo("Antônio","Souza","01906650660","01906650660","Brasileiro",$nascimento,"antonio@gmail.com","987123","Rua dos Bandeirantes","456","Bom Retiro","São Paulo","São Paulo",$aeroporto1,$companhia2);
 $transporte_conexao[0]=$piloto_3;
 $transporte_conexao[1]=$piloto_4;
 $transporte_conexao[2]=$comissario_1;
@@ -90,20 +90,8 @@ $carro_2 = new Veiculo($companhia2,$aeroporto1,"Van",18);
 $transporte_conexao = new Rota($aeroporto1,$carro_2,$transporte_conexao,$passagem_vip->get_conexao());
 print_r($transporte_conexao->definir_rota());
 print_r($transporte_conexao->set_hora_transporte());
-// $newLogEscrita = new logEscrita(0, 0, 0);
-// $resultado = VooPlanejado::proximos_voos_string();
-// echo $resultado;
 
-#$listaVoos = logEscrita::convertArrayToString($resultado);
-#echo $listaVoos;
-
-// $data_amanha = new DateTime("tomorow");
-// $programa_azul = new ProgramaDeMilhagem("TudoAzul", $companhia2);
-// $passageiro1_vip = new PassageiroVip("Bruno", "Rodrigues", "MG-10.123.345", 2, true, "brasileiro", "948.884.119-21", new DateTime("1995-03-15"), new DateTime("now"), "bruno@gmail.com", "2A", $programa_azul, "102");
-
-// $user1 = new Usuario("João", "Silva", "joao123@gmail.com", "joao123", "123456");
-
-//$user1->realizar_login("joao123", "123456");
-
-// $passagem_ida = new Passagens($aeroporto5, $aeroporto4, $passageiro1_vip, 30, $usuario1);
-// $passagem_ida->realizar_check_in();
+$conteudo_log_leitura = file_get_contents('logLeitura.txt');
+$conteudo_log_escrita = file_get_contents('logEscrita.txt');
+//echo $conteudo_log_leitura;
+//echo $conteudo_log_escrita;
