@@ -150,7 +150,6 @@ class Rota extends persist{
             $objectBefore = null;
         }
         $a = clone $this->voo->get_hora_agenda_saida();
-        $h = $a->format('H:i:s');
         $orderded_routes = [];
         $routes[] = $this->definir_rota();
         $route_buff = 0;
@@ -158,14 +157,16 @@ class Rota extends persist{
         foreach ($routes as $route) {
             if($route > $route_buff){
                 $route_buff == $route;
-                $segundos = $route[$this->tripulacao[$i]->get_nome()]*3600/(1000*50); #tempo em segundos com velocidade média de 50km/h
-                $tempo = date("H:i:s", $segundos);
-                $orderded_routes[$this->tripulacao[$i]->get_nome()] = $tempo;
+                $segundos = $route[$this->tripulacao[$i]->get_nome()]*3600/(60); #tempo em segundos com velocidade média de 50km/h           
+                $hora_tripulacao = new DateTime('0000-00-00 00:00:00');
+                $hora_tripulacao->modify('+'.$segundos.'seconds');
+                $orderded_routes[$this->tripulacao[$i]->get_nome()] = $hora_tripulacao;
                 $i++;
+                echo $hora_tripulacao->format('Y-m-d H:i:s');
             }
-        } $tempo_max = max($orderded_routes);
-        $this->hora_transporte= $h->diff($tempo_max);
-        $objectAfter = $this->hora_transporte;
+        } 
+        $tempo_max = max($orderded_routes);
+        $objectAfter = $tempo_max;
         new logEscrita(get_called_class(), $objectBefore, $objectAfter);
     }
     

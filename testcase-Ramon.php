@@ -89,6 +89,7 @@ $transporte_conexao[2]=$comissario_1;
 $carro_2 = new Veiculo($companhia2,$aeroporto1,"Van",18);
 $transporte_conexao = new Rota($aeroporto1,$carro_2,$transporte_conexao,$passagem_vip->get_conexao());
 print_r($transporte_conexao->definir_rota());
+print_r($transporte_conexao->set_hora_transporte());
 // $newLogEscrita = new logEscrita(0, 0, 0);
 // $resultado = VooPlanejado::proximos_voos_string();
 // echo $resultado;
